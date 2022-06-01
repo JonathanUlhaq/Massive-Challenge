@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/background_dashboard"
+    android:layout_height="match_parent"
+    android:paddingRight="30dp"
+    android:paddingLeft="50dp"
+    android:paddingTop="30dp"
+    android:paddingBottom="20dp"
+    android:gravity="center_vertical|center_horizontal"
+    android:orientation="vertical"
+    tools:context=".Home">
+
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:id="@+id/belajar"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/icon_belajar"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/icon_belajar_dashboard" />
+
+
+                <TextView
+                    android:id="@+id/judul_belajar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/rockoultraflf"
+                    android:text="@string/belajar"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:id="@+id/mewarnai"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/icon_mewarnai"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/icon_mewarnai_dashboard" />
+
+
+                <TextView
+                    android:id="@+id/judul_mewarnai"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/rockoultraflf"
+                    android:text="@string/mewarnai"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/musik"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/icon_musik"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/icon_musik_dashboard" />
+
+
+                <TextView
+                    android:id="@+id/judul_musik"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/rockoultraflf"
+                    android:text="@string/musik"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:fontFamily="@font/rockoultraflf"
+            android:text="Area Orang Tua"
+            android:textSize="12sp"
+            android:layout_gravity="end"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            />
+
+
+
+
+
+
+
+
+</LinearLayout>

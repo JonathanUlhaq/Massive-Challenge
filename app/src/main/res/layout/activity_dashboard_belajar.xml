@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_belajars"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".DashboardBelajar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_logo_homee"
+            android:id="@+id/home"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rockoultraflf"
+                android:text="@string/belajar"
+                android:textSize="32sp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        >
+
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <!--            Menu 1 dan 2-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="50dp"
+                        android:paddingTop="10dp"
+                        android:id="@+id/huruf"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="50dp"
+                        android:background="@drawable/background_menu_belajar"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:src="@drawable/icon_huruf"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/huruf"
+                                android:fontFamily="@font/rockoultraflf"/>
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="50dp"
+                        android:layout_marginRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:id="@+id/hewan"
+                        android:paddingLeft="50dp"
+                        android:background="@drawable/background_menu_belajar"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:src="@drawable/icon_hewan"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hewan"
+                                android:fontFamily="@font/rockoultraflf"/>
+                        </LinearLayout>
+
+
+
+                    </FrameLayout>
+
+                </LinearLayout>
+                <!--            End Menu 1 dan 2-->
+
+                <!--            Menu 3 dan 4-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:id="@+id/angka"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="20dp"
+                        android:background="@drawable/background_menu_belajar"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:src="@drawable/icon_angka" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/angka"
+                                android:fontFamily="@font/rockoultraflf"/>
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="25dp"
+                        android:layout_marginRight="20dp"
+                        android:paddingTop="10dp"
+                        android:id="@+id/sayur"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="25dp"
+                        android:background="@drawable/background_menu_belajar"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="15dp"
+                                android:src="@drawable/icon_sayur"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/sayur"
+                                android:fontFamily="@font/rockoultraflf"/>
+                        </LinearLayout>
+
+
+
+                    </FrameLayout>
+
+                </LinearLayout>
+                <!--            End Menu 3 dan 4-->
+
+
+                <!--            Menu 5 dan 6-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="30dp"
+                        android:paddingTop="10dp"
+                        android:id="@+id/menulis"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="30dp"
+                        android:background="@drawable/background_menu_belajar"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:src="@drawable/icon_menulis" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/menulis"
+                                android:fontFamily="@font/rockoultraflf"/>
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="40dp"
+                        android:layout_marginRight="20dp"
+                        android:paddingTop="10dp"
+                        android:id="@+id/buah"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="40dp"
+                        android:background="@drawable/background_menu_belajar"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="110dp"
+                                android:src="@drawable/icon_buah"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/buah"
+                                android:fontFamily="@font/rockoultraflf"/>
+                        </LinearLayout>
+
+
+
+                    </FrameLayout>
+
+                </LinearLayout>
+                <!--            End Menu 5 dan 6-->
+
+
+                <!--            Menu 7 dan 8-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="55dp"
+                        android:paddingTop="10dp"
+                        android:id="@+id/transportasi"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="55dp"
+                        android:background="@drawable/background_menu_belajar"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginTop="5dp"
+                                android:src="@drawable/icon_transportasi" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/transportasi"
+                                android:fontFamily="@font/rockoultraflf"/>
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="30dp"
+                        android:layout_marginRight="20dp"
+                        android:paddingTop="10dp"
+                        android:id="@+id/bentuk"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="30dp"
+                        android:background="@drawable/background_menu_belajar"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="110dp"
+                                android:src="@drawable/icon_bentuk" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/bentuk"
+                                android:fontFamily="@font/rockoultraflf"/>
+                        </LinearLayout>
+
+
+
+                    </FrameLayout>
+
+                </LinearLayout>
+                <!--            End Menu 7 dan 8-->
+
+
+                <!--            Menu 9 dan 10-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <FrameLayout
+                        android:id="@+id/perkakas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/background_menu_belajar"
+                        android:paddingLeft="40dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="40dp"
+                        android:paddingBottom="10dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="20dp"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/icon_perkakas" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/rockoultraflf"
+                                android:text="@string/alat" />
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="30dp"
+                        android:layout_marginRight="20dp"
+                        android:paddingTop="10dp"
+                        android:id="@+id/warna"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="30dp"
+                        android:background="@drawable/background_menu_belajar"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:src="@drawable/icon_warna"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/warna"
+                                android:fontFamily="@font/rockoultraflf"/>
+                        </LinearLayout>
+
+
+
+                    </FrameLayout>
+
+                </LinearLayout>
+                <!--            End Menu 9 dan 10-->
+
+
+                <!--            Menu 11 dan 12-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <FrameLayout
+                        android:id="@+id/profesi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/background_menu_belajar"
+                        android:paddingLeft="40dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="40dp"
+                        android:paddingBottom="10dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:src="@drawable/icon_profesi" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/rockoultraflf"
+                                android:text="@string/alat" />
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="45dp"
+                        android:layout_marginRight="20dp"
+                        android:paddingTop="10dp"
+                        android:id="@+id/tata_surya"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="50dp"
+                        android:background="@drawable/background_menu_belajar"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginBottom="20dp"
+                                android:src="@drawable/icon_surya"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tata"
+                                android:fontFamily="@font/rockoultraflf"/>
+                        </LinearLayout>
+
+
+
+                    </FrameLayout>
+
+                </LinearLayout>
+                <!--            End Menu 10 dan 12-->
+
+
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+
+
+
+    </HorizontalScrollView>
+
+
+
+</LinearLayout>

@@ -3,4 +3,17 @@
     <string name="mewarnai">Mewarnai</string>
     <string name="belajar">Belajar</string>
     <string name="musik">Musik</string>
+    <string name="huruf">Huruf</string>
+    <string name="angka">Angka</string>
+    <string name="sayur">Sayur</string>
+    <string name="hewan">Hewan</string>
+    <string name="buah">Buah</string>
+    <string name="bentuk">Bentuk</string>
+    <string name="alat">Alat dan Perkakas</string>
+    <string name="transportasi">Transportasi</string>
+    <string name="menulis">Menulis</string>
+    <string name="warna">Warna</string>
+    <string name="profesi">Profesi</string>
+    <string name="tata">Tata Surya</string>
+
 </resources>

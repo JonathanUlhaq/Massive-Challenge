@@ -19,15 +19,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".DashboardBelajar"
+            android:name=".DashboardMewarnai"
             android:exported="false"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity"/>
         <activity
-            android:name=".Home"
+            android:name=".DashboardBelajar"
+            android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"
-            android:exported="true">
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".Home"
+            android:exported="true"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

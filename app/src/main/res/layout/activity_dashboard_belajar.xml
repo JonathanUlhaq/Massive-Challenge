@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_belajars"
     android:orientation="vertical"
-    android:padding="10dp"
+    android:padding="20dp"
     tools:context=".DashboardBelajar">
 
     <LinearLayout
@@ -18,7 +18,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/ic_logo_homee"
-            android:id="@+id/home"/>
+            android:id="@+id/homes"/>
 
         <LinearLayout
             android:layout_width="match_parent"

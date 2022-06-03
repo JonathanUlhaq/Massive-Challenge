@@ -11,7 +11,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-public class DashboardBelajar extends AppCompatActivity {
+public class DashboardMewarnai extends AppCompatActivity {
 
     ImageView home;
 
@@ -19,11 +19,10 @@ public class DashboardBelajar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_dashboard_belajar);
+        setContentView(R.layout.activity_dashboard_mewarnai);
 
+        home = findViewById(R.id.home);
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.splash);
-
-        home = findViewById(R.id.homes);
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,14 +32,14 @@ public class DashboardBelajar extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
-                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this,R.raw.click_sound_effect);
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardMewarnai.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                        Intent intent = new Intent(DashboardBelajar.this,Home.class);
+                        Intent intent = new Intent(DashboardMewarnai.this,Home.class);
                         startActivity(intent);
 
                     }
@@ -50,11 +49,8 @@ public class DashboardBelajar extends AppCompatActivity {
 
                     }
                 });
-
             }
         });
-
-
 
     }
 }

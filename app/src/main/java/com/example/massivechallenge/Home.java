@@ -30,12 +30,30 @@ public class Home extends AppCompatActivity {
         belajar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 belajar.startAnimation(animation);
                 MediaPlayer mediaPlayer = MediaPlayer.create(Home.this,R.raw.click_sound_effect);
                 mediaPlayer.start();
 
-                Intent intent = new Intent(Home.this,DashboardBelajar.class);
-                startActivity(intent);
+                animation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        Intent intent = new Intent(Home.this,DashboardBelajar.class);
+
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+
             }
         });
 

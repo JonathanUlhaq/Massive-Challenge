@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -70,7 +71,6 @@ public class DashboardBelajar extends AppCompatActivity {
         });
 
 
-
         angka.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,7 +100,6 @@ public class DashboardBelajar extends AppCompatActivity {
 
             }
         });
-
 
 
         menulis.setOnClickListener(new View.OnClickListener() {
@@ -134,7 +133,6 @@ public class DashboardBelajar extends AppCompatActivity {
         });
 
 
-
         transportasi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -164,7 +162,6 @@ public class DashboardBelajar extends AppCompatActivity {
 
             }
         });
-
 
 
         perkakas.setOnClickListener(new View.OnClickListener() {
@@ -229,7 +226,6 @@ public class DashboardBelajar extends AppCompatActivity {
         });
 
 
-
         hewan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -259,7 +255,6 @@ public class DashboardBelajar extends AppCompatActivity {
 
             }
         });
-
 
 
         sayur.setOnClickListener(new View.OnClickListener() {
@@ -293,7 +288,6 @@ public class DashboardBelajar extends AppCompatActivity {
         });
 
 
-
         buah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -323,7 +317,6 @@ public class DashboardBelajar extends AppCompatActivity {
 
             }
         });
-
 
 
         bentuk.setOnClickListener(new View.OnClickListener() {
@@ -357,7 +350,6 @@ public class DashboardBelajar extends AppCompatActivity {
         });
 
 
-
         warna.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -389,7 +381,6 @@ public class DashboardBelajar extends AppCompatActivity {
         });
 
 
-
         tata_surya.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -419,6 +410,5 @@ public class DashboardBelajar extends AppCompatActivity {
 
             }
         });
-
     }
 }

@@ -22,7 +22,21 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_dashboard_mewarnai.xml" value="0.152" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_dashboard_musik.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_home.xml" value="0.2" />
+<<<<<<< HEAD
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_isi_belajar_huruf.xml" value="0.16799999999999998" />
+=======
+        <entry key="..\:/embun/Kampus_Merdeka/masif4/Massive-Challenge/app/src/main/res/layout/activity_dasboard_belajar_angka.xml" value="0.12" />
+        <entry key="..\:/embun/Kampus_Merdeka/masif4/Massive-Challenge/app/src/main/res/layout/activity_dasboard_belajar_buah.xml" value="0.14" />
+        <entry key="..\:/embun/Kampus_Merdeka/masif4/Massive-Challenge/app/src/main/res/layout/activity_dasboard_belajar_hewan.xml" value="0.16" />
+        <entry key="..\:/embun/Kampus_Merdeka/masif4/Massive-Challenge/app/src/main/res/layout/activity_dasboard_belajar_huruf.xml" value="0.16" />
+        <entry key="..\:/embun/Kampus_Merdeka/masif4/Massive-Challenge/app/src/main/res/layout/activity_dasboard_belajar_menulis.xml" value="0.20416666666666666" />
+        <entry key="..\:/embun/Kampus_Merdeka/masif4/Massive-Challenge/app/src/main/res/layout/activity_dasboard_belajar_sayur.xml" value="0.1" />
+        <entry key="..\:/embun/Kampus_Merdeka/masif4/Massive-Challenge/app/src/main/res/layout/activity_dashboard_belajar.xml" value="0.20416666666666666" />
+        <entry key="..\:/embun/Kampus_Merdeka/masif4/Massive-Challenge/app/src/main/res/layout/activity_dashboard_belajar_bentuk.xml" value="0.14" />
+        <entry key="..\:/embun/Kampus_Merdeka/masif4/Massive-Challenge/app/src/main/res/layout/activity_dashboard_belajar_perkakas.xml" value="0.20416666666666666" />
+        <entry key="..\:/embun/Kampus_Merdeka/masif4/Massive-Challenge/app/src/main/res/layout/activity_dashboard_belajar_profesi.xml" value="0.14" />
+        <entry key="..\:/embun/Kampus_Merdeka/masif4/Massive-Challenge/app/src/main/res/layout/activity_dashboard_belajar_warna.xml" value="0.16" />
+>>>>>>> 38a9044553f462a82fece0db04ffd68e4dc09793
       </map>
     </option>
   </component>

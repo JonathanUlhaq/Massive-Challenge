@@ -16,7 +16,7 @@ import android.widget.ImageView;
 public class DashboardBelajar extends AppCompatActivity {
 
     ImageView home;
-    FrameLayout transportasi,bentuk,perkakas,tata_surya,warna,profesi;
+    FrameLayout transportasi,bentuk,perkakas,tata_surya,warna, profesi, angka, buah, hewan, huruf, menulis, sayur;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,12 @@ public class DashboardBelajar extends AppCompatActivity {
         tata_surya = findViewById(R.id.tata_surya);
         warna = findViewById(R.id.warna);
         profesi = findViewById(R.id.profesi);
+        angka = findViewById(R.id.angka);
+        buah = findViewById(R.id.buah);
+        hewan = findViewById(R.id.hewan);
+        huruf = findViewById(R.id.huruf);
+        menulis = findViewById(R.id.menulis);
+        sayur = findViewById(R.id.sayur);
 
 
 //        Warna
@@ -270,6 +276,184 @@ public class DashboardBelajar extends AppCompatActivity {
         });
 
 //        End Home
+
+
+        angka.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                angka.startAnimation(itemAnimation);
+
+                itemAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
+                        mediaPlayer.start();
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                        Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarAngka.class);
+                        startActivity(intent);
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
+
+
+        buah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buah.startAnimation(itemAnimation);
+
+                itemAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
+                        mediaPlayer.start();
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                        Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarBuah.class);
+                        startActivity(intent);
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
+
+
+        hewan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                hewan.startAnimation(itemAnimation);
+
+                itemAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
+                        mediaPlayer.start();
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                        Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarHewan.class);
+                        startActivity(intent);
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
+
+
+        huruf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                huruf.startAnimation(itemAnimation);
+
+                itemAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
+                        mediaPlayer.start();
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                        Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarHuruf.class);
+                        startActivity(intent);
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
+
+
+        menulis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                menulis.startAnimation(itemAnimation);
+
+                itemAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
+                        mediaPlayer.start();
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                        Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarMenulis.class);
+                        startActivity(intent);
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
+
+
+        sayur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sayur.startAnimation(itemAnimation);
+
+                itemAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
+                        mediaPlayer.start();
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                        Intent intent = new Intent(DashboardBelajar.this, DasboardBelajarSayurs.class);
+                        startActivity(intent);
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
+
+
+
+
 
 
 

@@ -21,5 +21,11 @@
     <string name="tebak_bentuk">Tebak Bentuk</string>
     <string name="tebak_warna">Tebak Warna</string>
     <string name="tebak_tata">Tebak Tata Surua</string>
+    <string name="tebak_buah">Tebak Buah</string>
+    <string name="tebak_hewan">Tebak Hewan</string>
+    <string name="tebak_huruf">Tebak Huruf</string>
+    <string name="tebak_menulis">Tebak Menulis</string>
+    <string name="tebak_sayur">Tebak Sayur</string>
+    <string name="tebak_angka">Tebak Angka</string>
 
 </resources>

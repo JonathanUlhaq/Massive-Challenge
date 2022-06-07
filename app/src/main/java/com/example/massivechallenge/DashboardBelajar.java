@@ -1,5 +1,6 @@
 package com.example.massivechallenge;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -22,6 +23,15 @@ public class DashboardBelajar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_dashboard_belajar);
+
+        View decorView = getWindow().getDecorView();
+
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
+
+
 
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.splash);
         Animation itemAnimation = AnimationUtils.loadAnimation(this,R.anim.bouncing);

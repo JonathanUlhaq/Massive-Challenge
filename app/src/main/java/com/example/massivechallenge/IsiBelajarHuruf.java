@@ -11,15 +11,15 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-public class DashboardBelajarTransportasi extends AppCompatActivity {
+public class IsiBelajarHuruf extends AppCompatActivity {
 
-    ImageView back;
+    ImageView apel,back,bayangan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_dashboard_belajar_transportasi);
+        setContentView(R.layout.activity_isi_belajar_huruf);
 
         View decorView = getWindow().getDecorView();
 
@@ -27,27 +27,35 @@ public class DashboardBelajarTransportasi extends AppCompatActivity {
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
-        Animation animation = AnimationUtils.loadAnimation(DashboardBelajarTransportasi.this,R.anim.splash);
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.unlimited_bouncing);
+        Animation backAnimation = AnimationUtils.loadAnimation(this,R.anim.splash);
+        Animation shadowAnimation = AnimationUtils.loadAnimation(this,R.anim.unlimited_bouncing_shadow);
+
+
+        bayangan = findViewById(R.id.bayangan);
+        bayangan.startAnimation(shadowAnimation);
+
+        apel = findViewById(R.id.icon_apel);
+        apel.startAnimation(animation);
 
         back = findViewById(R.id.back);
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                back.startAnimation(animation);
+                back.startAnimation(backAnimation);
 
-                animation.setAnimationListener(new Animation.AnimationListener() {
+                backAnimation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
-                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarTransportasi.this,R.raw.click_sound_effect);
+                        MediaPlayer mediaPlayer = MediaPlayer.create(IsiBelajarHuruf.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                        Intent intent = new Intent(DashboardBelajarTransportasi.this,DashboardBelajar.class);
-                        startActivity(intent);
+                        Intent intent = new Intent(IsiBelajarHuruf.this,DashboardBelajar.class);
+                                startActivity(intent);
 
                     }
 
@@ -59,5 +67,8 @@ public class DashboardBelajarTransportasi extends AppCompatActivity {
 
             }
         });
+
+
+
     }
 }

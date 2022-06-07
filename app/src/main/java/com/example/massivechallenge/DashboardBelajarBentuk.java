@@ -9,11 +9,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 public class DashboardBelajarBentuk extends AppCompatActivity {
 
     ImageView back;
+    FrameLayout bentuk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +24,24 @@ public class DashboardBelajarBentuk extends AppCompatActivity {
 
         setContentView(R.layout.activity_dashboard_belajar_bentuk);
 
+        View decorView = getWindow().getDecorView();
+
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
         Animation animation = AnimationUtils.loadAnimation(DashboardBelajarBentuk.this,R.anim.splash);
 
         back = findViewById(R.id.back);
+        bentuk = findViewById(R.id.bentuk);
+
+        bentuk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DashboardBelajarBentuk.this,IsiBelajarHuruf.class);
+                startActivity(intent);
+            }
+        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -21,6 +21,11 @@ public class Home extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_home);
 
+        View decorView = getWindow().getDecorView();
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
         musik = findViewById(R.id.musik);
         mewarnai = findViewById(R.id.mewarnai);
         belajar = findViewById(R.id.belajar);

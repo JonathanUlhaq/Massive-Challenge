@@ -21,6 +21,12 @@ public class DashboardMewarnai extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_dashboard_mewarnai);
 
+        View decorView = getWindow().getDecorView();
+
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
         home = findViewById(R.id.home);
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.splash);
 

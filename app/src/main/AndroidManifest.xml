@@ -20,27 +20,39 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
         <activity
+
             android:name=".DasboardBelajarTataSurya"
+            android:name=".DashboardBelajarTataSurya"
             android:exported="false"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".DasboardBelajarWarna"
+            android:name=".DashboardBelajarWarna"
             android:exported="false"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".DasboardBelajarBentuk"
+            android:name=".DashboardBelajarBentuk"
             android:exported="false"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".DasboardBelajarBuah"
+            android:name=".DashboardBelajarProfesi"
             android:exported="false"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".DasboardBelajarSayur"
+
+            android:name=".DashboardBelajarPerkakas"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name=".DashboardBelajarTransportasi"
             android:exported="false"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity"/>
@@ -77,6 +89,7 @@
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".DasboardBelajarHuruf"
+            android:name=".DashboardMewarnai"
             android:exported="false"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity" />

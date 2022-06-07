@@ -15,6 +15,15 @@
     <string name="warna">Warna</string>
     <string name="profesi">Profesi</string>
     <string name="tata">Tata Surya</string>
+
     <string name="tebak_huruf">Tebak Huruf</string>
+
+    <string name="tebak_transportasi">Tebak Transportasi</string>
+    <string name="tebak_perkakas">Tebak Alat Perkakas</string>
+    <string name="tebak_profesi">Tebak Profesi</string>
+    <string name="tebak_bentuk">Tebak Bentuk</string>
+    <string name="tebak_warna">Tebak Warna</string>
+    <string name="tebak_tata">Tebak Tata Surua</string>
+
 
 </resources>

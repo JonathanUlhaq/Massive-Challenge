@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 
+
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,13 @@ import android.widget.LinearLayout;
 public class DashboardBelajar extends AppCompatActivity {
 
     FrameLayout huruf, angka, menulis, transportasi, perkakas, profesi, hewan, sayur, buah, bentuk, warna, tata_surya;
+
+import android.widget.ImageView;
+
+public class DashboardBelajar extends AppCompatActivity {
+
+    ImageView home;
+    FrameLayout transportasi,bentuk,perkakas,tata_surya,warna,profesi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +60,30 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationStart(Animation animation) {
 
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.splash);
+        Animation itemAnimation = AnimationUtils.loadAnimation(this,R.anim.bouncing);
+
+        home = findViewById(R.id.homes);
+        transportasi = findViewById(R.id.transportasi);
+        bentuk = findViewById(R.id.bentuk);
+        perkakas = findViewById(R.id.perkakas);
+        tata_surya = findViewById(R.id.tata_surya);
+        warna = findViewById(R.id.warna);
+        profesi = findViewById(R.id.profesi);
+
+
+//        Warna
+
+        warna.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                warna.startAnimation(itemAnimation);
+
+                itemAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
+                        mediaPlayer.start();
                     }
 
                     @Override
@@ -90,6 +122,11 @@ public class DashboardBelajar extends AppCompatActivity {
                         Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarAngka.class);
 
                         startActivity(intent);
+                    }
+
+                        Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarWarna.class);
+                        startActivity(intent);
+
                     }
 
                     @Override
@@ -145,6 +182,23 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationStart(Animation animation) {
 
+            }
+        });
+
+//        End Warna
+
+//        Tata Surya
+
+        tata_surya.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tata_surya.startAnimation(itemAnimation);
+
+                itemAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
+                        mediaPlayer.start();
                     }
 
                     @Override
@@ -176,6 +230,10 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationStart(Animation animation) {
 
+
+                        Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarTataSurya.class);
+                        startActivity(intent);
+
                     }
 
                     @Override
@@ -186,6 +244,7 @@ public class DashboardBelajar extends AppCompatActivity {
                     }
 
                     @Override
+
                     public void onAnimationRepeat(Animation animation) {
 
                     }
@@ -194,6 +253,13 @@ public class DashboardBelajar extends AppCompatActivity {
             }
         });
 
+
+            }
+        });
+
+//        End Tata Surya
+
+//        Profesi
 
         profesi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -207,6 +273,13 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationStart(Animation animation) {
 
+                profesi.startAnimation(itemAnimation);
+
+                itemAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
+                        mediaPlayer.start();
                     }
 
                     @Override
@@ -214,6 +287,11 @@ public class DashboardBelajar extends AppCompatActivity {
                         Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarProfesi.class);
 
                         startActivity(intent);
+
+
+                        Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarProfesi.class);
+                        startActivity(intent);
+
                     }
 
                     @Override
@@ -269,6 +347,25 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationStart(Animation animation) {
 
+
+            }
+        });
+
+//        End Profesi
+
+
+//        Transportasi
+
+        transportasi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                transportasi.startAnimation(itemAnimation);
+
+                itemAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
+                        mediaPlayer.start();
                     }
 
                     @Override
@@ -276,6 +373,10 @@ public class DashboardBelajar extends AppCompatActivity {
                         Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarSayur.class);
 
                         startActivity(intent);
+
+                        Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarTransportasi.class);
+                        startActivity(intent);
+
                     }
 
                     @Override
@@ -300,6 +401,24 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationStart(Animation animation) {
 
+
+            }
+        });
+
+//        End Transportasi
+
+//        Perkakas
+
+        perkakas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                perkakas.startAnimation(itemAnimation);
+
+                itemAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
+                        mediaPlayer.start();
                     }
 
                     @Override
@@ -307,6 +426,11 @@ public class DashboardBelajar extends AppCompatActivity {
                         Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarBuah.class);
 
                         startActivity(intent);
+
+
+                        Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarPerkakas.class);
+                        startActivity(intent);
+
                     }
 
                     @Override
@@ -318,6 +442,12 @@ public class DashboardBelajar extends AppCompatActivity {
             }
         });
 
+            }
+        });
+
+//        End Perkakas
+
+//        Bentuk
 
         bentuk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -331,6 +461,13 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationStart(Animation animation) {
 
+                bentuk.startAnimation(itemAnimation);
+
+                itemAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
+                        mediaPlayer.start();
                     }
 
                     @Override
@@ -338,6 +475,11 @@ public class DashboardBelajar extends AppCompatActivity {
                         Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarBentuk.class);
 
                         startActivity(intent);
+
+                        Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarBentuk.class);
+                        startActivity(intent);
+
+
                     }
 
                     @Override
@@ -357,18 +499,40 @@ public class DashboardBelajar extends AppCompatActivity {
                 warna.startAnimation(animation);
                 MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this,R.raw.click_sound_effect);
                 mediaPlayer.start();
+            }
+        });
+
+//        End Bentuk
+
+//        Home
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                home.startAnimation(animation);
+
 
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
 
+
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this,R.raw.click_sound_effect);
+                        mediaPlayer.start();
+
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
+
                         Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarWarna.class);
 
                         startActivity(intent);
+
+
+                        Intent intent = new Intent(DashboardBelajar.this,Home.class);
+                        startActivity(intent);
+
                     }
 
                     @Override
@@ -379,6 +543,7 @@ public class DashboardBelajar extends AppCompatActivity {
 
             }
         });
+
 
 
         tata_surya.setOnClickListener(new View.OnClickListener() {
@@ -410,5 +575,10 @@ public class DashboardBelajar extends AppCompatActivity {
 
             }
         });
+
+//        End Home
+
+
+
     }
 }

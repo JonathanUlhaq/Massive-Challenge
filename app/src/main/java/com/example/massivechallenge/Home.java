@@ -32,13 +32,13 @@ public class Home extends AppCompatActivity {
             public void onClick(View view) {
 
                 belajar.startAnimation(animation);
-                MediaPlayer mediaPlayer = MediaPlayer.create(Home.this,R.raw.click_sound_effect);
-                mediaPlayer.start();
+
 
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
-
+                        MediaPlayer mediaPlayer = MediaPlayer.create(Home.this,R.raw.click_sound_effect);
+                        mediaPlayer.start();
                     }
 
                     @Override
@@ -61,8 +61,29 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mewarnai.startAnimation(animation);
-                MediaPlayer mediaPlayer = MediaPlayer.create(Home.this,R.raw.click_sound_effect);
-                mediaPlayer.start();
+
+                animation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(Home.this,R.raw.click_sound_effect);
+                        mediaPlayer.start();
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                        Intent intent = new Intent(Home.this,DashboardMewarnai.class);
+                        startActivity(intent);
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+
+
+                    }
+                });
             }
         });
 

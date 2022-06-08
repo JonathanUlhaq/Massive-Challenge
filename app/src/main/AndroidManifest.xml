@@ -19,10 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-<<<<<<< HEAD
             android:name=".IsiBelajarHuruf"
-=======
-            android:name=".DasboardBelajarMenulis"
             android:exported="false"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity" />
@@ -53,12 +50,11 @@
             tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".DashboardBelajarTataSurya"
->>>>>>> 38a9044553f462a82fece0db04ffd68e4dc09793
             android:exported="false"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity"/>
         <activity
-            android:name=".DashboardBelajarTataSurya"
+            android:name=".DasboardBelajarMenulis"
             android:exported="false"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity" />

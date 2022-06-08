@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_belajars"
     android:orientation="vertical"
-    android:padding="10dp"
+    android:padding="20dp"
     tools:context=".DasboardBelajarAngka">
 
     <LinearLayout
@@ -51,6 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:id="@+id/angka"
             android:background="@drawable/background_menu_belajar">
 
             <LinearLayout
@@ -62,7 +63,7 @@
                 <ImageView
                     android:layout_width="173dp"
                     android:layout_height="157dp"
-                    android:src="@drawable/icon_angka" />
+                    android:src="@drawable/angka_a" />
 
                 <TextView
                     android:layout_width="wrap_content"

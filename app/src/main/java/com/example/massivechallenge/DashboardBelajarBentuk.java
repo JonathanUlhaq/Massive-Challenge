@@ -38,8 +38,7 @@ public class DashboardBelajarBentuk extends AppCompatActivity {
         bentuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DashboardBelajarBentuk.this,IsiBelajarHuruf.class);
-                startActivity(intent);
+
             }
         });
 

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_belajars"
     android:orientation="vertical"
-    android:padding="10dp"
+    android:padding="20dp"
     tools:context=".DasboardBelajarBuah">
 
     <LinearLayout
@@ -63,7 +63,7 @@
                 <ImageView
                     android:layout_width="173dp"
                     android:layout_height="157dp"
-                    android:src="@drawable/icon_buah" />
+                    android:src="@drawable/buah_a" />
 
                 <TextView
                     android:layout_width="wrap_content"

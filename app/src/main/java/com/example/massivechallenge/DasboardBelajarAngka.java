@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class DasboardBelajarAngka extends AppCompatActivity {
 
     ImageView back;
+    FrameLayout angka;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +23,24 @@ public class DasboardBelajarAngka extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_dasboard_belajar_angka);
 
+        View decorView = getWindow().getDecorView();
+
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
 
         Animation animation = AnimationUtils.loadAnimation(DasboardBelajarAngka.this,R.anim.splash);
 
         back = findViewById(R.id.back);
+        angka = findViewById(R.id.angka);
+
+        angka.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

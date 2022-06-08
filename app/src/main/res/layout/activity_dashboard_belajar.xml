@@ -41,6 +41,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="5dp"
         android:layout_marginTop="10dp">
         <HorizontalScrollView
             android:layout_width="match_parent"
@@ -85,7 +86,7 @@
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
 
-                                android:src="@drawable/icon_huruf" />
+                                android:src="@drawable/huruf_a" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -116,7 +117,7 @@
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:src="@drawable/icon_hewan"/>
+                                android:src="@drawable/hewan_a"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -161,7 +162,7 @@
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:src="@drawable/icon_angka" />
+                                android:src="@drawable/angka_a" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -192,7 +193,7 @@
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:src="@drawable/icon_sayur"/>
+                                android:src="@drawable/sayur_a"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -238,7 +239,7 @@
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:src="@drawable/icon_menulis" />
+                                android:src="@drawable/menulis_a" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -269,7 +270,7 @@
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:src="@drawable/icon_buah"/>
+                                android:src="@drawable/buah_a"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -315,7 +316,7 @@
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:src="@drawable/icon_transportasi" />
+                                android:src="@drawable/transportasi_a" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -392,7 +393,7 @@
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:src="@drawable/icon_perkakas" />
+                                android:src="@drawable/perkakas_a" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -423,7 +424,7 @@
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:src="@drawable/icon_warna"/>
+                                android:src="@drawable/warna_a"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -468,7 +469,7 @@
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:src="@drawable/icon_profesi" />
+                                android:src="@drawable/profesi_a" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -499,7 +500,7 @@
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:src="@drawable/icon_surya"/>
+                                android:src="@drawable/planet_a"/>
 
                             <TextView
                                 android:layout_width="wrap_content"

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:padding="20dp"
     android:orientation="vertical"
+    android:id="@+id/layout_isi"
     android:background="@drawable/backgorund_isi_belajar_1"
     tools:context=".IsiBelajarHuruf">
 
@@ -33,14 +34,14 @@
               android:layout_height="wrap_content"
               android:gravity="center">
               <ImageView
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
+                  android:layout_width="171dp"
+                  android:layout_height="47dp"
                   android:src="@drawable/button_indonesia_active"
                   android:id="@+id/bahasa_indonesia"/>
 
               <ImageView
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
+                  android:layout_width="171dp"
+                  android:layout_height="47dp"
                   android:src="@drawable/button_inggris_inactive"
                   android:id="@+id/bahasa_inggris"/>
           </LinearLayout>
@@ -57,43 +58,19 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/abjad_a"
-            android:id="@+id/abjad_a"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/icon_apel"
-                android:padding="6dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/a_apel" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/bayangan"
-                android:src="@drawable/bayangan_belajar_huruf"/>
-
-        </LinearLayout>
+  <androidx.viewpager.widget.ViewPager
+      android:layout_width="match_parent"
+      android:layout_height="200dp">
+      <FrameLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="5dp"
+          android:id="@+id/frame_layout">
 
 
 
-    </LinearLayout>
+      </FrameLayout>
+  </androidx.viewpager.widget.ViewPager>
 
     <LinearLayout
         android:layout_width="match_parent"

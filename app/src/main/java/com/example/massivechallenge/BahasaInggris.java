@@ -1,15 +1,21 @@
 package com.example.massivechallenge;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +64,10 @@ public class BahasaInggris extends Fragment {
         }
     }
 
-    ImageView apel,back,bayangan,bahasa_indonesia,bahasa_inggris;
+    ImageView next,previous;
+    LinearLayout layout_isi;
+    AdapterAbjadInggris adapterAbjadInggris;
+    ViewPager viewPager;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -66,14 +75,161 @@ public class BahasaInggris extends Fragment {
         View view = inflater.inflate(R.layout.fragment_bahasa_inggris, container, false);
 
 
-        Animation animation = AnimationUtils.loadAnimation(getContext(),R.anim.unlimited_bouncing);
+        Animation animation = AnimationUtils.loadAnimation(getContext(),R.anim.splash);
         Animation shadowAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.unlimited_bouncing_shadow);
+        Animation dissapear = AnimationUtils.loadAnimation(getContext(), R.anim.dissapear);
 
-        bayangan = view.findViewById(R.id.bayangan);
-        bayangan.startAnimation(shadowAnimation);
+        ArrayList<Integer> background = new ArrayList<Integer>();
 
-        apel = view.findViewById(R.id.icon_apel);
-        apel.startAnimation(animation);
+        for (int i =1; i<=26;i++)
+        {
+            background.add(getResources().getIdentifier("backgorund_isi_belajar_"+i,"drawable","com.example.massivechallenge"));
+        }
+
+        LinearLayout frameLayout;
+
+        adapterAbjadInggris = new AdapterAbjadInggris(getContext());
+        viewPager = view.findViewById(R.id.view_puager);
+        viewPager.setAdapter(adapterAbjadInggris);
+
+        frameLayout = getActivity().findViewById(R.id.frame_layout);
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+                frameLayout.setBackgroundResource(background.get(position));
+                Log.e("LOOG",Integer.toString(position) );
+//                adapterAbjadInggris.instantiateItem(container,position);
+
+                if(position == 25)
+                {
+                    next.startAnimation(dissapear);
+                    dissapear.setAnimationListener(new Animation.AnimationListener() {
+                        @Override
+                        public void onAnimationStart(Animation animation) {
+
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animation animation) {
+                            next.setVisibility(View.INVISIBLE);
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animation animation) {
+
+                        }
+                    });
+
+                } else {
+                    next.setVisibility(View.VISIBLE);
+                }
+
+                if(position == 0)
+                {
+                    previous.startAnimation(dissapear);
+                    dissapear.setAnimationListener(new Animation.AnimationListener() {
+                        @Override
+                        public void onAnimationStart(Animation animation) {
+
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animation animation) {
+                            previous.setVisibility(View.INVISIBLE);
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animation animation) {
+
+                        }
+                    });
+
+                } else {
+                    previous.setVisibility(View.VISIBLE);
+                }
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+
+        next = view.findViewById(R.id.next);
+        previous = view.findViewById(R.id.previus);
+
+        previous.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                previous.startAnimation(animation);
+
+                animation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
+                        mediaPlayer.start();
+                        viewPager.setCurrentItem(viewPager.getCurrentItem() -1,true);
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+
+            }
+        });
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                next.startAnimation(animation);
+
+                animation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
+                        mediaPlayer.start();
+                        viewPager.setCurrentItem(viewPager.getCurrentItem() +1,true);
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+
+            }
+        });
+
+//        layout_isi = getActivity().findViewById(R.id.layout_isi);
+
+
+//        bayangan = view.findViewById(R.id.bayangan);
+//        bayangan.startAnimation(shadowAnimation);
+//
+//        apel = view.findViewById(R.id.icon_apel);
+//        apel.startAnimation(animation);
+
 
         return view;
     }

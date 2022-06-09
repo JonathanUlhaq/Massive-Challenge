@@ -2,11 +2,14 @@ package com.example.massivechallenge;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -17,7 +20,7 @@ public class DashboardBelajar extends AppCompatActivity {
 
     ImageView home;
     FrameLayout transportasi,bentuk,perkakas,tata_surya,warna, profesi, angka, buah, hewan, huruf, menulis, sayur;
-
+    LayoutInflater inflater;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,14 +30,22 @@ public class DashboardBelajar extends AppCompatActivity {
         View decorView = getWindow().getDecorView();
 
         // Hide the status bar.
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        int  uiOptions =  View.SYSTEM_UI_FLAG_IMMERSIVE
+                // Set the content to appear under the system bars so that the
+                // content doesn't resize when the system bars hide and show.
+                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                // Hide the nav bar and status bar
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
 
 
 
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.splash);
-        Animation itemAnimation = AnimationUtils.loadAnimation(this,R.anim.bouncing);
+        Animation itemAnimation = AnimationUtils.loadAnimation(this,R.anim.splash);
 
         home = findViewById(R.id.homes);
         transportasi = findViewById(R.id.transportasi);
@@ -63,13 +74,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarWarna.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                        Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarWarna.class);
-                        startActivity(intent);
+
 
                     }
 
@@ -95,13 +107,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarTataSurya.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                        Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarTataSurya.class);
-                        startActivity(intent);
+
 
                     }
 
@@ -127,13 +140,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarProfesi.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                        Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarProfesi.class);
-                        startActivity(intent);
+
 
                     }
 
@@ -160,13 +174,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarTransportasi.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                        Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarTransportasi.class);
-                        startActivity(intent);
+
 
                     }
 
@@ -192,13 +207,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarPerkakas.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                        Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarPerkakas.class);
-                        startActivity(intent);
+
 
                     }
 
@@ -224,13 +240,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarBentuk.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                        Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarBentuk.class);
-                        startActivity(intent);
+
 
                     }
 
@@ -256,13 +273,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        Intent intent = new Intent(DashboardBelajar.this,Home.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                        Intent intent = new Intent(DashboardBelajar.this,Home.class);
-                        startActivity(intent);
+
 
                     }
 
@@ -288,13 +306,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarAngka.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                        Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarAngka.class);
-                        startActivity(intent);
+
 
                     }
 
@@ -317,13 +336,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarBuah.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                        Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarBuah.class);
-                        startActivity(intent);
+
 
                     }
 
@@ -346,13 +366,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarHewan.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                        Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarHewan.class);
-                        startActivity(intent);
+
 
                     }
 
@@ -375,13 +396,15 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+
+                        Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarHuruf.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                        Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarHuruf.class);
-                        startActivity(intent);
+
 
                     }
 
@@ -404,13 +427,15 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+
+                        Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarMenulis.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                        Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarMenulis.class);
-                        startActivity(intent);
+
 
                     }
 
@@ -433,13 +458,15 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+
+                        Intent intent = new Intent(DashboardBelajar.this, DasboardBelajarSayurs.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                        Intent intent = new Intent(DashboardBelajar.this, DasboardBelajarSayurs.class);
-                        startActivity(intent);
+
 
                     }
 

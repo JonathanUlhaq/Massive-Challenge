@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_belajars"
     android:orientation="vertical"
-    android:padding="20dp"
+    android:padding="10dp"
 
     tools:context=".DashboardBelajar">
 
@@ -41,18 +41,19 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="5dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="5dp"
+        android:padding="5dp">
+
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            >
+            android:layout_marginTop="5dp">
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="20dp"
                 android:orientation="horizontal">
 
 
@@ -64,17 +65,16 @@
 
 
                     <FrameLayout
+                        android:id="@+id/huruf"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingRight="40dp"
-                        android:paddingTop="10dp"
-                        android:id="@+id/huruf"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="10dp"
-                        android:paddingBottom="10dp"
-                        android:paddingLeft="40dp"
                         android:background="@drawable/background_menu_belajar"
-                        >
+                        android:paddingLeft="40dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="40dp"
+                        android:paddingBottom="10dp">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -91,41 +91,40 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/huruf"
-                                android:fontFamily="@font/rockoultraflf"/>
+                                android:fontFamily="@font/rockoultraflf"
+                                android:text="@string/huruf" />
                         </LinearLayout>
 
                     </FrameLayout>
 
                     <FrameLayout
+                        android:id="@+id/hewan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingRight="40dp"
                         android:layout_marginRight="20dp"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:id="@+id/hewan"
-                        android:paddingLeft="40dp"
                         android:background="@drawable/background_menu_belajar"
-                        >
+                        android:paddingLeft="40dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="40dp"
+                        android:paddingBottom="10dp">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:orientation="vertical">
+
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:src="@drawable/hewan_a"/>
+                                android:src="@drawable/hewan_a" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/hewan"
-                                android:fontFamily="@font/rockoultraflf"/>
+                                android:fontFamily="@font/rockoultraflf"
+                                android:text="@string/hewan" />
                         </LinearLayout>
-
 
 
                     </FrameLayout>
@@ -141,17 +140,16 @@
 
 
                     <FrameLayout
+                        android:id="@+id/angka"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingRight="40dp"
-                        android:paddingTop="10dp"
-                        android:id="@+id/angka"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="10dp"
-                        android:paddingBottom="10dp"
-                        android:paddingLeft="40dp"
                         android:background="@drawable/background_menu_belajar"
-                        >
+                        android:paddingLeft="40dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="40dp"
+                        android:paddingBottom="10dp">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -167,41 +165,40 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/angka"
-                                android:fontFamily="@font/rockoultraflf"/>
+                                android:fontFamily="@font/rockoultraflf"
+                                android:text="@string/angka" />
                         </LinearLayout>
 
                     </FrameLayout>
 
                     <FrameLayout
+                        android:id="@+id/sayur"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingRight="40dp"
                         android:layout_marginRight="20dp"
-                        android:paddingTop="10dp"
-                        android:id="@+id/sayur"
-                        android:paddingBottom="10dp"
-                        android:paddingLeft="40dp"
                         android:background="@drawable/background_menu_belajar"
-                        >
+                        android:paddingLeft="40dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="40dp"
+                        android:paddingBottom="10dp">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:orientation="vertical">
+
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:src="@drawable/sayur_a"/>
+                                android:src="@drawable/sayur_a" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/sayur"
-                                android:fontFamily="@font/rockoultraflf"/>
+                                android:fontFamily="@font/rockoultraflf"
+                                android:text="@string/sayur" />
                         </LinearLayout>
-
 
 
                     </FrameLayout>
@@ -218,17 +215,16 @@
 
 
                     <FrameLayout
+                        android:id="@+id/menulis"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingRight="40dp"
-                        android:paddingTop="10dp"
-                        android:id="@+id/menulis"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="10dp"
-                        android:paddingBottom="10dp"
-                        android:paddingLeft="40dp"
                         android:background="@drawable/background_menu_belajar"
-                        >
+                        android:paddingLeft="40dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="40dp"
+                        android:paddingBottom="10dp">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -244,41 +240,40 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/menulis"
-                                android:fontFamily="@font/rockoultraflf"/>
+                                android:fontFamily="@font/rockoultraflf"
+                                android:text="@string/menulis" />
                         </LinearLayout>
 
                     </FrameLayout>
 
                     <FrameLayout
+                        android:id="@+id/buah"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingRight="40dp"
                         android:layout_marginRight="20dp"
-                        android:paddingTop="10dp"
-                        android:id="@+id/buah"
-                        android:paddingBottom="10dp"
-                        android:paddingLeft="40dp"
                         android:background="@drawable/background_menu_belajar"
-                        >
+                        android:paddingLeft="40dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="40dp"
+                        android:paddingBottom="10dp">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:orientation="vertical">
+
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:src="@drawable/buah_a"/>
+                                android:src="@drawable/buah_a" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/buah"
-                                android:fontFamily="@font/rockoultraflf"/>
+                                android:fontFamily="@font/rockoultraflf"
+                                android:text="@string/buah" />
                         </LinearLayout>
-
 
 
                     </FrameLayout>
@@ -295,17 +290,16 @@
 
 
                     <FrameLayout
+                        android:id="@+id/transportasi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingRight="40dp"
-                        android:paddingTop="10dp"
-                        android:id="@+id/transportasi"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="10dp"
-                        android:paddingBottom="10dp"
-                        android:paddingLeft="40dp"
                         android:background="@drawable/background_menu_belajar"
-                        >
+                        android:paddingLeft="40dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="40dp"
+                        android:paddingBottom="10dp">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -321,23 +315,22 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/transportasi"
-                                android:fontFamily="@font/rockoultraflf"/>
+                                android:fontFamily="@font/rockoultraflf"
+                                android:text="@string/transportasi" />
                         </LinearLayout>
 
                     </FrameLayout>
 
                     <FrameLayout
+                        android:id="@+id/bentuk"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingRight="40dp"
                         android:layout_marginRight="20dp"
-                        android:paddingTop="10dp"
-                        android:id="@+id/bentuk"
-                        android:paddingBottom="10dp"
-                        android:paddingLeft="40dp"
                         android:background="@drawable/background_menu_belajar"
-                        >
+                        android:paddingLeft="40dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="40dp"
+                        android:paddingBottom="10dp">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -353,10 +346,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/bentuk"
-                                android:fontFamily="@font/rockoultraflf"/>
+                                android:fontFamily="@font/rockoultraflf"
+                                android:text="@string/bentuk" />
                         </LinearLayout>
-
 
 
                     </FrameLayout>
@@ -405,34 +397,33 @@
                     </FrameLayout>
 
                     <FrameLayout
+                        android:id="@+id/warna"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingRight="40dp"
                         android:layout_marginRight="20dp"
-                        android:paddingTop="10dp"
-                        android:id="@+id/warna"
-                        android:paddingBottom="10dp"
-                        android:paddingLeft="40dp"
                         android:background="@drawable/background_menu_belajar"
-                        >
+                        android:paddingLeft="40dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="40dp"
+                        android:paddingBottom="10dp">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:orientation="vertical">
+
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:src="@drawable/warna_a"/>
+                                android:src="@drawable/warna_a" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/warna"
-                                android:fontFamily="@font/rockoultraflf"/>
+                                android:fontFamily="@font/rockoultraflf"
+                                android:text="@string/warna" />
                         </LinearLayout>
-
 
 
                     </FrameLayout>
@@ -481,34 +472,33 @@
                     </FrameLayout>
 
                     <FrameLayout
+                        android:id="@+id/tata_surya"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingRight="40dp"
                         android:layout_marginRight="20dp"
-                        android:paddingTop="10dp"
-                        android:id="@+id/tata_surya"
-                        android:paddingBottom="10dp"
-                        android:paddingLeft="40dp"
                         android:background="@drawable/background_menu_belajar"
-                        >
+                        android:paddingLeft="40dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="40dp"
+                        android:paddingBottom="10dp">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:orientation="vertical">
+
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:src="@drawable/planet_a"/>
+                                android:src="@drawable/planet_a" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/tata"
-                                android:fontFamily="@font/rockoultraflf"/>
+                                android:fontFamily="@font/rockoultraflf"
+                                android:text="@string/tata" />
                         </LinearLayout>
-
 
 
                     </FrameLayout>
@@ -517,19 +507,11 @@
                 <!--            End Menu 10 dan 12-->
 
 
-
-
-
             </LinearLayout>
-
-
-
-
 
 
         </HorizontalScrollView>
     </ScrollView>
-
 
 
 </LinearLayout>

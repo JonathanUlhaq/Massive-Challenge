@@ -2,11 +2,13 @@ package com.example.massivechallenge;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -25,7 +27,15 @@ public class IsiBelajarHuruf extends AppCompatActivity {
         View decorView = getWindow().getDecorView();
 
         // Hide the status bar.
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        int  uiOptions =  View.SYSTEM_UI_FLAG_IMMERSIVE
+                // Set the content to appear under the system bars so that the
+                // content doesn't resize when the system bars hide and show.
+                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                // Hide the nav bar and status bar
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.unlimited_bouncing);
@@ -38,6 +48,8 @@ public class IsiBelajarHuruf extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,new BahasaIndonesia()).commit();
 
 
+
+      
         bahasa_inggris.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -128,13 +140,15 @@ public class IsiBelajarHuruf extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(IsiBelajarHuruf.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
+
+                        Intent intent = new Intent(IsiBelajarHuruf.this,DashboardBelajar.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                        Intent intent = new Intent(IsiBelajarHuruf.this,DashboardBelajar.class);
-                                startActivity(intent);
+
 
                     }
 

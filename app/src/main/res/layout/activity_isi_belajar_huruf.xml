@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
     android:orientation="vertical"
-    android:id="@+id/layout_isi"
+    android:padding="20dp"
+    android:id="@+id/frame_layout"
     android:background="@drawable/backgorund_isi_belajar_1"
     tools:context=".IsiBelajarHuruf">
 
@@ -29,22 +29,22 @@
             android:orientation="horizontal"
             android:gravity="center|end">
 
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:gravity="center">
-              <ImageView
-                  android:layout_width="171dp"
-                  android:layout_height="47dp"
-                  android:src="@drawable/button_indonesia_active"
-                  android:id="@+id/bahasa_indonesia"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="171dp"
+                    android:layout_height="47dp"
+                    android:src="@drawable/button_indonesia_active"
+                    android:id="@+id/bahasa_indonesia"/>
 
-              <ImageView
-                  android:layout_width="171dp"
-                  android:layout_height="47dp"
-                  android:src="@drawable/button_inggris_inactive"
-                  android:id="@+id/bahasa_inggris"/>
-          </LinearLayout>
+                <ImageView
+                    android:layout_width="171dp"
+                    android:layout_height="47dp"
+                    android:src="@drawable/button_inggris_inactive"
+                    android:id="@+id/bahasa_inggris"/>
+            </LinearLayout>
 
             <ImageView
                 android:layout_width="44dp"
@@ -56,32 +56,15 @@
 
 
 
-    </LinearLayout>
-
-  <androidx.viewpager.widget.ViewPager
-      android:layout_width="match_parent"
-      android:layout_height="200dp">
-      <FrameLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="5dp"
-          android:id="@+id/frame_layout">
 
 
 
-      </FrameLayout>
-  </androidx.viewpager.widget.ViewPager>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="right|center">
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_next_button"
-            android:id="@+id/next"/>
-    </LinearLayout>
+
+      </LinearLayout>
+
+
+
 
 
 </LinearLayout>

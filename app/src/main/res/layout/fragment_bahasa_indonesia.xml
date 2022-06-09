@@ -1,50 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/isi_laay"
     android:layout_height="match_parent"
     tools:context=".BahasaIndonesia">
 
 
+
+
     <!-- TODO: Update blank fragment layout -->
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="wrap_content"
+        android:id="@+id/view_puager"
+        android:layout_height="220dp">
+
+    </androidx.viewpager.widget.ViewPager>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        >
-
+        android:layout_height="wrap_content">
         <ImageView
-            android:layout_width="222dp"
-            android:layout_height="210dp"
-            android:src="@drawable/abjad_a"
-            android:id="@+id/abjad_a"/>
-
-        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/icon_apel"
-                android:padding="10dp"
-                android:layout_width="228dp"
-                android:layout_height="208dp"
-                android:src="@drawable/a_apel" />
+            android:src="@drawable/previous_button"
+            android:visibility="invisible"
+            android:id="@+id/previus"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right|center">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/bayangan"
-                android:src="@drawable/bayangan_belajar_huruf"/>
+                android:src="@drawable/ic_next_button"
+                android:id="@+id/next"/>
 
         </LinearLayout>
-
-
 
     </LinearLayout>
 
 
 
-</FrameLayout>
+</LinearLayout>

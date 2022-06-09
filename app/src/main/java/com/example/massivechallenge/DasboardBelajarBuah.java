@@ -24,7 +24,15 @@ public class DasboardBelajarBuah extends AppCompatActivity {
         View decorView = getWindow().getDecorView();
 
         // Hide the status bar.
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        int  uiOptions =  View.SYSTEM_UI_FLAG_IMMERSIVE
+                // Set the content to appear under the system bars so that the
+                // content doesn't resize when the system bars hide and show.
+                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                // Hide the nav bar and status bar
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
         Animation animation = AnimationUtils.loadAnimation(DasboardBelajarBuah.this,R.anim.splash);
@@ -41,13 +49,14 @@ public class DasboardBelajarBuah extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DasboardBelajarBuah.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        Intent intent = new Intent(DasboardBelajarBuah.this,DashboardBelajar.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                        Intent intent = new Intent(DasboardBelajarBuah.this,DashboardBelajar.class);
-                        startActivity(intent);
+
 
                     }
 

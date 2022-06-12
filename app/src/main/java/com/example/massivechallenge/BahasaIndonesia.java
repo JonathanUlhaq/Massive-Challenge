@@ -6,6 +6,9 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainerView;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 import androidx.viewpager.widget.ViewPager;
 
 
@@ -99,8 +102,21 @@ public class BahasaIndonesia extends Fragment {
         adapterAbjadIndonesia = new AdapterAbjadIndonesia(getContext());
         viewPager = view.findViewById(R.id.view_puager);
         viewPager.setAdapter(adapterAbjadIndonesia);
-        viewPager.setCurrentItem(viewPager.getCurrentItem());
 
+        // MENDAPATKAN POSISI DARI VIEWPAGER
+        Bundle bundle = getArguments();
+
+        if (bundle != null)
+        {
+            int data = bundle.getInt("posisi2");
+            viewPager.setCurrentItem(data);
+        }
+
+
+
+        MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
+
+        int positiones = 0;
 
 
 
@@ -114,8 +130,64 @@ public class BahasaIndonesia extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
-
                 frameLayout.setBackgroundResource(background.get(position));
+
+                Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
+
+                ImageView bahasa_inggris,bahasa_indonesia;
+                bahasa_indonesia = getActivity().findViewById(R.id.bahasa_indonesia);
+                bahasa_inggris = getActivity().findViewById(R.id.bahasa_inggris);
+                Animation backAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.splash);
+
+
+                bahasa_inggris.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        bahasa_inggris.startAnimation(backAnimation);
+                        backAnimation.setAnimationListener(new Animation.AnimationListener() {
+                            @Override
+                            public void onAnimationStart(Animation animation) {
+
+                                mediaPlayer.start();
+
+                                bahasa_indonesia.setImageResource(R.drawable.button_indonesia_inactive);
+                                bahasa_inggris.setImageResource(R.drawable.button_inggris_active);
+
+                                Bundle bundle = new Bundle();
+                                bundle.putInt("posisi",viewPager.getCurrentItem());
+
+                                BahasaInggris bahasaInggris = new BahasaInggris();
+                                bahasaInggris.setArguments(bundle);
+
+                                if(getActivity() != null)
+                                {
+                                    getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,bahasaInggris).commit();
+
+                                }
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+
+                                Fragment fragment = new BahasaInggris();
+
+
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animation animation) {
+
+                            }
+                        });
+
+
+
+                    }
+                });
+
 //                adapterAbjadIndonesia.instantiateItem(container,position);
                 if(position == 25)
                 {
@@ -165,7 +237,7 @@ public class BahasaIndonesia extends Fragment {
                     previous.setVisibility(View.VISIBLE);
                 }
 
-                Log.e("LOOG",Integer.toString(position) );
+
 
             }
 
@@ -232,6 +304,10 @@ public class BahasaIndonesia extends Fragment {
 
             }
         });
+
+
+
+
 
 //        layout_isi = getActivity().findViewById(R.id.layout_isi);
 

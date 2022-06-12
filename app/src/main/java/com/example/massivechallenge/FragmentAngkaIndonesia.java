@@ -3,9 +3,7 @@ package com.example.massivechallenge;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentResultListener;
 import androidx.viewpager.widget.ViewPager;
 
 import android.util.Log;
@@ -15,16 +13,13 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-
-import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link BahasaInggris#newInstance} factory method to
+ * Use the {@link FragmentAngkaIndonesia#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BahasaInggris extends Fragment {
+public class FragmentAngkaIndonesia extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,7 +30,7 @@ public class BahasaInggris extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public BahasaInggris() {
+    public FragmentAngkaIndonesia() {
         // Required empty public constructor
     }
 
@@ -45,11 +40,11 @@ public class BahasaInggris extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment BahasaInggris.
+     * @return A new instance of fragment AngkaIndonesia.
      */
     // TODO: Rename and change types and number of parameters
-    public static BahasaInggris newInstance(String param1, String param2) {
-        BahasaInggris fragment = new BahasaInggris();
+    public static FragmentAngkaIndonesia newInstance(String param1, String param2) {
+        FragmentAngkaIndonesia fragment = new FragmentAngkaIndonesia();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -66,54 +61,25 @@ public class BahasaInggris extends Fragment {
         }
     }
 
+    AdapterAngkaIndonesia adapterAngkaIndonesia;
+    ViewPager viewPager;
     ImageView next,previous;
-    LinearLayout layout_isi;
-    AdapterAbjadInggris adapterAbjadInggris;
-    ViewPager viewPager,viewPager2;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_bahasa_inggris, container, false);
+        View view = inflater.inflate(R.layout.fragment_angka_indonesia, container, false);
 
-
-        Animation animation = AnimationUtils.loadAnimation(getContext(),R.anim.splash);
-        Animation shadowAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.unlimited_bouncing_shadow);
+        Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.splash);
+        Animation shadowAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.unlimited_bouncing_shadow);
         Animation dissapear = AnimationUtils.loadAnimation(getContext(), R.anim.dissapear);
 
-
-
-
-        ArrayList<Integer> background = new ArrayList<Integer>();
-
-        for (int i =1; i<=26;i++)
-        {
-            background.add(getResources().getIdentifier("backgorund_isi_belajar_"+i,"drawable","com.example.massivechallenge"));
-        }
-
-        LinearLayout frameLayout;
-
-
-        adapterAbjadInggris = new AdapterAbjadInggris(getContext());
+        adapterAngkaIndonesia = new AdapterAngkaIndonesia(getContext());
         viewPager = view.findViewById(R.id.view_puager);
+        viewPager.setAdapter(adapterAngkaIndonesia);
 
-        viewPager.setAdapter(adapterAbjadInggris);
-
-        // MENDAPATKAN POSISI DARI VIEWPAGER
-                   Bundle bundle = getArguments();
-                    bundle.getInt("posisi");
-                   if (bundle != null)
-                   {
-                       int data = bundle.getInt("posisi");
-                       viewPager.setCurrentItem(data);
-                   }
-
-
-
-        MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
-
-
-        frameLayout = getActivity().findViewById(R.id.frame_layout);
+//        frameLayout = getActivity().findViewById(R.id.frame_layout);
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -124,66 +90,8 @@ public class BahasaInggris extends Fragment {
             @Override
             public void onPageSelected(int position) {
 
-
-                frameLayout.setBackgroundResource(background.get(position));
-                Log.e("LOOG",Integer.toString(position) );
-//                adapterAbjadInggris.instantiateItem(container,position);
-
-                ImageView bahasa_inggris,bahasa_indonesia;
-                bahasa_inggris = getActivity().findViewById(R.id.bahasa_inggris);
-                bahasa_indonesia = getActivity().findViewById(R.id.bahasa_indonesia);
-                Animation backAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.splash);
-
-
-                bahasa_indonesia.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        bahasa_indonesia.startAnimation(backAnimation);
-                        backAnimation.setAnimationListener(new Animation.AnimationListener() {
-                            @Override
-                            public void onAnimationStart(Animation animation) {
-
-                                mediaPlayer.start();
-
-                                bahasa_indonesia.setImageResource(R.drawable.button_indonesia_active);
-                                bahasa_inggris.setImageResource(R.drawable.button_inggris_inactive);
-
-                                // MENGIRIM NILAI POSISI VIEWPAGER
-                                Bundle bundle = new Bundle();
-                                bundle.putInt("posisi2",viewPager.getCurrentItem());
-
-                                BahasaIndonesia bahasaIndonesia = new BahasaIndonesia();
-                                bahasaIndonesia.setArguments(bundle);
-
-                                if(getActivity() != null)
-                                {
-                                    getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,bahasaIndonesia).commit();
-
-                                }
-
-                            }
-
-                            @Override
-                            public void onAnimationEnd(Animation animation) {
-
-                                Fragment fragment = new BahasaInggris();
-
-
-
-                            }
-
-                            @Override
-                            public void onAnimationRepeat(Animation animation) {
-
-                            }
-                        });
-
-
-
-                    }
-                });
-
+//                frameLayout.setBackgroundResource(background.get(position));
+//                adapterAbjadIndonesia.instantiateItem(container,position);
                 if(position == 25)
                 {
                     next.startAnimation(dissapear);
@@ -231,6 +139,8 @@ public class BahasaInggris extends Fragment {
                 } else {
                     previous.setVisibility(View.VISIBLE);
                 }
+
+                Log.e("LOOG",Integer.toString(position) );
 
             }
 
@@ -298,16 +208,6 @@ public class BahasaInggris extends Fragment {
             }
         });
 
-//        layout_isi = getActivity().findViewById(R.id.layout_isi);
-
-
-//        bayangan = view.findViewById(R.id.bayangan);
-//        bayangan.startAnimation(shadowAnimation);
-//
-//        apel = view.findViewById(R.id.icon_apel);
-//        apel.startAnimation(animation);
-
-
-        return view;
+        return  view;
     }
 }

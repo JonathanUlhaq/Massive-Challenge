@@ -45,84 +45,16 @@ public class IsiBelajarHuruf extends AppCompatActivity {
         bahasa_indonesia = findViewById(R.id.bahasa_indonesia);
         bahasa_inggris = findViewById(R.id.bahasa_inggris);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout,new BahasaIndonesia()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame,new BahasaIndonesia()).commit();
 
 
 
       
-        bahasa_inggris.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                bahasa_inggris.startAnimation(backAnimation);
-
-                backAnimation.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-                        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.click_sound_effect);
-                        mediaPlayer.start();
-
-                        bahasa_indonesia.setImageDrawable(getDrawable(R.drawable.button_indonesia_inactive));
-                        bahasa_inggris.setImageDrawable(getDrawable(R.drawable.button_inggris_active));
-
-                        Fragment fragment = new BahasaInggris();
-
-                        getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame_layout,fragment).commit();
-
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-
-
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-
-                    }
-                });
-
-            }
-        });
 
 
 
-        bahasa_indonesia.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                bahasa_indonesia.startAnimation(backAnimation);
-
-                backAnimation.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-                        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.click_sound_effect);
-                        mediaPlayer.start();
-
-                        bahasa_indonesia.setImageDrawable(getDrawable(R.drawable.button_indonesia_active));
-                        bahasa_inggris.setImageDrawable(getDrawable(R.drawable.button_inggris_inactive));
-
-                        Fragment fragment = new BahasaIndonesia();
-
-                        getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame_layout,fragment).commit();
-
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
 
 
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-
-                    }
-                });
-
-            }
-        });
 
 
 

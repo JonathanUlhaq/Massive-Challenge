@@ -48,6 +48,29 @@ public class DasboardBelajarAngka extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                angka.startAnimation(animation);
+
+                animation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DasboardBelajarAngka.this,R.raw.click_sound_effect);
+                        mediaPlayer.start();
+
+                        Intent intent = new Intent(DasboardBelajarAngka.this, IsiBelajarAngka.class);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+
             }
         });
 

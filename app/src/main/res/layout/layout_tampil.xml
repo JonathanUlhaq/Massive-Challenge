@@ -32,7 +32,7 @@
                 android:src="@drawable/a_apel" />
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="228dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/bayangan"
                 android:src="@drawable/bayangan_belajar_huruf"/>

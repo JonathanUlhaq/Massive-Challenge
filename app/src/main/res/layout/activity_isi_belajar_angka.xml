@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
     android:orientation="vertical"
+    android:padding="20dp"
     android:id="@+id/frame_layout"
     android:background="@drawable/bg_angka_1"
-    tools:context=".IsiBelajarAngka">
+    tools:context=".IsiBelajarHuruf">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -62,5 +62,14 @@
 
 
     </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frame">
+
+    </FrameLayout>
+
 
 </LinearLayout>

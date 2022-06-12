@@ -3,9 +3,7 @@ package com.example.massivechallenge;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentResultListener;
 import androidx.viewpager.widget.ViewPager;
 
 import android.util.Log;
@@ -21,10 +19,10 @@ import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link BahasaInggris#newInstance} factory method to
+ * Use the {@link FragmentAngkaEng#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BahasaInggris extends Fragment {
+public class FragmentAngkaEng extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -35,7 +33,7 @@ public class BahasaInggris extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public BahasaInggris() {
+    public FragmentAngkaEng() {
         // Required empty public constructor
     }
 
@@ -45,11 +43,11 @@ public class BahasaInggris extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment BahasaInggris.
+     * @return A new instance of fragment FragmentAngkaEng.
      */
     // TODO: Rename and change types and number of parameters
-    public static BahasaInggris newInstance(String param1, String param2) {
-        BahasaInggris fragment = new BahasaInggris();
+    public static FragmentAngkaEng newInstance(String param1, String param2) {
+        FragmentAngkaEng fragment = new FragmentAngkaEng();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -67,8 +65,9 @@ public class BahasaInggris extends Fragment {
     }
 
     ImageView next,previous;
-    AdapterAbjadInggris adapterAbjadInggris;
+    AdapterAngkaInggris adapterAngkaInggris;
     ViewPager viewPager;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -81,37 +80,30 @@ public class BahasaInggris extends Fragment {
         Animation dissapear = AnimationUtils.loadAnimation(getContext(), R.anim.dissapear);
 
 
-
-
         ArrayList<Integer> background = new ArrayList<Integer>();
 
         for (int i =1; i<=26;i++)
         {
-            background.add(getResources().getIdentifier("backgorund_isi_belajar_"+i,"drawable","com.example.massivechallenge"));
+            background.add(getResources().getIdentifier("bg_angka_"+i,"drawable","com.example.massivechallenge"));
         }
 
         LinearLayout frameLayout;
         frameLayout = getActivity().findViewById(R.id.frame_layout);
 
-
-        adapterAbjadInggris = new AdapterAbjadInggris(getContext());
+        adapterAngkaInggris = new AdapterAngkaInggris(getContext());
         viewPager = view.findViewById(R.id.view_puager);
 
-        viewPager.setAdapter(adapterAbjadInggris);
+        viewPager.setAdapter(adapterAngkaInggris);
 
         // MENDAPATKAN POSISI DARI VIEWPAGER
-                   Bundle bundle = getArguments();
-                   if (bundle != null)
-                   {
-                       int data = bundle.getInt("posisi");
-                       viewPager.setCurrentItem(data);
-                   }
-
-
+        Bundle bundle = getArguments();
+        if (bundle != null)
+        {
+            int data = bundle.getInt("posisi");
+            viewPager.setCurrentItem(data);
+        }
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
-
-
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -123,7 +115,7 @@ public class BahasaInggris extends Fragment {
             public void onPageSelected(int position) {
 
 
-                frameLayout.setBackgroundResource(background.get(position));
+          frameLayout.setBackgroundResource(background.get(position));
                 Log.e("LOOG",Integer.toString(position) );
 //                adapterAbjadInggris.instantiateItem(container,position);
 
@@ -151,12 +143,12 @@ public class BahasaInggris extends Fragment {
                                 Bundle bundle = new Bundle();
                                 bundle.putInt("posisi2",viewPager.getCurrentItem());
 
-                                BahasaIndonesia bahasaIndonesia = new BahasaIndonesia();
-                                bahasaIndonesia.setArguments(bundle);
+                                FragmentAngkaIndo fragmentAngkaIndo = new FragmentAngkaIndo();
+                                fragmentAngkaIndo.setArguments(bundle);
 
                                 if(getActivity() != null)
                                 {
-                                    getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,bahasaIndonesia).commit();
+                                    getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentAngkaIndo).commit();
 
                                 }
 
@@ -179,7 +171,7 @@ public class BahasaInggris extends Fragment {
                     }
                 });
 
-                if(position == 25)
+                if(position == 9)
                 {
                     next.startAnimation(dissapear);
                     dissapear.setAnimationListener(new Animation.AnimationListener() {
@@ -234,7 +226,6 @@ public class BahasaInggris extends Fragment {
 
             }
         });
-
 
         next = view.findViewById(R.id.next);
         previous = view.findViewById(R.id.previus);
@@ -293,16 +284,7 @@ public class BahasaInggris extends Fragment {
             }
         });
 
-//        layout_isi = getActivity().findViewById(R.id.layout_isi);
-
-
-//        bayangan = view.findViewById(R.id.bayangan);
-//        bayangan.startAnimation(shadowAnimation);
-//
-//        apel = view.findViewById(R.id.icon_apel);
-//        apel.startAnimation(animation);
-
-
         return view;
+
     }
 }

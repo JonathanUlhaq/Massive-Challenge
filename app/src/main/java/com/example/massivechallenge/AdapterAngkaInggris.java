@@ -11,32 +11,11 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
-public class AdapterAngkaIndonesia extends PagerAdapter {
+public class AdapterAngkaInggris extends PagerAdapter {
 
     Context context;
     LayoutInflater inflater;
 
-    public AdapterAngkaIndonesia(Context context) {
-
-
-        this.context = context;
-    }
-
-    int[] angka = {
-
-            R.drawable.angka_1_indonesia,
-            R.drawable.angka_2_indonesia,
-            R.drawable.angka_3_indonesia,
-            R.drawable.angka_4_indonesia,
-            R.drawable.angka_5_indonesia,
-            R.drawable.angka_6_indonesia,
-            R.drawable.angka_7_indonesia,
-            R.drawable.angka_8_indonesia,
-            R.drawable.angka_9_indonesia,
-            R.drawable.angka_10_indonesia,
-
-
-    };
 
     int [] shadowes = {
             R.drawable.bayangan_angka_apel_1,
@@ -66,6 +45,26 @@ public class AdapterAngkaIndonesia extends PagerAdapter {
 
     };
 
+    int[] angka = {
+
+            R.drawable.angka_1_inggris,
+            R.drawable.angka_2_inggris,
+            R.drawable.angka_3_inggris,
+            R.drawable.angka_4_inggris,
+            R.drawable.angka_5_inggris,
+            R.drawable.angka_6_inggris,
+            R.drawable.angka_7_inggris,
+            R.drawable.angka_8_inggris,
+            R.drawable.angka_9_inggris,
+            R.drawable.angka_10_inggris,
+
+
+    };
+
+    public AdapterAngkaInggris(Context context) {
+        this.context = context;
+    }
+
     @Override
     public int getCount() {
         return gambar.length;
@@ -75,6 +74,7 @@ public class AdapterAngkaIndonesia extends PagerAdapter {
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
         return view == object;
     }
+
 
     @NonNull
     @Override
@@ -100,7 +100,7 @@ public class AdapterAngkaIndonesia extends PagerAdapter {
 
         container.addView(view);
 
-        return view;
+        return  view;
     }
 
     @Override

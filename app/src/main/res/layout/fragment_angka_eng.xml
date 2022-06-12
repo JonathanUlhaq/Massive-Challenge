@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:id="@+id/isi_laay"
     android:layout_height="match_parent"
-    tools:context=".BahasaInggris">
+    tools:context=".FragmentAngkaEng">
 
 
 
@@ -14,7 +14,7 @@
     <androidx.viewpager.widget.ViewPager
         android:layout_width="wrap_content"
         android:id="@+id/view_puager"
-        android:layout_height="230dp">
+        android:layout_height="220dp">
 
     </androidx.viewpager.widget.ViewPager>
 

@@ -15,14 +15,12 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import java.util.ArrayList;
-
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FragmentAngkaIndo#newInstance} factory method to
+ * Use the {@link FragmentTransportasIndonesia#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentAngkaIndo extends Fragment {
+public class FragmentTransportasIndonesia extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,7 +31,7 @@ public class FragmentAngkaIndo extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FragmentAngkaIndo() {
+    public FragmentTransportasIndonesia() {
         // Required empty public constructor
     }
 
@@ -43,11 +41,11 @@ public class FragmentAngkaIndo extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentAngkaIndo.
+     * @return A new instance of fragment FragmentTransportasIndonesia.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentAngkaIndo newInstance(String param1, String param2) {
-        FragmentAngkaIndo fragment = new FragmentAngkaIndo();
+    public static FragmentTransportasIndonesia newInstance(String param1, String param2) {
+        FragmentTransportasIndonesia fragment = new FragmentTransportasIndonesia();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -65,33 +63,25 @@ public class FragmentAngkaIndo extends Fragment {
     }
 
     ImageView next,previous;
-    AdapterAngkaIndonesia adapterAngkaIndonesia;
+    AdapterTransportasiIndo adapterTransportasiIndo;
     ViewPager viewPager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_bahasa_indonesia, container, false);
+        View view = inflater.inflate(R.layout.fragment_transportas_indonesia, container, false);
 
         Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.splash);
         Animation shadowAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.unlimited_bouncing_shadow);
         Animation dissapear = AnimationUtils.loadAnimation(getContext(), R.anim.dissapear);
 
-        ArrayList<Integer> background = new ArrayList<Integer>();
-
-        for (int i =1; i<=26;i++)
-        {
-            background.add(getResources().getIdentifier("bg_angka_"+i,"drawable","com.example.massivechallenge"));
-        }
-
         LinearLayout frameLayout;
         frameLayout = getActivity().findViewById(R.id.frame_layout);
 
-
-        adapterAngkaIndonesia = new AdapterAngkaIndonesia(getContext());
+        adapterTransportasiIndo = new AdapterTransportasiIndo(getContext());
         viewPager = view.findViewById(R.id.view_puager);
-        viewPager.setAdapter(adapterAngkaIndonesia);
+        viewPager.setAdapter(adapterTransportasiIndo);
 
         // MENDAPATKAN POSISI DARI VIEWPAGER
         Bundle bundle = getArguments();
@@ -112,7 +102,8 @@ public class FragmentAngkaIndo extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
-           frameLayout.setBackgroundResource(background.get(position));
+              //  frameLayout.setBackgroundResource(background.get(position));
+
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
 
@@ -139,12 +130,12 @@ public class FragmentAngkaIndo extends Fragment {
                                 Bundle bundle = new Bundle();
                                 bundle.putInt("posisi",viewPager.getCurrentItem());
 
-                                FragmentAngkaEng fragmentAngkaEng = new FragmentAngkaEng();
-                                fragmentAngkaEng.setArguments(bundle);
+                                FragmentTransportasiEng fragmentTransportasiEng = new FragmentTransportasiEng();
+                                fragmentTransportasiEng.setArguments(bundle);
 
                                 if(getActivity() != null)
                                 {
-                                    getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentAngkaEng).commit();
+                                    getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentTransportasiEng).commit();
 
                                 }
 
@@ -153,7 +144,7 @@ public class FragmentAngkaIndo extends Fragment {
                             @Override
                             public void onAnimationEnd(Animation animation) {
 
-                                Fragment fragment = new BahasaInggris();
+
 
 
 
@@ -171,7 +162,7 @@ public class FragmentAngkaIndo extends Fragment {
                 });
 
 //                adapterAbjadIndonesia.instantiateItem(container,position);
-                if(position == 9)
+                if(position == 19)
                 {
                     next.startAnimation(dissapear);
                     dissapear.setAnimationListener(new Animation.AnimationListener() {
@@ -228,6 +219,9 @@ public class FragmentAngkaIndo extends Fragment {
 
             }
         });
+
+
+        View button = inflater.inflate(R.layout.layout_tampil_2,container,false);
 
         next = view.findViewById(R.id.next);
         previous = view.findViewById(R.id.previus);
@@ -287,6 +281,5 @@ public class FragmentAngkaIndo extends Fragment {
         });
 
         return view;
-
     }
 }

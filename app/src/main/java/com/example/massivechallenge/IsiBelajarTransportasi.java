@@ -9,19 +9,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-public class DashboardBelajarTransportasi extends AppCompatActivity {
+public class IsiBelajarTransportasi extends AppCompatActivity {
 
-    ImageView back;
-    FrameLayout belajar_transportasi;
+    ImageView back,bahasa_indonesia,bahasa_inggris;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_dashboard_belajar_transportasi);
+        setContentView(R.layout.activity_isi_belajar_transportasi);
 
         View decorView = getWindow().getDecorView();
 
@@ -37,50 +35,28 @@ public class DashboardBelajarTransportasi extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
-        Animation animation = AnimationUtils.loadAnimation(DashboardBelajarTransportasi.this,R.anim.splash);
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.unlimited_bouncing);
+        Animation backAnimation = AnimationUtils.loadAnimation(this,R.anim.splash);
+        Animation shadowAnimation = AnimationUtils.loadAnimation(this,R.anim.unlimited_bouncing_shadow);
+
+        bahasa_indonesia = findViewById(R.id.bahasa_indonesia);
+        bahasa_inggris = findViewById(R.id.bahasa_inggris);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame,new FragmentTransportasIndonesia()).commit();
 
         back = findViewById(R.id.back);
-        belajar_transportasi = findViewById(R.id.belajar_transportasi);
-
-        belajar_transportasi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                belajar_transportasi.startAnimation(animation);
-                animation.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarTransportasi.this,R.raw.click_sound_effect);
-                        mediaPlayer.start();
-
-                        Intent intent = new Intent(DashboardBelajarTransportasi.this, IsiBelajarTransportasi.class);
-                        startActivity(intent);
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-
-                    }
-                });
-            }
-        });
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                back.startAnimation(animation);
+                back.startAnimation(backAnimation);
 
-                animation.setAnimationListener(new Animation.AnimationListener() {
+                backAnimation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
-                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarTransportasi.this,R.raw.click_sound_effect);
+                        MediaPlayer mediaPlayer = MediaPlayer.create(IsiBelajarTransportasi.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
 
-                        Intent intent = new Intent(DashboardBelajarTransportasi.this,DashboardBelajar.class);
+                        Intent intent = new Intent(IsiBelajarTransportasi.this,DashboardBelajar.class);
                         startActivity(intent);
                     }
 

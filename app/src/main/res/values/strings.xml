@@ -27,7 +27,53 @@
     <string name="tebak_menulis">Tebak Menulis</string>
     <string name="tebak_sayur">Tebak Sayur</string>
     <string name="tebak_angka">Tebak Angka</string>
+
+    <!--    TODO: ASSET TRANSPORTASI INDONESIA-->
+    <string name="mobil">Mobil</string>
+    <string name="truk">Truk</string>
+    <string name="ambulan">Ambulan</string>
+    <string name="perahu">Perahu</string>
+    <string name="keretaApi">Kereta Api</string>
+    <string name="pemadam_kebakaran">Pemadam Kebakaran</string>
+    <string name="mobilPolisi">Mobil Polisi</string>
+    <string name="pesawat">Pesawat</string>
+    <string name="sepedaMotor">Sepeda Motor</string>
+    <string name="kapal">Kapal</string>
+    <string name="bajaj">Bajaj</string>
+    <string name="balon">Balon Udara</string>
+    <string name="buss">Bus</string>
+    <string name="kapal_cepat">Kapal Cepat</string>
+    <string name="trukKontainer">Truk Kontainer</string>
+    <string name="mobilSport">Mobil Sport</string>
+    <string name="sepeda">Sepeda</string>
+    <string name="vespa">Vespa</string>
+    <string name="bus_Sekolah">Bus Sekolah</string>
+    <string name="helikopter">Helikopter</string>
+
+    <!--    TODO: ASSET TRANSPORTASI INGGRIS-->
+    <string name="car">Car</string>
+    <string name="truck">Truck</string>
+    <string name="ambulance">Ambulance</string>
+    <string name="boat">Boat</string>
+    <string name="train">Train</string>
+    <string name="fireEngine">Fire Engine</string>
+    <string name="police">Police Car</string>
+    <string name="airplane">Airplane</string>
+    <string name="motor">Motorcycle</string>
+    <string name="ship">Ship</string>
+    <string name="rick">Auto Rickshaw</string>
+    <string name="balloon">Air Balloon</string>
+    <string name="bus">Bus</string>
+    <string name="speedboat">Speedboat</string>
+    <string name="containerTruck">Container Truck</string>
+    <string name="sportCar">Sport Car</string>
+    <string name="bycicle">Bycycle</string>
+    <string name="scooter">Scooter</string>
+    <string name="school">School Bus</string>
+    <string name="helicopter">Helicopter</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/liner_layout"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:background="@drawable/bg_isi_transport"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/icon_apel"
+                    android:padding="5dp"
+                    android:layout_width="228dp"
+                    android:layout_height="180dp"
+                    android:src="@drawable/a_apel" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nama"
+                    android:autoSizeTextType="uniform"
+                    android:textSize="30sp"
+                    android:fontFamily="@font/rockoultraflf"
+                    android:text="Nama"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

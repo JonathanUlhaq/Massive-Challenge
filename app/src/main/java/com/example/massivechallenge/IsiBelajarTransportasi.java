@@ -13,7 +13,7 @@ import android.widget.ImageView;
 
 public class IsiBelajarTransportasi extends AppCompatActivity {
 
-    ImageView back,bahasa_indonesia,bahasa_inggris;
+    ImageView back,button_all,bahasa_inggris,bahasa_indonesia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +39,46 @@ public class IsiBelajarTransportasi extends AppCompatActivity {
         Animation backAnimation = AnimationUtils.loadAnimation(this,R.anim.splash);
         Animation shadowAnimation = AnimationUtils.loadAnimation(this,R.anim.unlimited_bouncing_shadow);
 
-        bahasa_indonesia = findViewById(R.id.bahasa_indonesia);
-        bahasa_inggris = findViewById(R.id.bahasa_inggris);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame,new FragmentTransportasIndonesia()).commit();
+        button_all = findViewById(R.id.all);
+        bahasa_inggris = findViewById(R.id.bahasa_inggris);
+        bahasa_indonesia = findViewById(R.id.bahasa_indonesia);
+
+        getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,new FragmentTransportasIndonesia()).commit();
+
+        button_all.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                button_all.startAnimation(backAnimation);
+
+                backAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(IsiBelajarTransportasi.this,R.raw.click_sound_effect);
+                        mediaPlayer.start();
+
+                        bahasa_inggris.setImageResource(R.drawable.button_inggris_inactive);
+                        bahasa_indonesia.setImageResource(R.drawable.button_indonesia_inactive);
+                        button_all.setImageResource(R.drawable.button_all_pencet);
+                        getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,new FragmentAllTransportasi()).commit();
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+
+            }
+        });
 
         back = findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {

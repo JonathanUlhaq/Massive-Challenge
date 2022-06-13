@@ -1,5 +1,6 @@
 package com.example.massivechallenge;
 
+import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
@@ -87,7 +88,9 @@ public class FragmentTransportasiEng extends Fragment {
 
         // MENDAPATKAN POSISI DARI VIEWPAGER
         Bundle bundle = getArguments();
-
+        ImageView button_all;
+        button_all = getActivity().findViewById(R.id.all);
+        button_all.setImageResource(R.drawable.button_all);
         if (bundle != null)
         {
             int data = bundle.getInt("posisi");
@@ -112,6 +115,7 @@ public class FragmentTransportasiEng extends Fragment {
                 ImageView bahasa_inggris,bahasa_indonesia;
                 bahasa_indonesia = getActivity().findViewById(R.id.bahasa_indonesia);
                 bahasa_inggris = getActivity().findViewById(R.id.bahasa_inggris);
+
                 Animation backAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.splash);
 
 
@@ -129,6 +133,7 @@ public class FragmentTransportasiEng extends Fragment {
                                 bahasa_indonesia.setImageResource(R.drawable.button_indonesia_active);
                                 bahasa_inggris.setImageResource(R.drawable.button_inggris_inactive);
 
+                                button_all.setImageResource(R.drawable.button_all);
                                 Bundle bundle = new Bundle();
                                 bundle.putInt("posisi2",viewPager.getCurrentItem());
 

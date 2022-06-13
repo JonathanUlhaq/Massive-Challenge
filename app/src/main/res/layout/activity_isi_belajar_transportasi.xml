@@ -36,6 +36,7 @@
                 <ImageView
                     android:layout_width="171dp"
                     android:layout_height="47dp"
+                    android:layout_marginLeft="100dp"
                     android:src="@drawable/button_indonesia_active"
                     android:id="@+id/bahasa_indonesia"/>
 
@@ -45,6 +46,14 @@
                     android:src="@drawable/button_inggris_inactive"
                     android:id="@+id/bahasa_inggris"/>
             </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="47dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/button_all"
+                android:id="@+id/all"/>
 
             <ImageView
                 android:layout_width="44dp"

@@ -107,9 +107,10 @@ public class FragmentTransportasIndonesia extends Fragment {
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
 
-                ImageView bahasa_inggris,bahasa_indonesia;
+                ImageView bahasa_inggris,bahasa_indonesia,button_all;
                 bahasa_indonesia = getActivity().findViewById(R.id.bahasa_indonesia);
                 bahasa_inggris = getActivity().findViewById(R.id.bahasa_inggris);
+                button_all = getActivity().findViewById(R.id.all);
                 Animation backAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.splash);
 
 
@@ -126,6 +127,8 @@ public class FragmentTransportasIndonesia extends Fragment {
 
                                 bahasa_indonesia.setImageResource(R.drawable.button_indonesia_inactive);
                                 bahasa_inggris.setImageResource(R.drawable.button_inggris_active);
+
+                                button_all.setBackgroundResource(R.drawable.button_all);
 
                                 Bundle bundle = new Bundle();
                                 bundle.putInt("posisi",viewPager.getCurrentItem());

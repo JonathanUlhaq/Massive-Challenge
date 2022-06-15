@@ -37,7 +37,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/mobil"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -55,7 +55,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/truck"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -72,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/ambulan"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -89,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/perahu"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -106,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/pemadam"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -141,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/kereta"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -159,7 +159,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/polisi"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -176,7 +176,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/pesawat"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -193,7 +193,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/sepeda_motor"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -210,7 +210,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/kapal"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -245,7 +245,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/bajaj"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -263,7 +263,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/balon"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -280,7 +280,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/bus"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -297,7 +297,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/kapal_cepat"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -314,7 +314,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/kontainer"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -349,7 +349,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/mobil_sport"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -367,7 +367,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/sepeda"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -384,7 +384,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/vespa"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -401,7 +401,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/bus_sekolah"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"
@@ -418,7 +418,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/helikopter"
-                    android:background="@drawable/bg_isi_transport_all">
+                    android:background="@drawable/bg_alat_all">
 
                     <ImageView
                         android:layout_width="83dp"

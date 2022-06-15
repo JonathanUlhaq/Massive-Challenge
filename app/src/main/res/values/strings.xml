@@ -116,6 +116,50 @@
     <string name="tali1">Rope</string>
     <string name="tangga1">Ladder</string>
 
+
+    <!--    TODO: Profesi Indonesia-->
+
+    <string name="Koki">Koki</string>
+    <string name="Pengusaha">Pengusaha</string>
+    <string name="Dokter">Dokter</string>
+    <string name="Nelayan">Nelayan</string>
+    <string name="Guru">Guru</string>
+    <string name="Ilmuan">Ilmuan</string>
+    <string name="Insinyur">Insinyur</string>
+    <string name="Montir">Montir</string>
+    <string name="Pelukis">Pelukis</string>
+    <string name="Pemadam">Pemadam Kebakaran</string>
+    <string name="Petani">Petani</string>
+    <string name="Polisi">Polisi</string>
+    <string name="Pramugari">Pramugari</string>
+    <string name="Tentara">Tentara</string>
+    <string name="Sekretaris">Sekretaris</string>
+    <string name="Pelayan">Pelayan</string>
+    <string name="Atlet">Atlet</string>
+
+
+    <!--    TODO: Profesi Inggris-->
+
+    <string name="Koki1">Chef</string>
+    <string name="Pengusaha1">Businessman</string>
+    <string name="Dokter1">Doctor</string>
+    <string name="Nelayan1">Fisherman</string>
+    <string name="Guru1">Teacher</string>
+    <string name="Ilmuan1">Scientist</string>
+    <string name="Insinyur1">Engineer</string>
+    <string name="Montir1">Mechanic</string>
+    <string name="Pelukis1">Painter</string>
+    <string name="Pemadam1">Fire Fighter</string>
+    <string name="Petani1">Farmer</string>
+    <string name="Photographer">Photographer</string>
+    <string name="Pilot">Pilot</string>
+    <string name="Polisi1">Police</string>
+    <string name="Pramugari1">Air Hostess</string>
+    <string name="Tentara1">Army</string>
+    <string name="Sekretaris1">Secretary</string>
+    <string name="Pelayan1">Waiter</string>
+    <string name="Atlet1">Atlhete</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -92,9 +93,14 @@ public class AdapterTransportasiIndo extends PagerAdapter {
 
         ImageView icon_apel;
         TextView nama;
+        FrameLayout frame_layout;
+
 
         icon_apel = view.findViewById(R.id.icon_apel);
         nama = view.findViewById(R.id.nama);
+        frame_layout = view.findViewById(R.id.frame_layout);
+
+        frame_layout.setBackgroundResource(R.drawable.bg_isi_transport);
 
         icon_apel.startAnimation(animation);
 

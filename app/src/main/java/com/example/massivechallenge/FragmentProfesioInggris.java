@@ -17,10 +17,10 @@ import android.widget.LinearLayout;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FragmentPerkakasInggris#newInstance} factory method to
+ * Use the {@link FragmentProfesioInggris#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentPerkakasInggris extends Fragment {
+public class FragmentProfesioInggris extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,7 +31,7 @@ public class FragmentPerkakasInggris extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FragmentPerkakasInggris() {
+    public FragmentProfesioInggris() {
         // Required empty public constructor
     }
 
@@ -41,11 +41,11 @@ public class FragmentPerkakasInggris extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentPerkakasInggris.
+     * @return A new instance of fragment FragmentProfesioInggris.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentPerkakasInggris newInstance(String param1, String param2) {
-        FragmentPerkakasInggris fragment = new FragmentPerkakasInggris();
+    public static FragmentProfesioInggris newInstance(String param1, String param2) {
+        FragmentProfesioInggris fragment = new FragmentProfesioInggris();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,34 +63,31 @@ public class FragmentPerkakasInggris extends Fragment {
     }
 
     ImageView next,previous;
-    AdapterAlatInggris adapterAlatInggris;
+    AdapterProfesiInggris adapterProfesiInggris;
     ViewPager viewPager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_transportasi_eng, container, false);
+        View view = inflater.inflate(R.layout.fragment_profesio_inggris, container, false);
 
         Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.splash);
         Animation shadowAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.unlimited_bouncing_shadow);
         Animation dissapear = AnimationUtils.loadAnimation(getContext(), R.anim.dissapear);
 
-
-
         LinearLayout frameLayout;
         frameLayout = getActivity().findViewById(R.id.frame_layout);
 
-        adapterAlatInggris = new AdapterAlatInggris(getContext());
+        adapterProfesiInggris = new AdapterProfesiInggris(getContext());
         viewPager = view.findViewById(R.id.view_puager);
-        viewPager.setAdapter(adapterAlatInggris);
+        viewPager.setAdapter(adapterProfesiInggris);
 
         // MENDAPATKAN POSISI DARI VIEWPAGER
         Bundle bundle = getArguments();
         ImageView button_all;
         button_all = getActivity().findViewById(R.id.all);
         button_all.setImageResource(R.drawable.button_all);
-
         if (bundle != null)
         {
             int data = bundle.getInt("posisi");
@@ -98,7 +95,6 @@ public class FragmentPerkakasInggris extends Fragment {
         }
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
-
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -138,12 +134,12 @@ public class FragmentPerkakasInggris extends Fragment {
                                 Bundle bundle = new Bundle();
                                 bundle.putInt("posisi2",viewPager.getCurrentItem());
 
-                                FragmentPerkakasIndonesia fragmentPerkakasIndonesia = new FragmentPerkakasIndonesia();
-                                fragmentPerkakasIndonesia.setArguments(bundle);
+                                FragmentProfesioInggris fragmentProfesioInggris = new FragmentProfesioInggris();
+                                fragmentProfesioInggris.setArguments(bundle);
 
                                 if(getActivity() != null)
                                 {
-                                    getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentPerkakasIndonesia).commit();
+                                    getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentProfesioInggris).commit();
 
                                 }
 
@@ -168,7 +164,7 @@ public class FragmentPerkakasInggris extends Fragment {
                 });
 
 //                adapterAbjadIndonesia.instantiateItem(container,position);
-                if(position == 19)
+                if(position == 18)
                 {
                     next.startAnimation(dissapear);
                     dissapear.setAnimationListener(new Animation.AnimationListener() {
@@ -227,7 +223,9 @@ public class FragmentPerkakasInggris extends Fragment {
         });
 
         next = view.findViewById(R.id.next);
+        next.setBackgroundResource(R.drawable.button_right_profesi);
         previous = view.findViewById(R.id.previus);
+        previous.setBackgroundResource(R.drawable.button_left_profesi);
 
         previous.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -283,10 +281,7 @@ public class FragmentPerkakasInggris extends Fragment {
             }
         });
 
-
-        return view;
-
-
+        return  view;
 
     }
 }

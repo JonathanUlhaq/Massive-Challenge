@@ -9,19 +9,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-public class DashboardBelajarProfesi extends AppCompatActivity {
+public class IsiBelajarProfesi extends AppCompatActivity {
 
-    ImageView back;
-    FrameLayout profesi;
+    ImageView back,button_all,bahasa_inggris,bahasa_indonesia;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_dashboard_belajar_profesi);
+        setContentView(R.layout.activity_isi_belajar_profesi);
 
         View decorView = getWindow().getDecorView();
 
@@ -37,23 +36,33 @@ public class DashboardBelajarProfesi extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.unlimited_bouncing);
+        Animation backAnimation = AnimationUtils.loadAnimation(this,R.anim.splash);
+        Animation shadowAnimation = AnimationUtils.loadAnimation(this,R.anim.unlimited_bouncing_shadow);
 
-        Animation animation = AnimationUtils.loadAnimation(DashboardBelajarProfesi.this,R.anim.splash);
 
-        profesi = findViewById(R.id.belajar_es);
+        button_all = findViewById(R.id.all);
+        bahasa_inggris = findViewById(R.id.bahasa_inggris);
+        bahasa_indonesia = findViewById(R.id.bahasa_indonesia);
 
-        profesi.setOnClickListener(new View.OnClickListener() {
+        getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,new FragmentProfesiIndonesia()).commit();
+
+        button_all.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                profesi.startAnimation(animation);
+                button_all.startAnimation(backAnimation);
 
-                animation.setAnimationListener(new Animation.AnimationListener() {
+                backAnimation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
-                        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.click_sound_effect);
+                        MediaPlayer mediaPlayer = MediaPlayer.create(IsiBelajarProfesi.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
-                        Intent intent = new Intent(getApplicationContext(),IsiBelajarProfesi.class);
-                        startActivity(intent);
+
+                        bahasa_inggris.setImageResource(R.drawable.button_inggris_inactive);
+                        bahasa_indonesia.setImageResource(R.drawable.button_indonesia_inactive);
+                        button_all.setImageResource(R.drawable.button_all_pencet);
+                        getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,new FragmentAllProfesi()).commit();
+
                     }
 
                     @Override
@@ -68,23 +77,23 @@ public class DashboardBelajarProfesi extends AppCompatActivity {
 
                     }
                 });
+
             }
         });
 
         back = findViewById(R.id.back);
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                back.startAnimation(animation);
+                back.startAnimation(backAnimation);
 
-                animation.setAnimationListener(new Animation.AnimationListener() {
+                backAnimation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
-                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarProfesi.this,R.raw.click_sound_effect);
+                        MediaPlayer mediaPlayer = MediaPlayer.create(IsiBelajarProfesi.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
 
-                        Intent intent = new Intent(DashboardBelajarProfesi.this,DashboardBelajar.class);
+                        Intent intent = new Intent(IsiBelajarProfesi.this,DashboardBelajarProfesi.class);
                         startActivity(intent);
                     }
 
@@ -103,5 +112,6 @@ public class DashboardBelajarProfesi extends AppCompatActivity {
 
             }
         });
+
     }
 }

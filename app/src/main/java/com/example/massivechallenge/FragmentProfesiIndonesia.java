@@ -17,10 +17,10 @@ import android.widget.LinearLayout;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FragmentPerkakasInggris#newInstance} factory method to
+ * Use the {@link FragmentProfesiIndonesia#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentPerkakasInggris extends Fragment {
+public class FragmentProfesiIndonesia extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,7 +31,7 @@ public class FragmentPerkakasInggris extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FragmentPerkakasInggris() {
+    public FragmentProfesiIndonesia() {
         // Required empty public constructor
     }
 
@@ -41,11 +41,11 @@ public class FragmentPerkakasInggris extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentPerkakasInggris.
+     * @return A new instance of fragment FragmentProfesiIndonesia.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentPerkakasInggris newInstance(String param1, String param2) {
-        FragmentPerkakasInggris fragment = new FragmentPerkakasInggris();
+    public static FragmentProfesiIndonesia newInstance(String param1, String param2) {
+        FragmentProfesiIndonesia fragment = new FragmentProfesiIndonesia();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,37 +63,32 @@ public class FragmentPerkakasInggris extends Fragment {
     }
 
     ImageView next,previous;
-    AdapterAlatInggris adapterAlatInggris;
+    AdapterProfesiIndonesia adapterProfesiIndonesia;
     ViewPager viewPager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_transportasi_eng, container, false);
+        View view = inflater.inflate(R.layout.fragment_profesi_indonesia, container, false);
 
         Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.splash);
         Animation shadowAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.unlimited_bouncing_shadow);
         Animation dissapear = AnimationUtils.loadAnimation(getContext(), R.anim.dissapear);
 
-
-
         LinearLayout frameLayout;
         frameLayout = getActivity().findViewById(R.id.frame_layout);
 
-        adapterAlatInggris = new AdapterAlatInggris(getContext());
+        adapterProfesiIndonesia = new AdapterProfesiIndonesia(getContext());
         viewPager = view.findViewById(R.id.view_puager);
-        viewPager.setAdapter(adapterAlatInggris);
+        viewPager.setAdapter(adapterProfesiIndonesia);
 
         // MENDAPATKAN POSISI DARI VIEWPAGER
         Bundle bundle = getArguments();
-        ImageView button_all;
-        button_all = getActivity().findViewById(R.id.all);
-        button_all.setImageResource(R.drawable.button_all);
 
         if (bundle != null)
         {
-            int data = bundle.getInt("posisi");
+            int data = bundle.getInt("posisi2");
             viewPager.setCurrentItem(data);
         }
 
@@ -113,44 +108,46 @@ public class FragmentPerkakasInggris extends Fragment {
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
 
-                ImageView bahasa_inggris,bahasa_indonesia;
+                ImageView bahasa_inggris,bahasa_indonesia,button_all;
                 bahasa_indonesia = getActivity().findViewById(R.id.bahasa_indonesia);
                 bahasa_inggris = getActivity().findViewById(R.id.bahasa_inggris);
-
+                button_all = getActivity().findViewById(R.id.all);
                 Animation backAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.splash);
 
 
-                bahasa_indonesia.setOnClickListener(new View.OnClickListener() {
+                bahasa_inggris.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
 
-                        bahasa_indonesia.startAnimation(backAnimation);
+                        bahasa_inggris.startAnimation(backAnimation);
                         backAnimation.setAnimationListener(new Animation.AnimationListener() {
                             @Override
                             public void onAnimationStart(Animation animation) {
 
                                 mediaPlayer.start();
 
-                                bahasa_indonesia.setImageResource(R.drawable.button_indonesia_active);
-                                bahasa_inggris.setImageResource(R.drawable.button_inggris_inactive);
+                                bahasa_indonesia.setImageResource(R.drawable.button_indonesia_inactive);
+                                bahasa_inggris.setImageResource(R.drawable.button_inggris_active);
 
-                                button_all.setImageResource(R.drawable.button_all);
+                                button_all.setBackgroundResource(R.drawable.button_all);
+
                                 Bundle bundle = new Bundle();
-                                bundle.putInt("posisi2",viewPager.getCurrentItem());
+                                bundle.putInt("posisi",viewPager.getCurrentItem());
 
-                                FragmentPerkakasIndonesia fragmentPerkakasIndonesia = new FragmentPerkakasIndonesia();
-                                fragmentPerkakasIndonesia.setArguments(bundle);
+                                FragmentProfesioInggris fragmentProfesiInggris = new FragmentProfesioInggris();
+                                fragmentProfesiInggris.setArguments(bundle);
 
                                 if(getActivity() != null)
                                 {
-                                    getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentPerkakasIndonesia).commit();
-
+                                    getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentProfesiInggris).commit();
                                 }
 
                             }
 
                             @Override
                             public void onAnimationEnd(Animation animation) {
+
+
 
 
 
@@ -168,7 +165,7 @@ public class FragmentPerkakasInggris extends Fragment {
                 });
 
 //                adapterAbjadIndonesia.instantiateItem(container,position);
-                if(position == 19)
+                if(position == 18)
                 {
                     next.startAnimation(dissapear);
                     dissapear.setAnimationListener(new Animation.AnimationListener() {
@@ -227,7 +224,9 @@ public class FragmentPerkakasInggris extends Fragment {
         });
 
         next = view.findViewById(R.id.next);
+
         previous = view.findViewById(R.id.previus);
+
 
         previous.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -283,10 +282,6 @@ public class FragmentPerkakasInggris extends Fragment {
             }
         });
 
-
-        return view;
-
-
-
+        return  view;
     }
 }

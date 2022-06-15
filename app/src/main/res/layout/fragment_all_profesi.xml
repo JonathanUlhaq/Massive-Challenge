@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:id="@+id/frame_layout"
+    android:background="@drawable/bg_transportasi"
+    tools:context=".FragmentAllProfesi">
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!--            Layer 1-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <!--                Gambar Mobil-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/mobil"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_1"/>
+
+                </FrameLayout>
+
+
+                <!--                Gambar Truck-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/truck"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_2"/>
+
+                </FrameLayout>
+
+                <!--                Gambar Ambulan-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/ambulan"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_3"/>
+
+                </FrameLayout>
+
+                <!--                Gambar perahu-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/perahu"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_4"/>
+
+                </FrameLayout>
+
+                <!--                Gambar pemadam-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/pemadam"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_5"/>
+
+                </FrameLayout>
+
+
+
+
+
+            </LinearLayout>
+
+            <!--            End Layer 1-->
+
+
+            <!--            Layer 2-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <!--                Gambar kereta-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/kereta"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_6"/>
+
+                </FrameLayout>
+
+
+                <!--                Gambar polisi-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/polisi"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_7"/>
+
+                </FrameLayout>
+
+                <!--                Gambar pesawat-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/pesawat"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_8"/>
+
+                </FrameLayout>
+
+                <!--                Gambar sepeda motor-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/sepeda_motor"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_9"/>
+
+                </FrameLayout>
+
+                <!--                Gambar kapal-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/kapal"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_10"/>
+
+                </FrameLayout>
+
+
+
+
+
+            </LinearLayout>
+
+            <!--            End Layer 2-->
+
+
+            <!--            Layer 3-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <!--                Gambar bajaj-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/bajaj"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_11"/>
+
+                </FrameLayout>
+
+
+                <!--                Gambar balon-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/balon"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_12"/>
+
+                </FrameLayout>
+
+                <!--                Gambar bus-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/bus"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_13"/>
+
+                </FrameLayout>
+
+                <!--                Gambar kapal cepat-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/kapal_cepat"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_14"/>
+
+                </FrameLayout>
+
+                <!--                Gambar kontainer-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/kontainer"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_15"/>
+
+                </FrameLayout>
+
+
+
+
+
+            </LinearLayout>
+
+            <!--            End Layer 3-->
+
+
+            <!--            Layer 4-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <!--                Gambar mobil sport-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/mobil_sport"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_16"/>
+
+                </FrameLayout>
+
+
+                <!--                Gambar sepeda-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/sepeda"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_17"/>
+
+                </FrameLayout>
+
+                <!--                Gambar vespa-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/vespa"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_18"/>
+
+                </FrameLayout>
+
+                <!--                Gambar bus sekolah-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/bus_sekolah"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_profesi_19"/>
+
+                </FrameLayout>
+
+
+
+
+
+
+
+            </LinearLayout>
+
+            <!--            End Layer 4-->
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

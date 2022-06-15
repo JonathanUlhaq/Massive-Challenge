@@ -19,10 +19,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".IsiBelajarTransportasi"
+            android:name=".IsiBelajarAlatPerkakas"
             android:exported="false"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name=".IsiBelajarTransportasi"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".IsiBelajarAngka"
             android:exported="false"

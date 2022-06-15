@@ -17,10 +17,10 @@ import android.widget.LinearLayout;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FragmentTransportasIndonesia#newInstance} factory method to
+ * Use the {@link FragmentPerkakasInggris#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentTransportasIndonesia extends Fragment {
+public class FragmentPerkakasInggris extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,7 +31,7 @@ public class FragmentTransportasIndonesia extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FragmentTransportasIndonesia() {
+    public FragmentPerkakasInggris() {
         // Required empty public constructor
     }
 
@@ -41,11 +41,11 @@ public class FragmentTransportasIndonesia extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentTransportasIndonesia.
+     * @return A new instance of fragment FragmentPerkakasInggris.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentTransportasIndonesia newInstance(String param1, String param2) {
-        FragmentTransportasIndonesia fragment = new FragmentTransportasIndonesia();
+    public static FragmentPerkakasInggris newInstance(String param1, String param2) {
+        FragmentPerkakasInggris fragment = new FragmentPerkakasInggris();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,36 +63,41 @@ public class FragmentTransportasIndonesia extends Fragment {
     }
 
     ImageView next,previous;
-    AdapterTransportasiIndo adapterTransportasiIndo;
+    AdapterAlatInggris adapterAlatInggris;
     ViewPager viewPager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_transportas_indonesia, container, false);
+        View view = inflater.inflate(R.layout.fragment_transportasi_eng, container, false);
 
         Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.splash);
         Animation shadowAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.unlimited_bouncing_shadow);
         Animation dissapear = AnimationUtils.loadAnimation(getContext(), R.anim.dissapear);
 
+
+
         LinearLayout frameLayout;
         frameLayout = getActivity().findViewById(R.id.frame_layout);
 
-        adapterTransportasiIndo = new AdapterTransportasiIndo(getContext());
+        adapterAlatInggris = new AdapterAlatInggris(getContext());
         viewPager = view.findViewById(R.id.view_puager);
-        viewPager.setAdapter(adapterTransportasiIndo);
+        viewPager.setAdapter(adapterAlatInggris);
 
         // MENDAPATKAN POSISI DARI VIEWPAGER
         Bundle bundle = getArguments();
-
+        ImageView button_all;
+        button_all = getActivity().findViewById(R.id.all);
+        button_all.setImageResource(R.drawable.button_all);
         if (bundle != null)
         {
-            int data = bundle.getInt("posisi2");
+            int data = bundle.getInt("posisi");
             viewPager.setCurrentItem(data);
         }
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
+
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -102,43 +107,42 @@ public class FragmentTransportasIndonesia extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
-              //  frameLayout.setBackgroundResource(background.get(position));
+                //  frameLayout.setBackgroundResource(background.get(position));
 
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
 
-                ImageView bahasa_inggris,bahasa_indonesia,button_all;
+                ImageView bahasa_inggris,bahasa_indonesia;
                 bahasa_indonesia = getActivity().findViewById(R.id.bahasa_indonesia);
                 bahasa_inggris = getActivity().findViewById(R.id.bahasa_inggris);
-                button_all = getActivity().findViewById(R.id.all);
+
                 Animation backAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.splash);
 
 
-                bahasa_inggris.setOnClickListener(new View.OnClickListener() {
+                bahasa_indonesia.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
 
-                        bahasa_inggris.startAnimation(backAnimation);
+                        bahasa_indonesia.startAnimation(backAnimation);
                         backAnimation.setAnimationListener(new Animation.AnimationListener() {
                             @Override
                             public void onAnimationStart(Animation animation) {
 
                                 mediaPlayer.start();
 
-                                bahasa_indonesia.setImageResource(R.drawable.button_indonesia_inactive);
-                                bahasa_inggris.setImageResource(R.drawable.button_inggris_active);
+                                bahasa_indonesia.setImageResource(R.drawable.button_indonesia_active);
+                                bahasa_inggris.setImageResource(R.drawable.button_inggris_inactive);
 
-                                button_all.setBackgroundResource(R.drawable.button_all);
-
+                                button_all.setImageResource(R.drawable.button_all);
                                 Bundle bundle = new Bundle();
-                                bundle.putInt("posisi",viewPager.getCurrentItem());
+                                bundle.putInt("posisi2",viewPager.getCurrentItem());
 
-                                FragmentTransportasiEng fragmentTransportasiEng = new FragmentTransportasiEng();
-                                fragmentTransportasiEng.setArguments(bundle);
+                                FragmentPerkakasIndonesia fragmentPerkakasIndonesia = new FragmentPerkakasIndonesia();
+                                fragmentPerkakasIndonesia.setArguments(bundle);
 
                                 if(getActivity() != null)
                                 {
-                                    getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentTransportasiEng).commit();
+                                    getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentPerkakasIndonesia).commit();
 
                                 }
 
@@ -146,8 +150,6 @@ public class FragmentTransportasIndonesia extends Fragment {
 
                             @Override
                             public void onAnimationEnd(Animation animation) {
-
-
 
 
 
@@ -223,7 +225,6 @@ public class FragmentTransportasIndonesia extends Fragment {
             }
         });
 
-
         next = view.findViewById(R.id.next);
         previous = view.findViewById(R.id.previus);
 
@@ -281,6 +282,10 @@ public class FragmentTransportasIndonesia extends Fragment {
             }
         });
 
+
         return view;
+
+
+
     }
 }

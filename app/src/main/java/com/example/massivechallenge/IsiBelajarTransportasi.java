@@ -92,7 +92,7 @@ public class IsiBelajarTransportasi extends AppCompatActivity {
                         MediaPlayer mediaPlayer = MediaPlayer.create(IsiBelajarTransportasi.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
 
-                        Intent intent = new Intent(IsiBelajarTransportasi.this,DashboardBelajar.class);
+                        Intent intent = new Intent(IsiBelajarTransportasi.this,DashboardBelajarTransportasi.class);
                         startActivity(intent);
                     }
 

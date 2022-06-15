@@ -17,10 +17,10 @@ import android.widget.LinearLayout;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FragmentTransportasIndonesia#newInstance} factory method to
+ * Use the {@link FragmentPerkakasIndonesia#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentTransportasIndonesia extends Fragment {
+public class FragmentPerkakasIndonesia extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,7 +31,7 @@ public class FragmentTransportasIndonesia extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FragmentTransportasIndonesia() {
+    public FragmentPerkakasIndonesia() {
         // Required empty public constructor
     }
 
@@ -41,11 +41,11 @@ public class FragmentTransportasIndonesia extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentTransportasIndonesia.
+     * @return A new instance of fragment FragmentPerkakasIndoensia.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentTransportasIndonesia newInstance(String param1, String param2) {
-        FragmentTransportasIndonesia fragment = new FragmentTransportasIndonesia();
+    public static FragmentPerkakasIndonesia newInstance(String param1, String param2) {
+        FragmentPerkakasIndonesia fragment = new FragmentPerkakasIndonesia();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,7 +63,7 @@ public class FragmentTransportasIndonesia extends Fragment {
     }
 
     ImageView next,previous;
-    AdapterTransportasiIndo adapterTransportasiIndo;
+    AdapterAlatIndonesia adapterAlatIndonesia;
     ViewPager viewPager;
 
     @Override
@@ -79,9 +79,9 @@ public class FragmentTransportasIndonesia extends Fragment {
         LinearLayout frameLayout;
         frameLayout = getActivity().findViewById(R.id.frame_layout);
 
-        adapterTransportasiIndo = new AdapterTransportasiIndo(getContext());
+        adapterAlatIndonesia = new AdapterAlatIndonesia(getContext());
         viewPager = view.findViewById(R.id.view_puager);
-        viewPager.setAdapter(adapterTransportasiIndo);
+        viewPager.setAdapter(adapterAlatIndonesia);
 
         // MENDAPATKAN POSISI DARI VIEWPAGER
         Bundle bundle = getArguments();
@@ -102,7 +102,7 @@ public class FragmentTransportasIndonesia extends Fragment {
 
             @Override
             public void onPageSelected(int position) {
-              //  frameLayout.setBackgroundResource(background.get(position));
+                //  frameLayout.setBackgroundResource(background.get(position));
 
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
@@ -133,12 +133,12 @@ public class FragmentTransportasIndonesia extends Fragment {
                                 Bundle bundle = new Bundle();
                                 bundle.putInt("posisi",viewPager.getCurrentItem());
 
-                                FragmentTransportasiEng fragmentTransportasiEng = new FragmentTransportasiEng();
-                                fragmentTransportasiEng.setArguments(bundle);
+                                FragmentPerkakasInggris fragmentPerkakasInggris = new FragmentPerkakasInggris();
+                                fragmentPerkakasInggris.setArguments(bundle);
 
                                 if(getActivity() != null)
                                 {
-                                    getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentTransportasiEng).commit();
+                                    getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentPerkakasInggris).commit();
 
                                 }
 
@@ -223,7 +223,6 @@ public class FragmentTransportasIndonesia extends Fragment {
             }
         });
 
-
         next = view.findViewById(R.id.next);
         previous = view.findViewById(R.id.previus);
 
@@ -282,5 +281,6 @@ public class FragmentTransportasIndonesia extends Fragment {
         });
 
         return view;
+
     }
 }

@@ -72,6 +72,50 @@
     <string name="school">School Bus</string>
     <string name="helicopter">Helicopter</string>
 
+    <!--    TODO: Nama Perkakas Indonesia-->
+    <string name="gembok">Gembok</string>
+    <string name="gergaji">Gergaji</string>
+    <string name="gergaji_mesin">Gergaji Mesin</string>
+    <string name="gunting">Gunting</string>
+    <string name="helm">Helm</string>
+    <string name="jarum">Jarum</string>
+    <string name="kaca_pembesar">Kaca Pembesar</string>
+    <string name="kapak">Kapak</string>
+    <string name="kunci_inggris">Kunci Inggris</string>
+    <string name="magnet">Magnet</string>
+    <string name="obeng">Obeng</string>
+    <string name="paku">Paku</string>
+    <string name="palu">Palu</string>
+    <string name="rantai">Rantai</string>
+    <string name="roda">Roda</string>
+    <string name="skop">Sekop</string>
+    <string name="baut">Baut</string>
+    <string name="soket">Soket</string>
+    <string name="tali">Tali</string>
+    <string name="tangga">Tangga</string>
+
+
+    <!--    TODO: Nama Perkakas Indonesia-->
+    <string name="gembok1">Padlock</string>
+    <string name="gergaji1">Handsaw</string>
+    <string name="gergaji_mesin1">Chainsaw</string>
+    <string name="gunting1">Scissor</string>
+    <string name="helm1">Helmet</string>
+    <string name="jarum1">Needle</string>
+    <string name="kaca_pembesar1">Magnifying Glass</string>
+    <string name="kapak1">Axe</string>
+    <string name="kunci_inggris1">Wrench</string>
+    <string name="obeng1">Screwdriver</string>
+    <string name="paku1">Nail</string>
+    <string name="palu1">Hammer</string>
+    <string name="rantai1">Chain</string>
+    <string name="roda1">Wheel</string>
+    <string name="skop1">Shovel</string>
+    <string name="baut1">Screw</string>
+    <string name="soket1">Power Socker</string>
+    <string name="tali1">Rope</string>
+    <string name="tangga1">Ladder</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

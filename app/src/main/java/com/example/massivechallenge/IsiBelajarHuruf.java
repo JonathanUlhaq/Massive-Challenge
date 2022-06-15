@@ -73,7 +73,7 @@ public class IsiBelajarHuruf extends AppCompatActivity {
                         MediaPlayer mediaPlayer = MediaPlayer.create(IsiBelajarHuruf.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
 
-                        Intent intent = new Intent(IsiBelajarHuruf.this,DashboardBelajar.class);
+                        Intent intent = new Intent(IsiBelajarHuruf.this,DasboardBelajarHuruf.class);
                         startActivity(intent);
                     }
 

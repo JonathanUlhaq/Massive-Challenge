@@ -1,7 +1,6 @@
 package com.example.massivechallenge;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -12,15 +11,15 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-public class IsiBelajarAngka extends AppCompatActivity {
+public class IsiBelajarAlatPerkakas extends AppCompatActivity {
 
-    ImageView bahasa_indonesia,bahasa_inggris,back;
+    ImageView back,button_all,bahasa_inggris,bahasa_indonesia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_isi_belajar_angka);
+        setContentView(R.layout.activity_isi_belajar_alat_perkakas);
 
         View decorView = getWindow().getDecorView();
 
@@ -40,10 +39,46 @@ public class IsiBelajarAngka extends AppCompatActivity {
         Animation backAnimation = AnimationUtils.loadAnimation(this,R.anim.splash);
         Animation shadowAnimation = AnimationUtils.loadAnimation(this,R.anim.unlimited_bouncing_shadow);
 
-        bahasa_indonesia = findViewById(R.id.bahasa_indonesia);
-        bahasa_inggris = findViewById(R.id.bahasa_inggris);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame,new FragmentAngkaIndo()).commit();
+        button_all = findViewById(R.id.all);
+        bahasa_inggris = findViewById(R.id.bahasa_inggris);
+        bahasa_indonesia = findViewById(R.id.bahasa_indonesia);
+
+        getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,new FragmentPerkakasIndonesia()).commit();
+
+        button_all.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                button_all.startAnimation(backAnimation);
+
+                backAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(IsiBelajarAlatPerkakas.this,R.raw.click_sound_effect);
+                        mediaPlayer.start();
+
+                        bahasa_inggris.setImageResource(R.drawable.button_inggris_inactive);
+                        bahasa_indonesia.setImageResource(R.drawable.button_indonesia_inactive);
+                        button_all.setImageResource(R.drawable.button_all_pencet);
+                        getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,new FragmentAllPerkakas()).commit();
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+
+            }
+        });
 
         back = findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -54,10 +89,10 @@ public class IsiBelajarAngka extends AppCompatActivity {
                 backAnimation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
-                        MediaPlayer mediaPlayer = MediaPlayer.create(IsiBelajarAngka.this,R.raw.click_sound_effect);
+                        MediaPlayer mediaPlayer = MediaPlayer.create(IsiBelajarAlatPerkakas.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
 
-                        Intent intent = new Intent(IsiBelajarAngka.this,DasboardBelajarAngka.class);
+                        Intent intent = new Intent(IsiBelajarAlatPerkakas.this,DashboardBelajarPerkakas.class);
                         startActivity(intent);
                     }
 

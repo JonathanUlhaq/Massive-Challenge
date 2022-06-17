@@ -7,9 +7,12 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/abjad_wi.xml" value="0.184" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/backgorund_isi_belajar_1.xml" value="0.1885" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/background_dashboard.xml" value="0.1265" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/background_hint.xml" value="0.1185" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/background_menu_belajar.xml" value="0.1255" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/bg_angka_1.xml" value="0.1885" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/bg_rounded_dialog.xml" value="0.1185" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/button_left_profesi.xml" value="0.1845" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/button_tebak_ulangi.xml" value="0.1185" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/ic_launcher_background.xml" value="0.196" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/ic_logo_home.xml" value="0.1265" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/logo_home.xml" value="0.1265" />
@@ -37,6 +40,11 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_isi_belajar_huruf.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_isi_belajar_profesi.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_isi_belajar_transportasi.xml" value="0.152" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_tebak_huruf_indo.xml" value="0.21516754850088182" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_tebak_huruf_indonesia.xml" value="0.176" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/dialog_bahasa.xml" value="0.19882246376811594" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/dialog_hebat.xml" value="0.176" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/dialog_niali_akhir.xml" value="0.19882246376811594" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/fragment_all_perkakas.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/fragment_all_profesi.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/fragment_all_transportasi.xml" value="0.176" />

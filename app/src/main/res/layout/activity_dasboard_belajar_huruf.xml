@@ -84,6 +84,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_marginLeft="25dp"
+            android:id="@+id/bermain"
             android:background="@drawable/background_menu_belajar">
 
             <LinearLayout

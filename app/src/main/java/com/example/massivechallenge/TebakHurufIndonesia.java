@@ -287,10 +287,6 @@ public class TebakHurufIndonesia extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
-        Animation animation = AnimationUtils.loadAnimation(this,R.anim.unlimited_bouncing);
-        Animation backAnimation = AnimationUtils.loadAnimation(this,R.anim.splash);
-        Animation shadowAnimation = AnimationUtils.loadAnimation(this,R.anim.unlimited_bouncing_shadow);
-
         soal = findViewById(R.id.soal);
         huruf1 = findViewById(R.id.huruf1);
         huruf2 = findViewById(R.id.huruf2);

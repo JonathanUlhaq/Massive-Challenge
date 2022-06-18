@@ -7,7 +7,7 @@
     android:orientation="vertical"
 
     android:background="@drawable/bg_utama_tebak_angka"
-    tools:context=".TebakAngkaIndonesia">
+    tools:context=".TebakAngkaInggris">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,25 +67,27 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/angka1"
-                android:layout_width="wrap_content"
-                android:layout_height="166dp"
-                android:autoSizeTextType="uniform"
-                android:background="@drawable/bg_tebak_angkaa_1"
-                android:fontFamily="@font/rockoultraflf"
-                android:onClick="Jawaban"
-                android:tag="0"
-                android:layout_marginTop="5dp"
-                android:text="A"
-                android:textColor="@color/white"
-                android:textSize="110sp" />
-
-            <ImageView
-                android:id="@+id/bayangan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_tebak_angkaa_1"
+                android:text="A"
+                android:onClick="Jawaban"
+                android:tag="0"
+                android:id="@+id/angka1"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/rockoultraflf"
+                android:textSize="110sp"
+                android:autoSizeTextType="uniform"
+                android:textColor="@color/white"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bayangan"
+                android:src="@drawable/bayangan_tebak_angkaa"
                 android:layout_marginBottom="5dp"
-                android:src="@drawable/bayangan_tebak_angkaa" />
+                />
 
         </LinearLayout>
 
@@ -117,8 +119,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/bayangan1"
-                android:layout_marginBottom="5dp"
                 android:src="@drawable/bayangan_tebak_angkaa"
+                android:layout_marginBottom="5dp"
                 />
 
         </LinearLayout>
@@ -139,8 +141,8 @@
                 android:text="A"
                 android:onClick="Jawaban"
                 android:tag="2"
-                android:layout_marginTop="5dp"
                 android:id="@+id/angka3"
+                android:layout_marginTop="5dp"
                 android:fontFamily="@font/rockoultraflf"
                 android:textSize="110sp"
                 android:autoSizeTextType="uniform"
@@ -151,8 +153,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/bayangan2"
-                android:layout_marginBottom="5dp"
                 android:src="@drawable/bayangan_tebak_angkaa"
+                android:layout_marginBottom="5dp"
                 />
 
         </LinearLayout>

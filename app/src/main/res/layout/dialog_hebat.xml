@@ -9,5 +9,8 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
      android:src="@drawable/gambar_hebat"
+      android:layout_marginTop="15dp"
+      android:paddingTop="20dp"
+      android:paddingBottom="20dp"
      android:id="@+id/hebat"/>
 </LinearLayout>

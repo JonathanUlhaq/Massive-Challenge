@@ -9,6 +9,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
@@ -25,8 +26,8 @@ public class DasboardBelajarAngka extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_dasboard_belajar_angka);
-
         View decorView = getWindow().getDecorView();
 
         // Hide the status bar.
@@ -156,6 +157,33 @@ public class DasboardBelajarAngka extends AppCompatActivity {
 
         final ImageView bahasa_indonesia = dialog.findViewById(R.id.bahasa_indonesia);
         final ImageView bahasa_inggris = dialog.findViewById(R.id.bahasa_inggris);
+
+        bahasa_inggris.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                bahasa_inggris.startAnimation(animation);
+
+                animation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        Intent intent = new Intent(getApplicationContext(),TebakAngkaInggris.class);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+
+            }
+        });
 
         bahasa_indonesia.setOnClickListener(new View.OnClickListener() {
             @Override

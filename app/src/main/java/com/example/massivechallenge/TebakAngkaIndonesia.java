@@ -1,5 +1,6 @@
 package com.example.massivechallenge;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
@@ -13,8 +14,10 @@ import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,8 +28,9 @@ import java.util.Random;
 public class TebakAngkaIndonesia extends AppCompatActivity {
 
     //Inisialisasi
-    TextView soal,angka1,angka2,angka3;
-    ImageView back;
+    TextView soal;
+    Button angka1,angka2,angka3;
+    ImageView back,bayangan,bayangan1,bayangan2;
     int lokasiJawaban, jawabanSalah,nomorSoal = 0,scoreAll = 0;
     ArrayList<Integer> jawaban = new ArrayList<Integer>();
 
@@ -79,7 +83,19 @@ public class TebakAngkaIndonesia extends AppCompatActivity {
         angka1.setText(Integer.toString(jawaban.get(0)));
         angka2.setText(Integer.toString(jawaban.get(1)));
         angka3.setText(Integer.toString(jawaban.get(2)));
-        Log.e("TAGG2",Integer.toString(lokasiJawaban));
+
+
+        Animation animationImage = AnimationUtils.loadAnimation(TebakAngkaIndonesia.this,R.anim.unlimited_bouncing);
+        Animation animationBayangan = AnimationUtils.loadAnimation(TebakAngkaIndonesia.this,R.anim.unlimited_bouncing_shadow);
+
+
+        angka1.startAnimation(animationImage);
+        angka2.startAnimation(animationImage);
+        angka3.startAnimation(animationImage);
+
+        bayangan.startAnimation(animationBayangan);
+        bayangan1.startAnimation(animationBayangan);
+        bayangan2.startAnimation(animationBayangan);
     }
 
     public void Jawaban(View view)
@@ -327,6 +343,7 @@ public class TebakAngkaIndonesia extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_tebak_angka_indonesia);
 
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         View decorView = getWindow().getDecorView();
 
         // Hide the status bar.
@@ -341,12 +358,14 @@ public class TebakAngkaIndonesia extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
-
         soal = findViewById(R.id.soal);
         angka1 = findViewById(R.id.angka1);
         angka2 = findViewById(R.id.angka2);
         angka3 = findViewById(R.id.angka3);
         back = findViewById(R.id.back);
+        bayangan = findViewById(R.id.bayangan);
+        bayangan1 = findViewById(R.id.bayangan1);
+        bayangan2 = findViewById(R.id.bayangan2);
 
         Animation animation = AnimationUtils.loadAnimation(TebakAngkaIndonesia.this,R.anim.splash);
 
@@ -362,7 +381,7 @@ public class TebakAngkaIndonesia extends AppCompatActivity {
                         MediaPlayer mediaPlayer = MediaPlayer.create(TebakAngkaIndonesia.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
 
-                        Intent intent = new Intent(TebakAngkaIndonesia.this,DashboardBelajar.class);
+                        Intent intent = new Intent(TebakAngkaIndonesia.this,DasboardBelajarAngka.class);
                         startActivity(intent);
                     }
 

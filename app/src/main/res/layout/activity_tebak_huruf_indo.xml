@@ -74,6 +74,7 @@
                     android:text="A"
                     android:onClick="Jawaban"
                     android:tag="0"
+                    android:layout_marginTop="5dp"
                     android:id="@+id/huruf1"
                     android:fontFamily="@font/rockoultraflf"
                     android:textSize="110sp"
@@ -85,6 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/bayangan"
+                    android:layout_marginBottom="5dp"
                     android:src="@drawable/bayangan_tebak_angka"
                     />
 
@@ -104,6 +106,7 @@
                 android:id="@+id/huruf2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:autoSizeTextType="uniform"
                 android:background="@drawable/bg_tebak_angka_2"
                 android:fontFamily="@font/rockoultraflf"
@@ -117,6 +120,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/bayangan1"
+                android:layout_marginBottom="5dp"
                 android:src="@drawable/bayangan_tebak_angka"
                 />
 
@@ -138,6 +142,7 @@
                 android:text="A"
                 android:onClick="Jawaban"
                 android:tag="2"
+                android:layout_marginTop="5dp"
                 android:id="@+id/huruf3"
                 android:fontFamily="@font/rockoultraflf"
                 android:textSize="110sp"
@@ -149,6 +154,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/bayangan2"
+                android:layout_marginBottom="5dp"
                 android:src="@drawable/bayangan_tebak_angka"
                 />
 

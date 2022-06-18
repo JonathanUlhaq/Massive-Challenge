@@ -19,90 +19,72 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.Random;
 
-public class TebakHurufIndonesia extends AppCompatActivity {
-
-    int[] huruf = {
-            R.string.A,
-            R.string.B,
-            R.string.C,
-            R.string.D,
-            R.string.E,
-            R.string.F,
-            R.string.G,
-            R.string.H,
-            R.string.I,
-            R.string.J,
-            R.string.K,
-            R.string.L,
-            R.string.M,
-            R.string.N,
-            R.string.O,
-            R.string.P,
-            R.string.Q,
-            R.string.R,
-            R.string.S,
-            R.string.T,
-            R.string.U,
-            R.string.V,
-            R.string.W,
-            R.string.X,
-            R.string.Y,
-            R.string.Z
-    };
+public class TebakAngkaIndonesia extends AppCompatActivity {
 
     //Inisialisasi
-    TextView soal,huruf1,huruf2,huruf3;
+    TextView soal,angka1,angka2,angka3;
     ImageView back;
     int lokasiJawaban, jawabanSalah,nomorSoal = 0,scoreAll = 0;
     ArrayList<Integer> jawaban = new ArrayList<Integer>();
 
+    int[] nama_angka = {
+            R.string.satu,
+            R.string.dua,
+            R.string.tiga,
+            R.string.empat,
+            R.string.lima,
+            R.string.enam,
+            R.string.tujuh,
+            R.string.delapan,
+            R.string.sembilan,
+            R.string.sepuluh,
+    };
+
+    int[] angka = {
+            1,2,3,4,5,6,7,8,9,10
+    };
+
+
     public void generateSoal()
     {
         Random random = new Random();
-        int a = huruf[random.nextInt(26)];
-        soal.setText(a);
+        int a = random.nextInt(9);
+        int b = nama_angka[a];
+        int c = angka[a];
+        soal.setText(b);
 
         lokasiJawaban = random.nextInt(3);
         jawaban.clear();
 
-        for(int i = 0; i<3;i++)
+        for(int i = 0;i<3;i++)
         {
-            if (i == lokasiJawaban)
+            if(i == lokasiJawaban)
             {
-                jawaban.add(a);
+                jawaban.add(c);
             } else {
-                jawabanSalah = huruf[random.nextInt(26)];
+                jawabanSalah = angka[random.nextInt(9)];
 
-                while (jawabanSalah == a)
+                while (jawabanSalah == c)
                 {
-                    jawabanSalah = huruf[random.nextInt(26)];
+                    jawabanSalah = angka[random.nextInt(9)];
                 }
 
                 jawaban.add(jawabanSalah);
             }
         }
 
-
-        huruf1.setText(jawaban.get(0));
-        huruf2.setText(jawaban.get(1));
-        huruf3.setText(jawaban.get(2));
+        angka1.setText(Integer.toString(jawaban.get(0)));
+        angka2.setText(Integer.toString(jawaban.get(1)));
+        angka3.setText(Integer.toString(jawaban.get(2)));
         Log.e("TAGG2",Integer.toString(lokasiJawaban));
-
-
-
-
     }
 
     public void Jawaban(View view)
     {
-
-
-        final Dialog dialog = new Dialog(TebakHurufIndonesia.this);
+        final Dialog dialog = new Dialog(TebakAngkaIndonesia.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
@@ -110,25 +92,22 @@ public class TebakHurufIndonesia extends AppCompatActivity {
         dialog.setCancelable(false);
 
         Log.e("TAGG",view.getTag().toString());
-        Animation animation = AnimationUtils.loadAnimation(TebakHurufIndonesia.this,R.anim.splash);
+        Animation animation = AnimationUtils.loadAnimation(TebakAngkaIndonesia.this,R.anim.splash);
 
         view.startAnimation(animation);
         animation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
-                MediaPlayer mediaPlayer = MediaPlayer.create(TebakHurufIndonesia.this,R.raw.click_sound_effect);
+                MediaPlayer mediaPlayer = MediaPlayer.create(TebakAngkaIndonesia.this,R.raw.click_sound_effect);
                 mediaPlayer.start();
-
             }
 
             @Override
             public void onAnimationEnd(Animation animation) {
 
                 nomorSoal++;
-                if(view.getTag().toString().equals(Integer.toString(lokasiJawaban)))
-                {
-
+                if(view.getTag().toString().equals(Integer.toString(lokasiJawaban))) {
 
                     new CountDownTimer(3000,1000)
                     {
@@ -147,7 +126,7 @@ public class TebakHurufIndonesia extends AppCompatActivity {
 
                             if(nomorSoal == 10)
                             {
-                                Dialog result = new Dialog(TebakHurufIndonesia.this);
+                                Dialog result = new Dialog(TebakAngkaIndonesia.this);
                                 result.requestWindowFeature(Window.FEATURE_NO_TITLE);
                                 result.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                                 result.setContentView(R.layout.dialog_niali_akhir);
@@ -165,10 +144,10 @@ public class TebakHurufIndonesia extends AppCompatActivity {
                                         animation.setAnimationListener(new Animation.AnimationListener() {
                                             @Override
                                             public void onAnimationStart(Animation animation) {
-                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakHurufIndonesia.this,R.raw.click_sound_effect);
+                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakAngkaIndonesia.this,R.raw.click_sound_effect);
                                                 mediaPlayer.start();
 
-                                                Intent intent = new Intent(TebakHurufIndonesia.this,DasboardBelajarHuruf.class);
+                                                Intent intent = new Intent(TebakAngkaIndonesia.this,DasboardBelajarAngka.class);
                                                 startActivity(intent);
                                             }
 
@@ -196,7 +175,7 @@ public class TebakHurufIndonesia extends AppCompatActivity {
                                         animation.setAnimationListener(new Animation.AnimationListener() {
                                             @Override
                                             public void onAnimationStart(Animation animation) {
-                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakHurufIndonesia.this,R.raw.click_sound_effect);
+                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakAngkaIndonesia.this,R.raw.click_sound_effect);
                                                 mediaPlayer.start();
 
                                                 generateSoal();
@@ -228,11 +207,10 @@ public class TebakHurufIndonesia extends AppCompatActivity {
 
                         }
                     }.start();
-
                 } else {
-
                     ImageView hebat = dialog.findViewById(R.id.hebat);
                     hebat.setImageResource(R.drawable.gambar_oops);
+
                     new CountDownTimer(3000,1000)
                     {
                         @Override
@@ -249,7 +227,7 @@ public class TebakHurufIndonesia extends AppCompatActivity {
 
                             if(nomorSoal == 10)
                             {
-                                Dialog result = new Dialog(TebakHurufIndonesia.this);
+                                Dialog result = new Dialog(TebakAngkaIndonesia.this);
                                 result.requestWindowFeature(Window.FEATURE_NO_TITLE);
                                 result.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                                 result.setContentView(R.layout.dialog_niali_akhir);
@@ -267,10 +245,10 @@ public class TebakHurufIndonesia extends AppCompatActivity {
                                         animation.setAnimationListener(new Animation.AnimationListener() {
                                             @Override
                                             public void onAnimationStart(Animation animation) {
-                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakHurufIndonesia.this,R.raw.click_sound_effect);
+                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakAngkaIndonesia.this,R.raw.click_sound_effect);
                                                 mediaPlayer.start();
 
-                                                Intent intent = new Intent(TebakHurufIndonesia.this,DasboardBelajarHuruf.class);
+                                                Intent intent = new Intent(TebakAngkaIndonesia.this,DasboardBelajarHuruf.class);
                                                 startActivity(intent);
                                             }
 
@@ -298,7 +276,7 @@ public class TebakHurufIndonesia extends AppCompatActivity {
                                         animation.setAnimationListener(new Animation.AnimationListener() {
                                             @Override
                                             public void onAnimationStart(Animation animation) {
-                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakHurufIndonesia.this,R.raw.click_sound_effect);
+                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakAngkaIndonesia.this,R.raw.click_sound_effect);
                                                 mediaPlayer.start();
 
                                                 generateSoal();
@@ -323,6 +301,7 @@ public class TebakHurufIndonesia extends AppCompatActivity {
                                 });
 
                                 scoress.setText(Integer.toString(scoreAll));
+                                Log.e("ASDSS",Integer.toString(scoreAll));
 
                                 result.show();
 
@@ -330,33 +309,23 @@ public class TebakHurufIndonesia extends AppCompatActivity {
                         }
                     }.start();
 
+
                 }
 
-
-
-                Log.e("Nomor",Integer.toString(nomorSoal));
-                Log.e("SCORE",Integer.toString(scoreAll));
-
-
-
-            }
+                }
 
             @Override
             public void onAnimationRepeat(Animation animation) {
 
             }
         });
-
-
-
-
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        setContentView(R.layout.activity_tebak_huruf_indo);
+        setContentView(R.layout.activity_tebak_angka_indonesia);
 
         View decorView = getWindow().getDecorView();
 
@@ -372,13 +341,15 @@ public class TebakHurufIndonesia extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
+
         soal = findViewById(R.id.soal);
-        huruf1 = findViewById(R.id.huruf1);
-        huruf2 = findViewById(R.id.huruf2);
-        huruf3 = findViewById(R.id.huruf3);
+        angka1 = findViewById(R.id.angka1);
+        angka2 = findViewById(R.id.angka2);
+        angka3 = findViewById(R.id.angka3);
         back = findViewById(R.id.back);
 
-        Animation animation = AnimationUtils.loadAnimation(TebakHurufIndonesia.this,R.anim.splash);
+        Animation animation = AnimationUtils.loadAnimation(TebakAngkaIndonesia.this,R.anim.splash);
+
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -388,10 +359,10 @@ public class TebakHurufIndonesia extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
-                        MediaPlayer mediaPlayer = MediaPlayer.create(TebakHurufIndonesia.this,R.raw.click_sound_effect);
+                        MediaPlayer mediaPlayer = MediaPlayer.create(TebakAngkaIndonesia.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
 
-                        Intent intent = new Intent(TebakHurufIndonesia.this,DashboardBelajar.class);
+                        Intent intent = new Intent(TebakAngkaIndonesia.this,DashboardBelajar.class);
                         startActivity(intent);
                     }
 
@@ -412,7 +383,5 @@ public class TebakHurufIndonesia extends AppCompatActivity {
         });
 
         generateSoal();
-
-
     }
 }

@@ -138,8 +138,6 @@
     <string name="Atlet">Atlet</string>
 
 
-
-
     <!--    TODO: Profesi Inggris-->
 
     <string name="Koki1">Chef</string>
@@ -163,7 +161,7 @@
     <string name="Atlet1">Atlhete</string>
 
 
-<!--    TODO: Asset Tebak Huruf-->
+    <!--    TODO: Asset Tebak Huruf-->
     <string name="A">A</string>
     <string name="B">B</string>
     <string name="C">C</string>
@@ -191,7 +189,18 @@
     <string name="Y">Y</string>
     <string name="Z">Z</string>
 
+    <!-- TODO: Asset Angka Indonesia -->
 
+    <string name="satu">Satu</string>
+    <string name="dua">Dua</string>
+    <string name="tiga">Tiga</string>
+    <string name="empat">Empat</string>
+    <string name="lima">Lima</string>
+    <string name="enam">Enam</string>
+    <string name="tujuh">Tujuh</string>
+    <string name="delapan">Delapan</string>
+    <string name="sembilan">Sembilan</string>
+    <string name="sepuluh">Sepuluh</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

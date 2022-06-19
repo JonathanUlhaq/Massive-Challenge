@@ -81,6 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="20dp"
+            android:id="@+id/tebak_perkakas"
             android:layout_marginLeft="25dp"
             android:background="@drawable/background_menu_belajar">
 

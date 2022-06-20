@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -15,6 +16,36 @@ import android.widget.ImageView;
 public class IsiBelajarTransportasi extends AppCompatActivity {
 
     ImageView back,button_all,bahasa_inggris,bahasa_indonesia;
+
+    int[] suara = {
+            R.raw.mobil,
+            R.raw.truk,
+            R.raw.ambulan,
+            R.raw.perahu,
+            R.raw.kereta_api,
+            R.raw.pemadam_kebakaran,
+            R.raw.mobil_polisi,
+            R.raw.pesawat,
+            R.raw.sepeda_motor,
+            R.raw.kapal,
+            R.raw.bajaj,
+            R.raw.balon_udara,
+            R.raw.bus,
+            R.raw.kapal_cepat,
+            R.raw.truk_kontainer,
+            R.raw.mobil_sport,
+            R.raw.sepeda,
+            R.raw.vespa,
+            R.raw.bus_sekolah,
+            R.raw.helikopter,
+    };
+
+    public void Jawaban (View view)
+    {
+        MediaPlayer mediaPlayer = MediaPlayer.create(IsiBelajarTransportasi.this,suara[Integer.valueOf(view.getTag().toString())]);
+        mediaPlayer.start();
+        Log.e("TEST1",view.getTag().toString());
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -65,6 +65,7 @@ public class FragmentPerkakasIndonesia extends Fragment {
     ImageView next,previous;
     AdapterAlatIndonesia adapterAlatIndonesia;
     ViewPager viewPager;
+    int posiss;
 
     int[] suara = {
             R.raw.gembok,
@@ -131,6 +132,8 @@ public class FragmentPerkakasIndonesia extends Fragment {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
+                posiss = position;
+
             }
 
             @Override
@@ -144,62 +147,6 @@ public class FragmentPerkakasIndonesia extends Fragment {
                 Log.e("POSISIS",Integer.toString(position));
                 mediaPlayers.start();
 
-                ImageView bahasa_inggris,bahasa_indonesia,button_all;
-                bahasa_indonesia = getActivity().findViewById(R.id.bahasa_indonesia);
-                bahasa_inggris = getActivity().findViewById(R.id.bahasa_inggris);
-                button_all = getActivity().findViewById(R.id.all);
-                Animation backAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.splash);
-
-
-                bahasa_inggris.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        bahasa_inggris.startAnimation(backAnimation);
-                        backAnimation.setAnimationListener(new Animation.AnimationListener() {
-                            @Override
-                            public void onAnimationStart(Animation animation) {
-
-                                mediaPlayer.start();
-
-                                bahasa_indonesia.setImageResource(R.drawable.button_indonesia_inactive);
-                                bahasa_inggris.setImageResource(R.drawable.button_inggris_active);
-
-                                button_all.setBackgroundResource(R.drawable.button_all);
-
-                                Bundle bundle = new Bundle();
-                                bundle.putInt("posisi",viewPager.getCurrentItem());
-
-                                FragmentPerkakasInggris fragmentPerkakasInggris = new FragmentPerkakasInggris();
-                                fragmentPerkakasInggris.setArguments(bundle);
-
-                                if(getActivity() != null)
-                                {
-                                    getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentPerkakasInggris).commit();
-
-                                }
-
-                            }
-
-                            @Override
-                            public void onAnimationEnd(Animation animation) {
-
-
-
-
-
-                            }
-
-                            @Override
-                            public void onAnimationRepeat(Animation animation) {
-
-                            }
-                        });
-
-
-
-                    }
-                });
 
 //                adapterAbjadIndonesia.instantiateItem(container,position);
                 if(position == 19)
@@ -273,6 +220,13 @@ public class FragmentPerkakasIndonesia extends Fragment {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
+
                         viewPager.setCurrentItem(viewPager.getCurrentItem() -1,true);
                     }
 
@@ -300,6 +254,13 @@ public class FragmentPerkakasIndonesia extends Fragment {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
+
                         viewPager.setCurrentItem(viewPager.getCurrentItem() +1,true);
                     }
 
@@ -313,6 +274,70 @@ public class FragmentPerkakasIndonesia extends Fragment {
 
                     }
                 });
+
+            }
+        });
+
+        ImageView bahasa_inggris,bahasa_indonesia,button_all;
+        bahasa_indonesia = getActivity().findViewById(R.id.bahasa_indonesia);
+        bahasa_inggris = getActivity().findViewById(R.id.bahasa_inggris);
+        button_all = getActivity().findViewById(R.id.all);
+        Animation backAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.splash);
+
+
+        bahasa_inggris.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                bahasa_inggris.startAnimation(backAnimation);
+                backAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
+
+
+                        bahasa_indonesia.setImageResource(R.drawable.button_indonesia_inactive);
+                        bahasa_inggris.setImageResource(R.drawable.button_inggris_active);
+
+                        button_all.setBackgroundResource(R.drawable.button_all);
+
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("posisi",posiss);
+
+                        FragmentPerkakasInggris fragmentPerkakasInggris = new FragmentPerkakasInggris();
+                        fragmentPerkakasInggris.setArguments(bundle);
+
+                        if(getActivity() != null)
+                        {
+                            getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentPerkakasInggris).commit();
+
+                        }
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+
+
+
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+
+
 
             }
         });

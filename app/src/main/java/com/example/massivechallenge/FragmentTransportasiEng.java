@@ -66,6 +66,7 @@ public class FragmentTransportasiEng extends Fragment {
     ImageView next,previous;
     AdapterTransportasiInggris adapterTransportasiInggris;
     ViewPager viewPager;
+    int posisiss;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -102,7 +103,7 @@ public class FragmentTransportasiEng extends Fragment {
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
+                posisiss = position ;
             }
 
             @Override
@@ -112,59 +113,7 @@ public class FragmentTransportasiEng extends Fragment {
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
 
-                ImageView bahasa_inggris,bahasa_indonesia;
-                bahasa_indonesia = getActivity().findViewById(R.id.bahasa_indonesia);
-                bahasa_inggris = getActivity().findViewById(R.id.bahasa_inggris);
 
-                Animation backAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.splash);
-
-
-                bahasa_indonesia.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                        bahasa_indonesia.startAnimation(backAnimation);
-                        backAnimation.setAnimationListener(new Animation.AnimationListener() {
-                            @Override
-                            public void onAnimationStart(Animation animation) {
-
-                                mediaPlayer.start();
-
-                                bahasa_indonesia.setImageResource(R.drawable.button_indonesia_active);
-                                bahasa_inggris.setImageResource(R.drawable.button_inggris_inactive);
-
-                                button_all.setImageResource(R.drawable.button_all);
-                                Bundle bundle = new Bundle();
-                                bundle.putInt("posisi2",viewPager.getCurrentItem());
-
-                                FragmentTransportasIndonesia fragmentTransportasIndonesia = new FragmentTransportasIndonesia();
-                                fragmentTransportasIndonesia.setArguments(bundle);
-
-                                if(getActivity() != null)
-                                {
-                                    getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentTransportasIndonesia).commit();
-
-                                }
-
-                            }
-
-                            @Override
-                            public void onAnimationEnd(Animation animation) {
-
-
-
-                            }
-
-                            @Override
-                            public void onAnimationRepeat(Animation animation) {
-
-                            }
-                        });
-
-
-
-                    }
-                });
 
 //                adapterAbjadIndonesia.instantiateItem(container,position);
                 if(position == 19)
@@ -238,6 +187,13 @@ public class FragmentTransportasiEng extends Fragment {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
+
                         viewPager.setCurrentItem(viewPager.getCurrentItem() -1,true);
                     }
 
@@ -265,6 +221,13 @@ public class FragmentTransportasiEng extends Fragment {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
+
                         viewPager.setCurrentItem(viewPager.getCurrentItem() +1,true);
                     }
 
@@ -278,6 +241,67 @@ public class FragmentTransportasiEng extends Fragment {
 
                     }
                 });
+
+            }
+        });
+
+
+        ImageView bahasa_inggris,bahasa_indonesia;
+        bahasa_indonesia = getActivity().findViewById(R.id.bahasa_indonesia);
+        bahasa_inggris = getActivity().findViewById(R.id.bahasa_inggris);
+
+        Animation backAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.splash);
+
+
+        bahasa_indonesia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                bahasa_indonesia.startAnimation(backAnimation);
+                backAnimation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
+
+                        bahasa_indonesia.setImageResource(R.drawable.button_indonesia_active);
+                        bahasa_inggris.setImageResource(R.drawable.button_inggris_inactive);
+
+                        button_all.setImageResource(R.drawable.button_all);
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("posisi2",posisiss);
+                        Log.e("COBA POSISI",Integer.toString(posisiss));
+                        FragmentTransportasIndonesia fragmentTransportasIndonesia = new FragmentTransportasIndonesia();
+                        fragmentTransportasIndonesia.setArguments(bundle);
+
+                        if(getActivity() != null)
+                        {
+                            getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentTransportasIndonesia).commit();
+
+                        }
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+
+
 
             }
         });

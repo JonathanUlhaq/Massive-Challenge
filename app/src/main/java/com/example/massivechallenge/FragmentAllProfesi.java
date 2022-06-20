@@ -83,7 +83,12 @@ public class FragmentAllProfesi extends Fragment {
                     public void onAnimationStart(Animation animation) {
 
                         mediaPlayer.start();
-
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         bahasa_indonesia.setImageResource(R.drawable.button_indonesia_inactive);
                         bahasa_inggris.setImageResource(R.drawable.button_inggris_active);
 
@@ -133,7 +138,12 @@ public class FragmentAllProfesi extends Fragment {
                     public void onAnimationStart(Animation animation) {
 
                         mediaPlayer.start();
-
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         bahasa_indonesia.setImageResource(R.drawable.button_indonesia_active);
                         bahasa_inggris.setImageResource(R.drawable.button_inggris_inactive);
 

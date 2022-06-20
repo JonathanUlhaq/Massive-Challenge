@@ -38,6 +38,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/mobil"
+                    android:onClick="Jawaban"
+                    android:tag="0"
                     android:background="@drawable/bg_isi_transport_all">
 
                     <ImageView
@@ -56,6 +58,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="17dp"
                     android:id="@+id/truck"
+                    android:onClick="Jawaban"
+                    android:tag="1"
                     android:background="@drawable/bg_isi_transport_all">
 
                     <ImageView

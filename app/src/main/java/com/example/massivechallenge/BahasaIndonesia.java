@@ -142,7 +142,7 @@ public class BahasaIndonesia extends Fragment {
             int data = bundle.getInt("posisi2");
             viewPager.setCurrentItem(data);
             MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
-            
+
             mediaPlayers.start();
         }
 

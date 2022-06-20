@@ -66,6 +66,30 @@ public class FragmentPerkakasIndonesia extends Fragment {
     AdapterAlatIndonesia adapterAlatIndonesia;
     ViewPager viewPager;
 
+    int[] suara = {
+            R.raw.gembok,
+            R.raw.gergaji,
+            R.raw.gergaji_mesin,
+            R.raw.guntin,
+            R.raw.helm,
+            R.raw.jarum,
+            R.raw.kaca_pembesar,
+            R.raw.kapak,
+            R.raw.kapak,
+            R.raw.kunci_inggris,
+            R.raw.magnet,
+            R.raw.obeng,
+            R.raw.paku,
+            R.raw.palu,
+            R.raw.rantai,
+            R.raw.roda,
+            R.raw.sekop,
+            R.raw.baut,
+            R.raw.soket,
+            R.raw.tali,
+            R.raw.tangga,
+    };
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -90,6 +114,15 @@ public class FragmentPerkakasIndonesia extends Fragment {
         {
             int data = bundle.getInt("posisi2");
             viewPager.setCurrentItem(data);
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
+
+            mediaPlayers.start();
+        }
+
+        if(bundle == null)
+        {
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
+            mediaPlayers.start();
         }
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
@@ -106,6 +139,10 @@ public class FragmentPerkakasIndonesia extends Fragment {
 
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
+
+                MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                Log.e("POSISIS",Integer.toString(position));
+                mediaPlayers.start();
 
                 ImageView bahasa_inggris,bahasa_indonesia,button_all;
                 bahasa_indonesia = getActivity().findViewById(R.id.bahasa_indonesia);

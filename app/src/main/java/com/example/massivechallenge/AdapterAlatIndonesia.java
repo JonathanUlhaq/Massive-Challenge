@@ -22,6 +22,7 @@ public class AdapterAlatIndonesia extends PagerAdapter {
     LayoutInflater inflater;
 
 
+
     int[] gambar = {
             R.drawable.gambar_alat_1,
             R.drawable.gambar_alat_2,
@@ -45,6 +46,8 @@ public class AdapterAlatIndonesia extends PagerAdapter {
             R.drawable.gambar_alat_20,
 
     };
+
+
 
     int[] namas = {
             R.string.gembok,

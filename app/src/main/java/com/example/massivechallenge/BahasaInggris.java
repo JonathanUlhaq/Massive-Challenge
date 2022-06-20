@@ -69,6 +69,38 @@ public class BahasaInggris extends Fragment {
     ImageView next,previous;
     AdapterAbjadInggris adapterAbjadInggris;
     ViewPager viewPager;
+
+    int[] suara = {
+            R.raw.aaple_inggris,
+            R.raw.bbal_inggris,
+            R.raw.ccarrot_inggris,
+            R.raw.ddog_inggris,
+            R.raw.eeagle_inggris,
+            R.raw.ffish_inggris,
+            R.raw.ggirafe_inggris,
+            R.raw.hhat_inggris,
+            R.raw.iice_inggris,
+            R.raw.jjuice_inggris,
+            R.raw.kkanggaro_inggris,
+            R.raw.llamb_inggris,
+            R.raw.mmonkey_inggris,
+            R.raw.nno_inggris,
+            R.raw.ooctopus_inggris,
+            R.raw.ppig_inggris,
+            R.raw.qquestion_inggris,
+            R.raw.rring_inggris,
+            R.raw.ssun_inggris,
+            R.raw.ttable_inggris,
+            R.raw.uumbrella_inggris,
+            R.raw.vvan_inggris,
+            R.raw.wwortel,
+            R.raw.xxylophone_inggris,
+            R.raw.yyellow_inggris,
+            R.raw.zzebra_inggris,
+
+
+    };
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -105,8 +137,16 @@ public class BahasaInggris extends Fragment {
                    {
                        int data = bundle.getInt("posisi");
                        viewPager.setCurrentItem(data);
+                       MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
+
+                       mediaPlayers.start();
                    }
 
+        if(bundle == null)
+        {
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
+            mediaPlayers.start();
+        }
 
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
@@ -124,6 +164,11 @@ public class BahasaInggris extends Fragment {
 
 
                 frameLayout.setBackgroundResource(background.get(position));
+
+                MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                Log.e("POSISIS",Integer.toString(position));
+                mediaPlayers.start();
+
                 Log.e("LOOG",Integer.toString(position) );
 //                adapterAbjadInggris.instantiateItem(container,position);
 

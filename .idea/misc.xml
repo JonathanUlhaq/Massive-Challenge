@@ -8,11 +8,30 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_bajaj.xml" value="0.187" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_bus.xml" value="0.187" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_cepat.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_koki.xml" value="0.187" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_kontainer.xml" value="0.187" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_mobil.xml" value="0.187" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_pemadam.xml" value="0.187" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_perahu.xml" value="0.187" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_pesawat.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_profesi_10.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_profesi_11.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_profesi_12.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_profesi_13.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_profesi_14.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_profesi_15.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_profesi_16.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_profesi_17.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_profesi_18.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_profesi_19.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_profesi_2.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_profesi_3.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_profesi_4.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_profesi_5.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_profesi_6.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_profesi_7.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_profesi_8.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_profesi_9.xml" value="0.187" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_sekolah.xml" value="0.187" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_sepeda.xml" value="0.187" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable-v24/layer_sport.xml" value="0.187" />
@@ -88,6 +107,8 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_tebak_huruf_indonesia.xml" value="0.176" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_tebak_perkakas_indonesia.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_tebak_perkakas_inggris.xml" value="0.10677083333333333" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_tebak_profesi_indonesia.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_tebak_profesi_inggris.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_tebak_transportasi_indonesia.xml" value="0.176" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_tebak_transportasi_inggris.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/dialog_bahasa.xml" value="0.19882246376811594" />

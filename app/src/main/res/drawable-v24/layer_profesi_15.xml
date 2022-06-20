@@ -1,0 +1,6 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:drawable="@drawable/gambar_profesi_15"
+        android:width="170dp"
+        android:height="135dp"/>
+</layer-list >

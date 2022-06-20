@@ -19,15 +19,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".TebakProfesiInggris"
+            android:exported="false" />
+        <activity
+            android:name=".TebakProfesiIndonesia"
+            android:exported="false" />
+        <activity
             android:name=".TebakPerkakasInggris"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".TebakPerkakasIndonesia"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".TebakTransportasiInggris"
             android:exported="false"

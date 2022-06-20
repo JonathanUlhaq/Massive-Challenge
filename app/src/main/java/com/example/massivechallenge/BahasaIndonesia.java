@@ -78,6 +78,37 @@ public class BahasaIndonesia extends Fragment {
     AdapterAbjadIndonesia adapterAbjadIndonesia;
     ViewPager viewPager;
 
+    int[] suara = {
+            R.raw.aapel,
+            R.raw.bbola,
+            R.raw.ccicak,
+            R.raw.ddomba,
+            R.raw.eelang,
+            R.raw.ffoto,
+            R.raw.ggajah,
+            R.raw.hharimau,
+            R.raw.iikan,
+            R.raw.jjam,
+            R.raw.kkuda,
+            R.raw.llebah,
+            R.raw.mmeja,
+            R.raw.nnanas,
+            R.raw.oorangutan,
+            R.raw.ppisang,
+            R.raw.qquran,
+            R.raw.rroda,
+            R.raw.ssapi,
+            R.raw.ttelur,
+            R.raw.uunta,
+            R.raw.vvas,
+            R.raw.wwortel,
+            R.raw.xxylophone,
+            R.raw.yyoyo,
+            R.raw.zzebra,
+
+
+    };
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -110,6 +141,15 @@ public class BahasaIndonesia extends Fragment {
         {
             int data = bundle.getInt("posisi2");
             viewPager.setCurrentItem(data);
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
+            
+            mediaPlayers.start();
+        }
+
+        if(bundle == null)
+        {
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
+            mediaPlayers.start();
         }
 
 
@@ -131,6 +171,10 @@ public class BahasaIndonesia extends Fragment {
             @Override
             public void onPageSelected(int position) {
                 frameLayout.setBackgroundResource(background.get(position));
+
+                MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                Log.e("POSISIS",Integer.toString(position));
+                mediaPlayers.start();
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
 

@@ -1,6 +1,8 @@
 package com.example.massivechallenge;
 
 import android.content.Context;
+import android.media.MediaPlayer;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +25,6 @@ public class AdapterAngkaIndonesia extends PagerAdapter {
     }
 
     int[] angka = {
-
             R.drawable.angka_1_indonesia,
             R.drawable.angka_2_indonesia,
             R.drawable.angka_3_indonesia,
@@ -37,6 +38,8 @@ public class AdapterAngkaIndonesia extends PagerAdapter {
 
 
     };
+
+
 
     int [] shadowes = {
             R.drawable.bayangan_angka_apel_1,
@@ -91,12 +94,15 @@ public class AdapterAngkaIndonesia extends PagerAdapter {
         shadow = view.findViewById(R.id.bayangan);
 
 
+
+
         a_apel.startAnimation(animation);
         shadow.startAnimation(shadowAnimation);
 
         shadow.setImageResource(shadowes[position]);
         a_apel.setImageResource(gambar[position]);
         abjad_a.setImageResource(angka[position]);
+
 
         container.addView(view);
 

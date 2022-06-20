@@ -68,11 +68,26 @@ public class FragmentAngkaIndo extends Fragment {
     AdapterAngkaIndonesia adapterAngkaIndonesia;
     ViewPager viewPager;
 
+    int[] suara = {
+            R.raw.satu,
+            R.raw.dua,
+            R.raw.tiga,
+            R.raw.empat,
+            R.raw.lima,
+            R.raw.enam,
+            R.raw.tujuh,
+            R.raw.delapan,
+            R.raw.sembilan,
+            R.raw.sepuluh,
+
+
+    };
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_bahasa_indonesia, container, false);
+        View view = inflater.inflate(R.layout.fragment_angka_indo, container, false);
 
         Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.splash);
         Animation shadowAnimation = AnimationUtils.loadAnimation(getContext(), R.anim.unlimited_bouncing_shadow);
@@ -93,6 +108,8 @@ public class FragmentAngkaIndo extends Fragment {
         viewPager = view.findViewById(R.id.view_puager);
         viewPager.setAdapter(adapterAngkaIndonesia);
 
+
+
         // MENDAPATKAN POSISI DARI VIEWPAGER
         Bundle bundle = getArguments();
 
@@ -100,6 +117,13 @@ public class FragmentAngkaIndo extends Fragment {
         {
             int data = bundle.getInt("posisi2");
             viewPager.setCurrentItem(data);
+            MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),suara[data]);
+            Log.e("POSISIS",Integer.toString(data));
+            mediaPlayer.start();
+        } if(bundle == null)
+        {
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
+            mediaPlayers.start();
         }
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
@@ -115,6 +139,10 @@ public class FragmentAngkaIndo extends Fragment {
            frameLayout.setBackgroundResource(background.get(position));
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
+
+                MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                Log.e("POSISIS",Integer.toString(position));
+                mediaPlayers.start();
 
                 ImageView bahasa_inggris,bahasa_indonesia;
                 bahasa_indonesia = getActivity().findViewById(R.id.bahasa_indonesia);
@@ -147,6 +175,7 @@ public class FragmentAngkaIndo extends Fragment {
                                     getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentAngkaEng).commit();
 
                                 }
+
 
                             }
 

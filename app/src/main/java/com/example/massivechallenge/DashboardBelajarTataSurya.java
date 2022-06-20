@@ -9,10 +9,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 public class DashboardBelajarTataSurya extends AppCompatActivity {
+
     ImageView back;
+    FrameLayout belajar_tata;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +41,34 @@ public class DashboardBelajarTataSurya extends AppCompatActivity {
         Animation animation = AnimationUtils.loadAnimation(DashboardBelajarTataSurya.this,R.anim.splash);
 
         back = findViewById(R.id.back);
+        belajar_tata= findViewById(R.id.belajar_tata);
+
+        belajar_tata.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                belajar_tata.startAnimation(animation);
+                animation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarTataSurya.this,R.raw.click_sound_effect);
+                        mediaPlayer.start();
+
+                        Intent intent = new Intent(DashboardBelajarTataSurya.this, IsiBelajarTata.class);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

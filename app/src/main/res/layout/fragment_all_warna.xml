@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:id="@+id/frame_layout"
+    tools:context=".FragmentAllWarna">
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!--            Layer 1-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <!--                -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/merah"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_warna_merah"/>
+
+                </FrameLayout>
+
+
+                <!--                -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/jingga"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_warna_jingga"/>
+
+                </FrameLayout>
+
+                <!--                -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/kuning"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_warna_kuning"/>
+
+                </FrameLayout>
+
+                <!--                -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/hijau"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_warna_hijau"/>
+
+                </FrameLayout>
+
+                <!--                -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/biru"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_warna_biru"/>
+
+                </FrameLayout>
+
+
+
+
+
+            </LinearLayout>
+
+            <!--            End Layer 1-->
+
+
+            <!--            Layer 2-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <!--               -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/hitam"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_warna_hitam"/>
+
+                </FrameLayout>
+
+
+                <!--                -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/putih"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_warna_putih"/>
+
+                </FrameLayout>
+
+                <!--                -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/abu"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_warna_abu"/>
+
+                </FrameLayout>
+
+                <!--                -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/merah_muda"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_warna_merah_muda"/>
+
+                </FrameLayout>
+
+                <!--                -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/ungu"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_warna_ungu"/>
+
+                </FrameLayout>
+
+
+
+
+
+            </LinearLayout>
+
+            <!--            End Layer 2-->
+
+
+            <!--            Layer 3-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <!--               -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/coklat"
+                    android:background="@drawable/bg_isi_transport_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_warna_coklat"/>
+
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+            <!--            End Layer 3-->
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

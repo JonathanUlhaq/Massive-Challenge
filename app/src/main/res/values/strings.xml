@@ -202,6 +202,214 @@
     <string name="sembilan">Sembilan</string>
     <string name="sepuluh">Sepuluh</string>
 
+    <!-- TODO: Asset Hewan Indonesia-->
+
+    <string name="Kucing">Kucing</string>
+    <string name="Anjing">Anjing</string>
+    <string name="Monyet">Monyet</string>
+    <string name="beruang">Beruang</string>
+    <string name="citah">Citah</string>
+    <string name="elang">Elang</string>
+    <string name="kangguru">Kangguru</string>
+    <string name="kelinci">Kelinci</string>
+    <string name="panda">Panda</string>
+    <string name="sapi">Sapi</string>
+    <string name="singa">Singa</string>
+    <string name="unta">Unta</string>
+    <string name="zebra">Zebra</string>
+    <string name="bebek">Bebek</string>
+    <string name="katak">Katak</string>
+    <string name="kelelawar">Kelelawar</string>
+    <string name="landak">Landak</string>
+    <string name="rusa">Rusa</string>
+    <string name="siput">Siput</string>
+    <string name="ayam">Ayam</string>
+
+
+    <!-- TODO: Asset Hewan Ing-->
+
+    <string name="cat">Cat</string>
+    <string name="dog">Dog</string>
+    <string name="monkey">Monkey</string>
+    <string name="bear">Bear</string>
+    <string name="cheetah">Cheetah</string>
+    <string name="eagle">Eagle</string>
+    <string name="kangaroo">Kangaroo</string>
+    <string name="rabbit">Rabbit</string>
+    <string name="caw">Caw</string>
+    <string name="lion">Lion</string>
+    <string name="camel">Camel</string>
+    <string name="duck">Duck</string>
+    <string name="frog">Frog</string>
+    <string name="bat">Bat</string>
+    <string name="hedgehog">Hedgehog</string>
+    <string name="deer">Deer</string>
+    <string name="snail">Snail</string>
+    <string name="chicken">Chicken</string>
+
+
+    <!-- TODO: Asset Sayur Indo-->
+
+    <string name="brokoli">Brokoli</string>
+    <string name="bunga_kol">Bunga Kol</string>
+    <string name="cabe">Cabe</string>
+    <string name="daun_bawang">Daun Bawang</string>
+    <string name="jagung">Jagung</string>
+    <string name="jamur">Jamur</string>
+    <string name="kacang_panjang">Kacang Panjang</string>
+    <string name="kacang_polong">Kacang Polong</string>
+    <string name="kangkung">Kangkung</string>
+    <string name="kedelai">Kedelai</string>
+    <string name="kentang">Kentang</string>
+    <string name="kubis">Kubis</string>
+    <string name="labu">Labu</string>
+    <string name="lobak">Lobak</string>
+    <string name="paprika">Paprika</string>
+    <string name="selada">Selada</string>
+    <string name="terong">Terong</string>
+    <string name="timun">Timun</string>
+    <string name="tomat">Tomat</string>
+    <string name="wortel">Wortel</string>
+
+
+    <!-- TODO: Asset Sayur Eng-->
+    <string name="broccoli">Broccoli</string>
+    <string name="cauliflower">Cauliflower</string>
+    <string name="chili">Chili</string>
+    <string name="leek">Leek</string>
+    <string name="corn">Corn</string>
+    <string name="mushroom">Mushroom</string>
+    <string name="long_bean">Long Bean</string>
+    <string name="pea">Pea</string>
+    <string name="water_spinach">Water Spinach</string>
+    <string name="soybean">Soybean</string>
+    <string name="potato">Potato</string>
+    <string name="cabbage">Cabbage</string>
+    <string name="pumpkin">Pumpkin</string>
+    <string name="radis">Radis</string>
+    <string name="peppers">Peppers</string>
+    <string name="lettuce">Lettuce</string>
+    <string name="eggplant">Eggplant</string>
+    <string name="cucumber">Cucumber</string>
+    <string name="tomato">Tomato</string>
+    <string name="carrot">Carrot</string>
+
+    <!-- TODO: Asset Buah Indo-->
+    <string name="alpukat">Alpukat</string>
+    <string name="anggur">Anggur</string>
+    <string name="strawberi">Stroberi</string>
+    <string name="belimbing">Belimbing</string>
+    <string name="buah_naga">Buah Naga</string>
+    <string name="ceri">Ceri</string>
+    <string name="delima">Delima</string>
+    <string name="durian">Durian</string>
+    <string name="jambu">Jambu</string>
+    <string name="jeruk_nipis">Jeruk Nipis</string>
+    <string name="jeruk">Jeruk</string>
+    <string name="kelapa">Kelapa</string>
+    <string name="kiwi">Kiwi</string>
+    <string name="lemon">Lemon</string>
+    <string name="mangga">Mangga</string>
+    <string name="nanas">Nanas</string>
+    <string name="pepaya">Pepaya</string>
+    <string name="pisang">Pisang</string>
+    <string name="rambutan">Rambutan</string>
+    <string name="semangka">Semangka</string>
+
+    <!-- TODO: Asset Buah Eng-->
+    <string name="Avocado">Avocado</string>
+    <string name="grape">Grape</string>
+    <string name="strawberry">Strawberry</string>
+    <string name="star_fruit">Star Fruit</string>
+    <string name="dragon_fruit">Dragon Fruit</string>
+    <string name="cherry">Cherry</string>
+    <string name="pomegranate">Pomegranate</string>
+    <string name="guava">Guava</string>
+    <string name="lime">Lime</string>
+    <string name="orange">Orange</string>
+    <string name="coconut">Coconut</string>
+    <string name="mango">Mango</string>
+    <string name="pineapple">Pineapple</string>
+    <string name="papaya">Papaya</string>
+    <string name="banana">Banana</string>
+    <string name="watermelon">Watermelon</string>
+
+    <!-- TODO: Asset Bentuk Indo-->
+    <string name="persegi">Persegi</string>
+    <string name="persegi_panjang">Persegi Panjang</string>
+    <string name="lingkaran">Lingkaran</string>
+    <string name="lonjong">Lonjong</string>
+    <string name="segitiga">Segitiga</string>
+    <string name="segi_lima">Segi Lima</string>
+    <string name="segi_enam">Segi Enam</string>
+    <string name="segi_delapan">Segi Delapan</string>
+    <string name="jajar_genjang">Jajar Genjang</string>
+    <string name="trapesium">Trapesium</string>
+    <string name="belah_ketupat">Belah Ketupat</string>
+    <string name="bintang">Bintang</string>
+    <string name="panah">Panah</string>
+    <string name="bulan">Bulan</string>
+    <string name="layang_layang">Layang-Layang</string>
+
+    <!-- TODO: Asset Bentuk Eng-->
+    <string name="square">Square</string>
+    <string name="rectangle">Rectangle</string>
+    <string name="circle">Circle</string>
+    <string name="oval">Oval</string>
+    <string name="triangle">Triangle</string>
+    <string name="pentagon">Pentagon</string>
+    <string name="hexagon">Hexagon</string>
+    <string name="octagonal">Octagonal</string>
+    <string name="parallelogram">Parallelogram</string>
+    <string name="trapezoidal">Trapezoidal</string>
+    <string name="rhombus">Rhombus</string>
+    <string name="star">Star</string>
+    <string name="arrow">Arrow</string>
+    <string name="moon">Moon</string>
+    <string name="kite">Kite</string>
+
+    <!-- TODO: Asset Warna Indo-->
+    <string name="merah">Merah</string>
+    <string name="jingga">Jingga</string>
+    <string name="kuning">Kuning</string>
+    <string name="hijau">Hijau</string>
+    <string name="biru">Biru</string>
+    <string name="hitam">Hitam</string>
+    <string name="putih">Putih</string>
+    <string name="abu">Abu-Abu</string>
+    <string name="merah_muda">Merah Muda</string>
+    <string name="ungu">Ungu</string>
+    <string name="coklat">Coklat</string>
+
+    <!-- TODO: Asset Warna Eng-->
+    <string name="red">Red</string>
+    <string name="yellow">Yellow</string>
+    <string name="green">Green</string>
+    <string name="blue">Blue</string>
+    <string name="black">Black</string>
+    <string name="white">White</string>
+    <string name="grey">Grey</string>
+    <string name="pink">Pink</string>
+    <string name="purple">Purple</string>
+    <string name="chocolate">Chocolate</string>
+
+    <!-- TODO: Asset Tata Indo-->
+    <string name="matahari">Matahari</string>
+    <string name="merkurius">Merkurius</string>
+    <string name="venus">Venus</string>
+    <string name="bumi">Bumi</string>
+    <string name="mars">Mars</string>
+    <string name="jupiter">Jupiter</string>
+    <string name="saturnus">Saturnus</string>
+    <string name="uranus">Uranus</string>
+    <string name="neptunus">Neptunus</string>
+
+    <!-- TODO: Asset Tata Eng-->
+    <string name="sun">Sun</string>
+    <string name="mercury">Mercury</string>
+    <string name="earth">Earth</string>
+    <string name="saturn">Saturn</string>
+    <string name="neptune">Neptune</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

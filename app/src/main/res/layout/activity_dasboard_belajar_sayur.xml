@@ -52,6 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:id="@+id/belajar_sayur"
             android:background="@drawable/background_menu_belajar">
 
             <LinearLayout

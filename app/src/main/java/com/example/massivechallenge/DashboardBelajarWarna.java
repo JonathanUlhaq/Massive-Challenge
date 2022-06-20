@@ -9,11 +9,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 public class DashboardBelajarWarna extends AppCompatActivity {
 
     ImageView back;
+    FrameLayout belajar_warna;
 
 
     @Override
@@ -39,6 +41,34 @@ public class DashboardBelajarWarna extends AppCompatActivity {
         Animation animation = AnimationUtils.loadAnimation(DashboardBelajarWarna.this,R.anim.splash);
 
         back = findViewById(R.id.back);
+        belajar_warna= findViewById(R.id.belajar_warna);
+
+        belajar_warna.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                belajar_warna.startAnimation(animation);
+                animation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarWarna.this,R.raw.click_sound_effect);
+                        mediaPlayer.start();
+
+                        Intent intent = new Intent(DashboardBelajarWarna.this, IsiBelajarWarna.class);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

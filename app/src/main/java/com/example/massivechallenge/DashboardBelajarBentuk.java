@@ -16,6 +16,7 @@ public class DashboardBelajarBentuk extends AppCompatActivity {
 
     ImageView back;
     FrameLayout bentuk;
+    FrameLayout belajar_bentuk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +42,32 @@ public class DashboardBelajarBentuk extends AppCompatActivity {
         Animation animation = AnimationUtils.loadAnimation(DashboardBelajarBentuk.this,R.anim.splash);
 
         back = findViewById(R.id.back);
-        bentuk = findViewById(R.id.bentuk);
+        belajar_bentuk= findViewById(R.id.belajar_bentuk);
 
-        bentuk.setOnClickListener(new View.OnClickListener() {
+        belajar_bentuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                belajar_bentuk.startAnimation(animation);
+                animation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarBentuk.this,R.raw.click_sound_effect);
+                        mediaPlayer.start();
 
+                        Intent intent = new Intent(DashboardBelajarBentuk.this, IsiBelajarBentuk.class);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
             }
         });
 

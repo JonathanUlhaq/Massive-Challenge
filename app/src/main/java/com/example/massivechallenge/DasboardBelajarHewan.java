@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class DasboardBelajarHewan extends AppCompatActivity {
 
     ImageView back;
+    FrameLayout belajar_hewan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,34 @@ public class DasboardBelajarHewan extends AppCompatActivity {
         Animation animation = AnimationUtils.loadAnimation(DasboardBelajarHewan.this,R.anim.splash);
 
         back = findViewById(R.id.back);
+        belajar_hewan= findViewById(R.id.belajar_hewan);
+
+        belajar_hewan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                belajar_hewan.startAnimation(animation);
+                animation.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DasboardBelajarHewan.this,R.raw.click_sound_effect);
+                        mediaPlayer.start();
+
+                        Intent intent = new Intent(DasboardBelajarHewan.this, IsiBelajarHewan.class);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+            }
+        });
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override

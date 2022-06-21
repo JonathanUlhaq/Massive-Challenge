@@ -242,6 +242,28 @@
     <string name="Purple">Purple</string>
     <string name="Brown">Brown</string>
 
+    <!-- TODO: Asset Planet Indonesia -->
+
+    <string name="matahari">Matahari</string>
+    <string name="bulan">Bulan</string>
+    <string name="merkurius">Merkurius</string>
+    <string name="venus">Venus</string>
+    <string name="bumi">Bumi</string>
+    <string name="mars">Mars</string>
+    <string name="jupiter">Jupiter</string>
+    <string name="saturnus">Saturnus</string>
+    <string name="uranus">Uranus</string>
+    <string name="neptunus">Neptunus</string>
+
+    <!-- TODO: Asset Planet Indonesia -->
+
+    <string name="sun">Sun</string>
+    <string name="moon">Moon</string>
+    <string name="mercury">Mercury</string>
+    <string name="earth">Earth</string>
+    <string name="saturn">Saturn</string>
+    <string name="neptune">Neptune</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

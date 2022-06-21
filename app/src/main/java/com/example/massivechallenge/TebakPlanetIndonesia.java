@@ -22,7 +22,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class TebakProfesiInggris extends AppCompatActivity {
+public class TebakPlanetIndonesia extends AppCompatActivity {
 
     //Inisialisasi
     TextView soal;
@@ -31,54 +31,35 @@ public class TebakProfesiInggris extends AppCompatActivity {
     int lokasiJawaban, jawabanSalah, nomorSoal = 0, scoreAll = 0;
     ArrayList<Integer> jawaban = new ArrayList<Integer>();
 
-    int[] gambar = {
-            R.drawable.layer_profesi_1,
-            R.drawable.layer_profesi_2,
-            R.drawable.layer_profesi_3,
-            R.drawable.layer_profesi_4,
-            R.drawable.layer_profesi_5,
-            R.drawable.layer_profesi_6,
-            R.drawable.layer_profesi_7,
-            R.drawable.layer_profesi_8,
-            R.drawable.layer_profesi_9,
-            R.drawable.layer_profesi_10,
-            R.drawable.layer_profesi_11,
-            R.drawable.layer_profesi_12,
-            R.drawable.layer_profesi_13,
-            R.drawable.layer_profesi_14,
-            R.drawable.layer_profesi_15,
-            R.drawable.layer_profesi_16,
-            R.drawable.layer_profesi_17,
-            R.drawable.layer_profesi_18,
-            R.drawable.layer_profesi_19
-
+    int[] namas = {
+            R.string.matahari,
+            R.string.bulan,
+            R.string.merkurius,
+            R.string.venus,
+            R.string.bumi,
+            R.string.mars,
+            R.string.jupiter,
+            R.string.saturnus,
+            R.string.uranus,
+            R.string.neptunus,
     };
 
-    int[] namas = {
-            R.string.Koki1,
-            R.string.Pengusaha1,
-            R.string.Dokter1,
-            R.string.Nelayan1,
-            R.string.Guru1,
-            R.string.Ilmuan1,
-            R.string.Insinyur1,
-            R.string.Montir1,
-            R.string.Pelukis1,
-            R.string.Pemadam1,
-            R.string.Petani1,
-            R.string.Photographer,
-            R.string.Pilot,
-            R.string.Polisi1,
-            R.string.Pramugari1,
-            R.string.Tentara1,
-            R.string.Sekretaris1,
-            R.string.Pelayan1,
-            R.string.Atlet1,
+    int[] gambar = {
+            R.drawable.layer_planet_1,
+            R.drawable.layer_planet_2,
+            R.drawable.layer_planet_3,
+            R.drawable.layer_planet_4,
+            R.drawable.layer_planet_5,
+            R.drawable.layer_planet_6,
+            R.drawable.layer_planet_7,
+            R.drawable.layer_planet_8,
+            R.drawable.layer_planet_9,
+            R.drawable.layer_planet_10,
     };
 
     public void generateSoal() {
         Random random = new Random();
-        int a = random.nextInt(19);
+        int a = random.nextInt(9);
         int b = namas[a];
         int c = gambar[a];
         soal.setText(b);
@@ -90,9 +71,9 @@ public class TebakProfesiInggris extends AppCompatActivity {
             if (i == lokasiJawaban) {
                 jawaban.add(c);
             } else {
-                jawabanSalah = gambar[random.nextInt(19)];
+                jawabanSalah = gambar[random.nextInt(9)];
                 while (jawabanSalah == c) {
-                    jawabanSalah = gambar[random.nextInt(19)];
+                    jawabanSalah = gambar[random.nextInt(9)];
                 }
 
                 jawaban.add(jawabanSalah);
@@ -104,8 +85,8 @@ public class TebakProfesiInggris extends AppCompatActivity {
         gambar3.setImageDrawable(getDrawable(jawaban.get(2)));
 
 
-        Animation animationImage = AnimationUtils.loadAnimation(TebakProfesiInggris.this, R.anim.unlimited_bouncing);
-        Animation animationBayangan = AnimationUtils.loadAnimation(TebakProfesiInggris.this, R.anim.unlimited_bouncing_shadow);
+        Animation animationImage = AnimationUtils.loadAnimation(TebakPlanetIndonesia.this, R.anim.unlimited_bouncing);
+        Animation animationBayangan = AnimationUtils.loadAnimation(TebakPlanetIndonesia.this, R.anim.unlimited_bouncing_shadow);
 
 
         gambar1.startAnimation(animationImage);
@@ -118,11 +99,10 @@ public class TebakProfesiInggris extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        setContentView(R.layout.activity_tebak_profesi_inggris);
+        setContentView(R.layout.activity_tebak_planet_indonesia);
 
         View decorView = getWindow().getDecorView();
 
@@ -145,8 +125,7 @@ public class TebakProfesiInggris extends AppCompatActivity {
 
         back = findViewById(R.id.back);
 
-        Animation animation = AnimationUtils.loadAnimation(TebakProfesiInggris.this, R.anim.splash);
-
+        Animation animation = AnimationUtils.loadAnimation(TebakPlanetIndonesia.this, R.anim.splash);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,10 +135,10 @@ public class TebakProfesiInggris extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
-                        MediaPlayer mediaPlayer = MediaPlayer.create(TebakProfesiInggris.this, R.raw.click_sound_effect);
+                        MediaPlayer mediaPlayer = MediaPlayer.create(TebakPlanetIndonesia.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
 
-                        Intent intent = new Intent(TebakProfesiInggris.this, DashboardBelajarProfesi.class);
+                        Intent intent = new Intent(TebakPlanetIndonesia.this, DashboardBelajarTataSurya.class);
                         startActivity(intent);
                     }
 
@@ -179,10 +158,11 @@ public class TebakProfesiInggris extends AppCompatActivity {
         });
 
         generateSoal();
+
     }
 
     public void Jawaban(View view) {
-        final Dialog dialog = new Dialog(TebakProfesiInggris.this);
+        final Dialog dialog = new Dialog(TebakPlanetIndonesia.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
@@ -190,14 +170,14 @@ public class TebakProfesiInggris extends AppCompatActivity {
         dialog.setCancelable(false);
 
         Log.e("TAGG", view.getTag().toString());
-        Animation animation = AnimationUtils.loadAnimation(TebakProfesiInggris.this, R.anim.splash);
+        Animation animation = AnimationUtils.loadAnimation(TebakPlanetIndonesia.this, R.anim.splash);
 
         view.startAnimation(animation);
         animation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
-                MediaPlayer mediaPlayer = MediaPlayer.create(TebakProfesiInggris.this, R.raw.click_sound_effect);
+                MediaPlayer mediaPlayer = MediaPlayer.create(TebakPlanetIndonesia.this, R.raw.click_sound_effect);
                 mediaPlayer.start();
             }
 
@@ -222,7 +202,7 @@ public class TebakProfesiInggris extends AppCompatActivity {
                             scoreAll = scoreAll + 10;
 
                             if (nomorSoal == 10) {
-                                Dialog result = new Dialog(TebakProfesiInggris.this);
+                                Dialog result = new Dialog(TebakPlanetIndonesia.this);
                                 result.requestWindowFeature(Window.FEATURE_NO_TITLE);
                                 result.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                                 result.setContentView(R.layout.dialog_niali_akhir);
@@ -240,10 +220,10 @@ public class TebakProfesiInggris extends AppCompatActivity {
                                         animation.setAnimationListener(new Animation.AnimationListener() {
                                             @Override
                                             public void onAnimationStart(Animation animation) {
-                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakProfesiInggris.this, R.raw.click_sound_effect);
+                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakPlanetIndonesia.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
 
-                                                Intent intent = new Intent(TebakProfesiInggris.this, DashboardBelajarProfesi.class);
+                                                Intent intent = new Intent(TebakPlanetIndonesia.this, DashboardBelajarTataSurya.class);
                                                 startActivity(intent);
                                             }
 
@@ -271,7 +251,7 @@ public class TebakProfesiInggris extends AppCompatActivity {
                                         animation.setAnimationListener(new Animation.AnimationListener() {
                                             @Override
                                             public void onAnimationStart(Animation animation) {
-                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakProfesiInggris.this, R.raw.click_sound_effect);
+                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakPlanetIndonesia.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
 
                                                 generateSoal();
@@ -321,7 +301,7 @@ public class TebakProfesiInggris extends AppCompatActivity {
                             generateSoal();
 
                             if (nomorSoal == 10) {
-                                Dialog result = new Dialog(TebakProfesiInggris.this);
+                                Dialog result = new Dialog(TebakPlanetIndonesia.this);
                                 result.requestWindowFeature(Window.FEATURE_NO_TITLE);
                                 result.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                                 result.setContentView(R.layout.dialog_niali_akhir);
@@ -339,10 +319,10 @@ public class TebakProfesiInggris extends AppCompatActivity {
                                         animation.setAnimationListener(new Animation.AnimationListener() {
                                             @Override
                                             public void onAnimationStart(Animation animation) {
-                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakProfesiInggris.this, R.raw.click_sound_effect);
+                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakPlanetIndonesia.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
 
-                                                Intent intent = new Intent(TebakProfesiInggris.this, DashboardBelajarProfesi.class);
+                                                Intent intent = new Intent(TebakPlanetIndonesia.this, DashboardBelajarTataSurya.class);
                                                 startActivity(intent);
                                             }
 
@@ -370,7 +350,7 @@ public class TebakProfesiInggris extends AppCompatActivity {
                                         animation.setAnimationListener(new Animation.AnimationListener() {
                                             @Override
                                             public void onAnimationStart(Animation animation) {
-                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakProfesiInggris.this, R.raw.click_sound_effect);
+                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakPlanetIndonesia.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
 
                                                 generateSoal();
@@ -414,5 +394,4 @@ public class TebakProfesiInggris extends AppCompatActivity {
             }
         });
     }
-
 }

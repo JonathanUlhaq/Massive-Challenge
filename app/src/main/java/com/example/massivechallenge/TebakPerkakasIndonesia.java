@@ -344,7 +344,7 @@ public class TebakPerkakasIndonesia extends AppCompatActivity {
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakPerkakasIndonesia.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
 
-                                                Intent intent = new Intent(TebakPerkakasIndonesia.this, DashboardBelajarTransportasi.class);
+                                                Intent intent = new Intent(TebakPerkakasIndonesia.this, DashboardBelajarPerkakas.class);
                                                 startActivity(intent);
                                             }
 

@@ -19,15 +19,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".TebakPlanetInggris"
+            android:exported="false" />
+        <activity
+            android:name=".TebakPlanetIndonesia"
+            android:exported="false" />
+        <activity
+            android:name=".IsiBelajarPlanet"
+            android:exported="false" />
+        <activity
             android:name=".TebakWarnaInggris"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".TebakWarnaIndonesia"
             android:exported="false"
             android:screenOrientation="landscape"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".IsiBelajarWarna"
             android:exported="false"

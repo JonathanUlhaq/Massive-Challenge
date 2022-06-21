@@ -49,17 +49,24 @@
 
 
             <ImageView
+                android:id="@+id/all"
                 android:layout_width="44dp"
-                android:layout_height="47dp"
+                android:layout_height="33dp"
                 android:layout_marginRight="10dp"
-                android:src="@drawable/button_all"
-                android:id="@+id/all"/>
+                android:src="@drawable/button_all" />
 
             <ImageView
                 android:layout_width="44dp"
                 android:layout_height="47dp"
                 android:src="@drawable/button_auto"
+
                 android:id="@+id/auto"/>
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="47dp"
+                android:src="@drawable/button_all"
+                android:visibility="gone"
+                android:id="@+id/auto2"/>
 
         </LinearLayout>
 

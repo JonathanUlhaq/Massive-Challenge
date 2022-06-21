@@ -1,11 +1,13 @@
 package com.example.massivechallenge;
 
+import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,6 +71,9 @@ public class FragmentPerkakasIndonesia extends Fragment {
     AdapterAlatIndonesia adapterAlatIndonesia;
     ViewPager viewPager;
     int posiss;
+    Timer timer,timers;
+    Handler handler;
+    boolean b = false,c = false;
 
     int[] suara = {
             R.raw.gembok,
@@ -75,7 +83,6 @@ public class FragmentPerkakasIndonesia extends Fragment {
             R.raw.helm,
             R.raw.jarum,
             R.raw.kaca_pembesar,
-            R.raw.kapak,
             R.raw.kapak,
             R.raw.kunci_inggris,
             R.raw.magnet,
@@ -111,6 +118,9 @@ public class FragmentPerkakasIndonesia extends Fragment {
         // MENDAPATKAN POSISI DARI VIEWPAGER
         Bundle bundle = getArguments();
 
+
+
+
         if (bundle != null)
         {
             int data = bundle.getInt("posisi2");
@@ -133,6 +143,79 @@ public class FragmentPerkakasIndonesia extends Fragment {
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
                 posiss = position;
+                timer = new Timer();
+                handler = new Handler();
+
+                ImageView auto = getActivity().findViewById(R.id.auto);
+                ImageView cancel = getActivity().findViewById(R.id.auto2);
+
+
+                auto.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                     
+                        MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                        Log.e("POSISIS",Integer.toString(position));
+                        mediaPlayers.start();
+                            Log.e("BEOL2",Boolean.toString(b));
+                            timer.schedule(new TimerTask() {
+                                @Override
+                                public void run() {
+
+                                    handler.post(new Runnable() {
+                                        @Override
+                                        public void run() {
+
+                                            if (bundle != null)
+                                            {
+//                                                int datas = bundle.getInt("posisi2");
+
+
+                                                viewPager.setCurrentItem(posiss);
+                                                posiss++;
+
+                                            } if (viewPager.getCurrentItem() == suara.length -1)
+                                            {
+                                                int i = viewPager.getCurrentItem();
+                                                viewPager.setCurrentItem(i);
+                                            } else {
+                                                int i = viewPager.getCurrentItem();
+                                                i++;
+                                                viewPager.setCurrentItem(i);
+                                            }
+
+                                        }
+                                    });
+
+
+                                }
+
+
+                            } ,4000,4000);
+
+                            auto.setVisibility(View.GONE);
+                            cancel.setVisibility(View.VISIBLE);
+
+                    }
+
+
+
+                });
+
+                cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        FragmentPerkakasIndonesia indonesia = new FragmentPerkakasIndonesia();
+                        Bundle bundle = new Bundle();
+                        bundle.putInt("posisi2",posiss);
+                        indonesia.setArguments(bundle);
+                        getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,indonesia).commit();
+
+                        auto.setVisibility(View.VISIBLE);
+                        cancel.setVisibility(View.GONE);
+                    }
+                });
 
             }
 
@@ -140,12 +223,17 @@ public class FragmentPerkakasIndonesia extends Fragment {
             public void onPageSelected(int position) {
                 //  frameLayout.setBackgroundResource(background.get(position));
 
+               if(getContext() != null)
+               {
+                   MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                   Log.e("POSISIS",Integer.toString(position));
+                   mediaPlayers.start();
+               }
+
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
 
-                MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
-                Log.e("POSISIS",Integer.toString(position));
-                mediaPlayers.start();
+
 
 
 //                adapterAbjadIndonesia.instantiateItem(container,position);

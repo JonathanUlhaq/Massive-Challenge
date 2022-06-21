@@ -215,6 +215,32 @@
     <string name="nine">Nine</string>
     <string name="ten">Ten</string>
 
+    <!--    TODO: ASSET WARNA INDO-->
+    <string name="merah">Merah</string>
+    <string name="jingga">Jingga</string>
+    <string name="kuning">Kuning</string>
+    <string name="hijau">Hijau</string>
+    <string name="biru">Biru</string>
+    <string name="hitam">Hitam</string>
+    <string name="putih">Putih</string>
+    <string name="abu">Abu - Abu</string>
+    <string name="muda">Merah Muda</string>
+    <string name="ungu">Ungu</string>
+    <string name="coklat">Cokelat</string>
+
+
+    <!--    TODO: ASSET WARNA Inggris-->
+    <string name="red">Red</string>
+    <string name="Orange">Orange</string>
+    <string name="Yellow">Yellow</string>
+    <string name="Green">Green</string>
+    <string name="Blue">Blue</string>
+    <string name="Black">Black</string>
+    <string name="White">White</string>
+    <string name="Grey">Grey</string>
+    <string name="Pink">Pink</string>
+    <string name="Purple">Purple</string>
+    <string name="Brown">Brown</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -249,7 +249,7 @@ public class TebakTransportasiInggris extends AppCompatActivity {
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakTransportasiInggris.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
 
-                                                Intent intent = new Intent(TebakTransportasiInggris.this, DasboardBelajarAngka.class);
+                                                Intent intent = new Intent(TebakTransportasiInggris.this, DashboardBelajarTransportasi.class);
                                                 startActivity(intent);
                                             }
 

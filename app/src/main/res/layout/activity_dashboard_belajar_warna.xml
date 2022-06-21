@@ -51,6 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
+            android:id="@+id/belajar"
             android:background="@drawable/background_menu_belajar">
 
             <LinearLayout
@@ -82,6 +83,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_marginLeft="25dp"
+            android:id="@+id/tebak_warna"
             android:background="@drawable/background_menu_belajar">
 
             <LinearLayout

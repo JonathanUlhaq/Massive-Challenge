@@ -264,7 +264,7 @@ public class TebakAngkaIndonesia extends AppCompatActivity {
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakAngkaIndonesia.this,R.raw.click_sound_effect);
                                                 mediaPlayer.start();
 
-                                                Intent intent = new Intent(TebakAngkaIndonesia.this,DasboardBelajarHuruf.class);
+                                                Intent intent = new Intent(TebakAngkaIndonesia.this,DasboardBelajarAngka.class);
                                                 startActivity(intent);
                                             }
 

@@ -22,7 +22,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class TebakPerkakasIndonesia extends AppCompatActivity {
+public class TebakWarnaIndonesia extends AppCompatActivity {
 
     //Inisialisasi
     TextView soal;
@@ -32,54 +32,36 @@ public class TebakPerkakasIndonesia extends AppCompatActivity {
     ArrayList<Integer> jawaban = new ArrayList<Integer>();
 
     int[] namas = {
-            R.string.gembok,
-            R.string.gergaji,
-            R.string.gergaji_mesin,
-            R.string.gunting,
-            R.string.helm,
-            R.string.jarum,
-            R.string.kaca_pembesar,
-            R.string.kapak,
-            R.string.kunci_inggris,
-            R.string.magnet,
-            R.string.obeng,
-            R.string.paku,
-            R.string.palu,
-            R.string.rantai,
-            R.string.roda,
-            R.string.skop,
-            R.string.baut,
-            R.string.soket,
-            R.string.tali,
-            R.string.tangga,
+            R.string.merah,
+            R.string.jingga,
+            R.string.kuning,
+            R.string.hijau,
+            R.string.biru,
+            R.string.hitam,
+            R.string.putih,
+            R.string.abu,
+            R.string.muda,
+            R.string.ungu,
+            R.string.coklat,
     };
 
     int[] gambar = {
-            R.drawable.layout_perkakas_1,
-            R.drawable.layout_perkakas_2,
-            R.drawable.layout_perkakas_3,
-            R.drawable.layout_perkakas_4,
-            R.drawable.layout_perkakas_5,
-            R.drawable.layout_perkakas_6,
-            R.drawable.layout_perkakas_7,
-            R.drawable.layout_perkakas_8,
-            R.drawable.layout_perkakas_9,
-            R.drawable.layout_perkakas_10,
-            R.drawable.layout_perkakas_11,
-            R.drawable.layout_perkakas_12,
-            R.drawable.layout_perkakas_13,
-            R.drawable.layout_perkakas_14,
-            R.drawable.layout_perkakas_15,
-            R.drawable.layout_perkakas_16,
-            R.drawable.layout_perkakas_17,
-            R.drawable.layout_perkakas_18,
-            R.drawable.layout_perkakas_19,
-            R.drawable.layout_perkakas_20,
+            R.drawable.layer_warna_1,
+            R.drawable.layer_warna_2,
+            R.drawable.layer_warna_3,
+            R.drawable.layer_warna_4,
+            R.drawable.layer_warna_5,
+            R.drawable.layer_warna_6,
+            R.drawable.layer_warna_7,
+            R.drawable.layer_warna_8,
+            R.drawable.layer_warna_9,
+            R.drawable.layer_warna_10,
+            R.drawable.layer_warna_11,
     };
 
     public void generateSoal() {
         Random random = new Random();
-        int a = random.nextInt(19);
+        int a = random.nextInt(10);
         int b = namas[a];
         int c = gambar[a];
         soal.setText(b);
@@ -91,9 +73,9 @@ public class TebakPerkakasIndonesia extends AppCompatActivity {
             if (i == lokasiJawaban) {
                 jawaban.add(c);
             } else {
-                jawabanSalah = gambar[random.nextInt(19)];
+                jawabanSalah = gambar[random.nextInt(10)];
                 while (jawabanSalah == c) {
-                    jawabanSalah = gambar[random.nextInt(19)];
+                    jawabanSalah = gambar[random.nextInt(10)];
                 }
 
                 jawaban.add(jawabanSalah);
@@ -105,8 +87,8 @@ public class TebakPerkakasIndonesia extends AppCompatActivity {
         gambar3.setImageDrawable(getDrawable(jawaban.get(2)));
 
 
-        Animation animationImage = AnimationUtils.loadAnimation(TebakPerkakasIndonesia.this, R.anim.unlimited_bouncing);
-        Animation animationBayangan = AnimationUtils.loadAnimation(TebakPerkakasIndonesia.this, R.anim.unlimited_bouncing_shadow);
+        Animation animationImage = AnimationUtils.loadAnimation(TebakWarnaIndonesia.this, R.anim.unlimited_bouncing);
+        Animation animationBayangan = AnimationUtils.loadAnimation(TebakWarnaIndonesia.this, R.anim.unlimited_bouncing_shadow);
 
 
         gambar1.startAnimation(animationImage);
@@ -116,15 +98,14 @@ public class TebakPerkakasIndonesia extends AppCompatActivity {
 
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        setContentView(R.layout.activity_tebak_perkakas_indonesia);
+        setContentView(R.layout.activity_tebak_warna_indonesia);
 
         View decorView = getWindow().getDecorView();
 
@@ -147,8 +128,7 @@ public class TebakPerkakasIndonesia extends AppCompatActivity {
 
         back = findViewById(R.id.back);
 
-        Animation animation = AnimationUtils.loadAnimation(TebakPerkakasIndonesia.this, R.anim.splash);
-
+        Animation animation = AnimationUtils.loadAnimation(TebakWarnaIndonesia.this, R.anim.splash);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,10 +138,10 @@ public class TebakPerkakasIndonesia extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
-                        MediaPlayer mediaPlayer = MediaPlayer.create(TebakPerkakasIndonesia.this, R.raw.click_sound_effect);
+                        MediaPlayer mediaPlayer = MediaPlayer.create(TebakWarnaIndonesia.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
 
-                        Intent intent = new Intent(TebakPerkakasIndonesia.this, DashboardBelajarPerkakas.class);
+                        Intent intent = new Intent(TebakWarnaIndonesia.this, DashboardBelajarWarna.class);
                         startActivity(intent);
                     }
 
@@ -181,10 +161,12 @@ public class TebakPerkakasIndonesia extends AppCompatActivity {
         });
 
         generateSoal();
+
+
     }
 
     public void Jawaban(View view) {
-        final Dialog dialog = new Dialog(TebakPerkakasIndonesia.this);
+        final Dialog dialog = new Dialog(TebakWarnaIndonesia.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
@@ -192,14 +174,14 @@ public class TebakPerkakasIndonesia extends AppCompatActivity {
         dialog.setCancelable(false);
 
         Log.e("TAGG", view.getTag().toString());
-        Animation animation = AnimationUtils.loadAnimation(TebakPerkakasIndonesia.this, R.anim.splash);
+        Animation animation = AnimationUtils.loadAnimation(TebakWarnaIndonesia.this, R.anim.splash);
 
         view.startAnimation(animation);
         animation.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
-                MediaPlayer mediaPlayer = MediaPlayer.create(TebakPerkakasIndonesia.this, R.raw.click_sound_effect);
+                MediaPlayer mediaPlayer = MediaPlayer.create(TebakWarnaIndonesia.this, R.raw.click_sound_effect);
                 mediaPlayer.start();
             }
 
@@ -224,7 +206,7 @@ public class TebakPerkakasIndonesia extends AppCompatActivity {
                             scoreAll = scoreAll + 10;
 
                             if (nomorSoal == 10) {
-                                Dialog result = new Dialog(TebakPerkakasIndonesia.this);
+                                Dialog result = new Dialog(TebakWarnaIndonesia.this);
                                 result.requestWindowFeature(Window.FEATURE_NO_TITLE);
                                 result.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                                 result.setContentView(R.layout.dialog_niali_akhir);
@@ -242,10 +224,10 @@ public class TebakPerkakasIndonesia extends AppCompatActivity {
                                         animation.setAnimationListener(new Animation.AnimationListener() {
                                             @Override
                                             public void onAnimationStart(Animation animation) {
-                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakPerkakasIndonesia.this, R.raw.click_sound_effect);
+                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakWarnaIndonesia.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
 
-                                                Intent intent = new Intent(TebakPerkakasIndonesia.this, DashboardBelajarPerkakas.class);
+                                                Intent intent = new Intent(TebakWarnaIndonesia.this, DashboardBelajarWarna.class);
                                                 startActivity(intent);
                                             }
 
@@ -273,7 +255,7 @@ public class TebakPerkakasIndonesia extends AppCompatActivity {
                                         animation.setAnimationListener(new Animation.AnimationListener() {
                                             @Override
                                             public void onAnimationStart(Animation animation) {
-                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakPerkakasIndonesia.this, R.raw.click_sound_effect);
+                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakWarnaIndonesia.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
 
                                                 generateSoal();
@@ -323,7 +305,7 @@ public class TebakPerkakasIndonesia extends AppCompatActivity {
                             generateSoal();
 
                             if (nomorSoal == 10) {
-                                Dialog result = new Dialog(TebakPerkakasIndonesia.this);
+                                Dialog result = new Dialog(TebakWarnaIndonesia.this);
                                 result.requestWindowFeature(Window.FEATURE_NO_TITLE);
                                 result.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                                 result.setContentView(R.layout.dialog_niali_akhir);
@@ -341,10 +323,10 @@ public class TebakPerkakasIndonesia extends AppCompatActivity {
                                         animation.setAnimationListener(new Animation.AnimationListener() {
                                             @Override
                                             public void onAnimationStart(Animation animation) {
-                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakPerkakasIndonesia.this, R.raw.click_sound_effect);
+                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakWarnaIndonesia.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
 
-                                                Intent intent = new Intent(TebakPerkakasIndonesia.this, DashboardBelajarTransportasi.class);
+                                                Intent intent = new Intent(TebakWarnaIndonesia.this, DashboardBelajarTransportasi.class);
                                                 startActivity(intent);
                                             }
 
@@ -372,7 +354,7 @@ public class TebakPerkakasIndonesia extends AppCompatActivity {
                                         animation.setAnimationListener(new Animation.AnimationListener() {
                                             @Override
                                             public void onAnimationStart(Animation animation) {
-                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakPerkakasIndonesia.this, R.raw.click_sound_effect);
+                                                MediaPlayer mediaPlayer = MediaPlayer.create(TebakWarnaIndonesia.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
 
                                                 generateSoal();

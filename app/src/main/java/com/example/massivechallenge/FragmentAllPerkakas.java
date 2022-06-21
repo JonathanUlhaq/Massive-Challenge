@@ -77,6 +77,12 @@ public class FragmentAllPerkakas extends Fragment {
         Animation backAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.splash);
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
 
+        ImageView cancel = getActivity().findViewById(R.id.auto2);
+        ImageView auto = getActivity().findViewById(R.id.auto);
+
+        auto.setVisibility(View.GONE);
+        cancel.setVisibility(View.GONE);
+
         bahasa_inggris.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,7 +102,7 @@ public class FragmentAllPerkakas extends Fragment {
                         bahasa_indonesia.setImageResource(R.drawable.button_indonesia_inactive);
                         bahasa_inggris.setImageResource(R.drawable.button_inggris_active);
 
-                        button_all.setBackgroundResource(R.drawable.button_all);
+                        button_all.setImageResource(R.drawable.button_all);
 
 
 

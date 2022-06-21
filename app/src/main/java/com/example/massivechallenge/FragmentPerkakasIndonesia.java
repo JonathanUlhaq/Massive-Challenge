@@ -71,7 +71,7 @@ public class FragmentPerkakasIndonesia extends Fragment {
     AdapterAlatIndonesia adapterAlatIndonesia;
     ViewPager viewPager;
     int posiss;
-    Timer timer,timers;
+    Timer timer;
     Handler handler;
     boolean b = false,c = false;
 
@@ -115,6 +115,9 @@ public class FragmentPerkakasIndonesia extends Fragment {
         viewPager = view.findViewById(R.id.view_puager);
         viewPager.setAdapter(adapterAlatIndonesia);
 
+        ImageView auto = getActivity().findViewById(R.id.auto);
+        auto.setVisibility(View.VISIBLE);
+
         // MENDAPATKAN POSISI DARI VIEWPAGER
         Bundle bundle = getArguments();
 
@@ -128,12 +131,24 @@ public class FragmentPerkakasIndonesia extends Fragment {
             MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
 
             mediaPlayers.start();
+            mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    mediaPlayer.reset();
+                }
+            });
         }
 
         if(bundle == null)
         {
             MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
             mediaPlayers.start();
+            mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    mediaPlayer.reset();
+                }
+            });
         }
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
@@ -146,7 +161,6 @@ public class FragmentPerkakasIndonesia extends Fragment {
                 timer = new Timer();
                 handler = new Handler();
 
-                ImageView auto = getActivity().findViewById(R.id.auto);
                 ImageView cancel = getActivity().findViewById(R.id.auto2);
 
 
@@ -154,48 +168,90 @@ public class FragmentPerkakasIndonesia extends Fragment {
                     @Override
                     public void onClick(View view) {
 
+                        MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
 
-                        MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
-                        Log.e("POSISIS",Integer.toString(position));
-                        mediaPlayers.start();
-                            Log.e("BEOL2",Boolean.toString(b));
-                            timer.schedule(new TimerTask() {
-                                @Override
-                                public void run() {
 
-                                    handler.post(new Runnable() {
-                                        @Override
-                                        public void run() {
+                            }
+                        });
 
-                                            if (bundle != null)
-                                            {
+                        auto.startAnimation(animation);
+
+                        animation.setAnimationListener(new Animation.AnimationListener() {
+                            @Override
+                            public void onAnimationStart(Animation animation) {
+                                MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
+                                mediaPlayer.start();
+                                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                    @Override
+                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                        mediaPlayer.reset();
+
+
+                                    }
+                                });
+
+                                MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                                Log.e("POSISIS",Integer.toString(position));
+                                mediaPlayers.start();
+                                Log.e("BEOL2",Boolean.toString(b));
+                                timer.schedule(new TimerTask() {
+                                    @Override
+                                    public void run() {
+
+                                        handler.post(new Runnable() {
+                                            @Override
+                                            public void run() {
+
+                                                if (bundle != null)
+                                                {
 //                                                int datas = bundle.getInt("posisi2");
 
 
-                                                viewPager.setCurrentItem(posiss);
-                                                posiss++;
+                                                    viewPager.setCurrentItem(posiss);
+                                                    posiss++;
 
-                                            } if (viewPager.getCurrentItem() == suara.length -1)
-                                            {
-                                                int i = viewPager.getCurrentItem();
-                                                viewPager.setCurrentItem(i);
-                                            } else {
-                                                int i = viewPager.getCurrentItem();
-                                                i++;
-                                                viewPager.setCurrentItem(i);
+                                                } if (viewPager.getCurrentItem() == suara.length -1)
+                                                {
+                                                    int i = viewPager.getCurrentItem();
+                                                    viewPager.setCurrentItem(i);
+                                                } else {
+                                                    int i = viewPager.getCurrentItem();
+                                                    i++;
+                                                    viewPager.setCurrentItem(i);
+                                                }
+
                                             }
-
-                                        }
-                                    });
+                                        });
 
 
-                                }
+                                    }
 
 
-                            } ,4000,4000);
+                                } ,4000,4000);
 
-                            auto.setVisibility(View.GONE);
-                            cancel.setVisibility(View.VISIBLE);
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+
+                                auto.setVisibility(View.GONE);
+                                cancel.setVisibility(View.VISIBLE);
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animation animation) {
+
+                            }
+                        });
+
+
 
                     }
 
@@ -206,14 +262,47 @@ public class FragmentPerkakasIndonesia extends Fragment {
                 cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        FragmentPerkakasIndonesia indonesia = new FragmentPerkakasIndonesia();
-                        Bundle bundle = new Bundle();
-                        bundle.putInt("posisi2",posiss);
-                        indonesia.setArguments(bundle);
-                        getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,indonesia).commit();
 
-                        auto.setVisibility(View.VISIBLE);
-                        cancel.setVisibility(View.GONE);
+                        cancel.startAnimation(animation);
+
+                        animation.setAnimationListener(new Animation.AnimationListener() {
+                            @Override
+                            public void onAnimationStart(Animation animation) {
+
+                                MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
+                                mediaPlayer.start();
+                                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                    @Override
+                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                        mediaPlayer.reset();
+
+
+                                    }
+                                });
+
+                                FragmentPerkakasIndonesia indonesia = new FragmentPerkakasIndonesia();
+                                Bundle bundle = new Bundle();
+                                bundle.putInt("posisi2",posiss);
+                                indonesia.setArguments(bundle);
+                                getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,indonesia).commit();
+
+                                auto.setVisibility(View.VISIBLE);
+                                cancel.setVisibility(View.GONE);
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animation animation) {
+
+                            }
+                        });
+
+
                     }
                 });
 
@@ -228,6 +317,12 @@ public class FragmentPerkakasIndonesia extends Fragment {
                    MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
                    Log.e("POSISIS",Integer.toString(position));
                    mediaPlayers.start();
+                   mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                       @Override
+                       public void onCompletion(MediaPlayer mediaPlayer) {
+                           mediaPlayer.reset();
+                       }
+                   });
                }
 
 

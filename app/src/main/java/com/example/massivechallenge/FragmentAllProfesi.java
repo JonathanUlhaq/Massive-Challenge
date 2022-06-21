@@ -72,6 +72,12 @@ public class FragmentAllProfesi extends Fragment {
         Animation backAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.splash);
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
 
+        ImageView cancel = getActivity().findViewById(R.id.auto2);
+        ImageView auto = getActivity().findViewById(R.id.auto);
+
+        auto.setVisibility(View.GONE);
+        cancel.setVisibility(View.GONE);
+
 
         bahasa_inggris.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,12 +102,12 @@ public class FragmentAllProfesi extends Fragment {
 
 
 
-                        FragmentTransportasiEng fragmentTransportasiEng = new FragmentTransportasiEng();
+                        FragmentProfesioInggris fragmentProfesioInggris = new FragmentProfesioInggris();
 
 
                         if(getActivity() != null)
                         {
-                            getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentTransportasiEng).commit();
+                            getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentProfesioInggris).commit();
 
                         }
 
@@ -150,11 +156,11 @@ public class FragmentAllProfesi extends Fragment {
                         button_all.setImageResource(R.drawable.button_all);
 
 
-                        FragmentTransportasIndonesia fragmentTransportasIndonesia = new FragmentTransportasIndonesia();
+                        FragmentProfesiIndonesia fragmentProfesiIndonesia = new FragmentProfesiIndonesia();
 
                         if(getActivity() != null)
                         {
-                            getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentTransportasIndonesia).commit();
+                            getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,fragmentProfesiIndonesia).commit();
 
                         }
 

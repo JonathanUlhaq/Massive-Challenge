@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -68,6 +71,8 @@ public class FragmentAngkaEng extends Fragment {
     AdapterAngkaInggris adapterAngkaInggris;
     ViewPager viewPager;
     int posiss;
+    Timer timer;
+    Handler handler;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -80,6 +85,8 @@ public class FragmentAngkaEng extends Fragment {
         Animation shadowAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.unlimited_bouncing_shadow);
         Animation dissapear = AnimationUtils.loadAnimation(getContext(), R.anim.dissapear);
 
+        ImageView auto = getActivity().findViewById(R.id.auto);
+        auto.setVisibility(View.VISIBLE);
 
         ArrayList<Integer> background = new ArrayList<Integer>();
 
@@ -104,6 +111,12 @@ public class FragmentAngkaEng extends Fragment {
             viewPager.setCurrentItem(data);
         }
 
+        //        if(bundle == null)
+//        {
+//            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
+//            mediaPlayers.start();
+//        }
+
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -111,6 +124,146 @@ public class FragmentAngkaEng extends Fragment {
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
                 posiss = position;
+                timer = new Timer();
+                handler = new Handler();
+
+                ImageView cancel = getActivity().findViewById(R.id.auto2);
+
+                auto.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+
+
+                            }
+                        });
+
+
+                        auto.startAnimation(animation);
+
+                        //MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                        Log.e("POSISIS",Integer.toString(position));
+                        // mediaPlayers.start();
+
+                        animation.setAnimationListener(new Animation.AnimationListener() {
+                            @Override
+                            public void onAnimationStart(Animation animation) {
+
+                                timer.schedule(new TimerTask() {
+                                    @Override
+                                    public void run() {
+
+                                        handler.post(new Runnable() {
+                                            @Override
+                                            public void run() {
+
+                                                if (bundle != null)
+                                                {
+//                                                int datas = bundle.getInt("posisi2");
+
+
+                                                    viewPager.setCurrentItem(posiss);
+                                                    posiss++;
+
+                                                }
+//                                        if (viewPager.getCurrentItem() == suara.length -1)
+//                                        {
+//                                            int i = viewPager.getCurrentItem();
+//                                            viewPager.setCurrentItem(i);
+//                                        }
+                                                else {
+                                                    int i = viewPager.getCurrentItem();
+                                                    i++;
+                                                    viewPager.setCurrentItem(i);
+                                                }
+
+                                            }
+                                        });
+
+
+                                    }
+
+
+                                } ,3000,3000);
+
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+
+                                auto.setVisibility(View.GONE);
+                                cancel.setVisibility(View.VISIBLE);
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animation animation) {
+
+                            }
+                        });
+
+                    }
+
+
+
+                });
+
+                cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        cancel.startAnimation(animation);
+
+                        animation.setAnimationListener(new Animation.AnimationListener() {
+                            @Override
+                            public void onAnimationStart(Animation animation) {
+
+                                MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
+                                mediaPlayer.start();
+                                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                    @Override
+                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                        mediaPlayer.reset();
+
+
+                                    }
+                                });
+
+                                FragmentAngkaEng inggris = new FragmentAngkaEng();
+                                Bundle bundle = new Bundle();
+                                bundle.putInt("posisi",posiss);
+                                inggris.setArguments(bundle);
+                                getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,inggris).commit();
+
+                                auto.setVisibility(View.VISIBLE);
+                                cancel.setVisibility(View.GONE);
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animation animation) {
+
+                            }
+                        });
+
+
+                    }
+                });
+
+                frameLayout.setBackgroundResource(background.get(position));
+
 
             }
 
@@ -118,8 +271,23 @@ public class FragmentAngkaEng extends Fragment {
             public void onPageSelected(int position) {
 
 
-          frameLayout.setBackgroundResource(background.get(position));
                 Log.e("LOOG",Integer.toString(position) );
+
+//                Jika ada suara
+
+//                if(getContext() != null)
+//                {
+//                    MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+//                    Log.e("POSISIS",Integer.toString(position));
+//                    mediaPlayers.start();
+//                    mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+//                        @Override
+//                        public void onCompletion(MediaPlayer mediaPlayer) {
+//                            mediaPlayer.reset();
+//                        }
+//                    });
+//                }
+
 //                adapterAbjadInggris.instantiateItem(container,position);
 
 

@@ -52,6 +52,13 @@
                 android:src="@drawable/button_auto"
                 android:id="@+id/auto"/>
 
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="47dp"
+                android:src="@drawable/button_pause"
+                android:visibility="gone"
+                android:id="@+id/auto2"/>
+
         </LinearLayout>
 
 

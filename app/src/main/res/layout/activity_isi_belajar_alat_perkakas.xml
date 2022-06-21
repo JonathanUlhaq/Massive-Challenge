@@ -41,30 +41,29 @@
                     android:id="@+id/bahasa_indonesia"/>
 
                 <ImageView
-                    android:layout_width="171dp"
+                    android:id="@+id/bahasa_inggris"
+                    android:layout_width="166dp"
                     android:layout_height="47dp"
-                    android:src="@drawable/button_inggris_inactive"
-                    android:id="@+id/bahasa_inggris"/>
+                    android:src="@drawable/button_inggris_inactive" />
             </LinearLayout>
 
 
             <ImageView
-                android:id="@+id/all"
                 android:layout_width="44dp"
-                android:layout_height="33dp"
+                android:layout_height="47dp"
                 android:layout_marginRight="10dp"
-                android:src="@drawable/button_all" />
-
-            <ImageView
-                android:layout_width="44dp"
-                android:layout_height="47dp"
-                android:src="@drawable/button_auto"
-
-                android:id="@+id/auto"/>
-            <ImageView
-                android:layout_width="44dp"
-                android:layout_height="47dp"
                 android:src="@drawable/button_all"
+                android:id="@+id/all"/>
+
+            <ImageView
+                android:id="@+id/auto"
+                android:layout_width="44dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/button_auto" />
+            <ImageView
+                android:layout_width="44dp"
+                android:layout_height="47dp"
+                android:src="@drawable/button_pause"
                 android:visibility="gone"
                 android:id="@+id/auto2"/>
 

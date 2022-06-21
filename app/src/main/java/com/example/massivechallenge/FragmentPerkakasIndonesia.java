@@ -154,7 +154,7 @@ public class FragmentPerkakasIndonesia extends Fragment {
                     @Override
                     public void onClick(View view) {
 
-                     
+
                         MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
                         Log.e("POSISIS",Integer.toString(position));
                         mediaPlayers.start();

@@ -26,7 +26,7 @@ public class AdapterAbjadIndonesia extends PagerAdapter {
             R.drawable.abjad_5, R.drawable.abjad_6,
             R.drawable.abjad_7, R.drawable.abjad_8,
             R.drawable.abjad_9, R.drawable.abjad_10,
-            R.drawable.abjad_11, R.drawable.abjad_12,
+            R.drawable.abjad_kuda, R.drawable.abjad_12,
             R.drawable.abjad_13, R.drawable.abjad_14,
             R.drawable.abjad_15, R.drawable.abjad_16,
             R.drawable.abjad_17, R.drawable.abjad_18,

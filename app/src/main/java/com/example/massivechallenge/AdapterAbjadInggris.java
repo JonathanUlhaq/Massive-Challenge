@@ -40,7 +40,7 @@ public class AdapterAbjadInggris extends PagerAdapter {
             R.drawable.abjad_ii, R.drawable.abjad_fi,
             R.drawable.abjad_gi, R.drawable.abjad_hi,
             R.drawable.abjad_ai, R.drawable.abjad_ji,
-            R.drawable.abjad_ki, R.drawable.abjad_li,
+            R.drawable.abjad_11, R.drawable.abjad_li,
             R.drawable.abjad_mi, R.drawable.abjad_ni,
             R.drawable.abjad_oi, R.drawable.abjad_pi,
             R.drawable.abjad_qi, R.drawable.abjad_ri,

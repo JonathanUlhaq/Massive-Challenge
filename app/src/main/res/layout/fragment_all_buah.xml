@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:id="@+id/frame_layout"
+    tools:context=".FragmentAllBuah">
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!--            Layer 1-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <!--              -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/alpukat"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_alpukat"/>
+
+                </FrameLayout>
+
+
+                <!--               -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/anggur"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_anggur"/>
+
+                </FrameLayout>
+
+                <!--                -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/stroberi"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_stroberi"/>
+
+                </FrameLayout>
+
+                <!--                -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/belimbing"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_belimbing"/>
+
+                </FrameLayout>
+
+                <!--               m-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/buah_naga"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_buah_naga"/>
+
+                </FrameLayout>
+
+
+
+
+
+            </LinearLayout>
+
+            <!--            End Layer 1-->
+
+
+            <!--            Layer 2-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <!--              -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/ceri"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_ceri"/>
+
+                </FrameLayout>
+
+
+                <!--                -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/delima"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_delima"/>
+
+                </FrameLayout>
+
+                <!--               -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/durian"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_durian"/>
+
+                </FrameLayout>
+
+                <!--               -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/jambu"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_jambu"/>
+
+                </FrameLayout>
+
+                <!--                -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/jeruk_nipis"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_jeruk_nipis"/>
+
+                </FrameLayout>
+
+
+
+
+
+            </LinearLayout>
+
+            <!--            End Layer 2-->
+
+
+            <!--            Layer 3-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <!--               -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/jeruk"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_jeruk"/>
+
+                </FrameLayout>
+
+
+                <!--              -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/kelapa"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_kelapa"/>
+
+                </FrameLayout>
+
+                <!--               -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/kiwi"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_kiwi"/>
+
+                </FrameLayout>
+
+                <!--               -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/lemon"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_lemon"/>
+
+                </FrameLayout>
+
+                <!--             -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/mangga"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_mangga"/>
+
+                </FrameLayout>
+
+
+
+
+
+            </LinearLayout>
+
+            <!--            End Layer 3-->
+
+
+            <!--            Layer 4-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <!--               -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/nanas"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_nanas"/>
+
+                </FrameLayout>
+
+
+                <!--             -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/pepaya"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_pepaya"/>
+
+                </FrameLayout>
+
+                <!--              -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/pisang"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_pisang"/>
+
+                </FrameLayout>
+
+                <!--               -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/rambutan"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_rambutan"/>
+
+                </FrameLayout>
+
+                <!--               -->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/semangka"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/gambar_buah_semangka"/>
+
+                </FrameLayout>
+
+
+
+
+
+            </LinearLayout>
+
+            <!--            End Layer 4-->
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

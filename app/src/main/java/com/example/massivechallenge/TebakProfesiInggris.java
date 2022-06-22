@@ -243,7 +243,7 @@ public class TebakProfesiInggris extends AppCompatActivity {
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakProfesiInggris.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
 
-                                                Intent intent = new Intent(TebakProfesiInggris.this, DashboardBelajarProfesi.class);
+                                                Intent intent = new Intent(TebakProfesiInggris.this, DasboardBelajarAngka.class);
                                                 startActivity(intent);
                                             }
 

@@ -19,15 +19,45 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name=".TebakProfesiInggris"
+            android:name=".TebakBentukEng"
             android:exported="false"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity"/>
         <activity
-            android:name=".TebakProfesiIndonesia"
+            android:name=".TebakBentukIndo"
             android:exported="false"
             android:screenOrientation="landscape"
             tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name=".TebakBuahEng"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name=".TebakBuahIndo"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name=".IsiBelajarBentuk"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name=".IsiBelajarBuah"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity"/>
+        <activity
+            android:name=".TebakProfesiInggris"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".TebakProfesiIndonesia"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".TebakPerkakasInggris"
             android:exported="false"

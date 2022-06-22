@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Massive Challenge</string>
+    <string name="app_name">E-Kids</string>
     <string name="mewarnai">Mewarnai</string>
     <string name="belajar">Belajar</string>
     <string name="musik">Musik</string>
@@ -263,6 +263,18 @@
     <string name="earth">Earth</string>
     <string name="saturn">Saturn</string>
     <string name="neptune">Neptune</string>
+
+
+    <!-- TODO: Asset Planet Indonesia -->
+
+    <string name="dos">Do</string>
+    <string name="re">Re</string>
+    <string name="mi">Mi</string>
+    <string name="fa">Fa</string>
+    <string name="sol">Sol</string>
+    <string name="la">La</string>
+    <string name="si">La</string>
+    <string name="do_octv">Do</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

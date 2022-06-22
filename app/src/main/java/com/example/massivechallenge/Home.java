@@ -111,6 +111,9 @@ public class Home extends AppCompatActivity {
                 musik.startAnimation(animation);
                 MediaPlayer mediaPlayer = MediaPlayer.create(Home.this,R.raw.click_sound_effect);
                 mediaPlayer.start();
+
+                Intent intent = new Intent(Home.this,BermainMusik.class);
+                startActivity(intent);
             }
         });
 

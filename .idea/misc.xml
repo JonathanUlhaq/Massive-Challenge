@@ -76,11 +76,52 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/ic_logo_home.xml" value="0.1265" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_balon.xml" value="0.187" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_helikopter.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_anjing.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_ayam.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_bebek.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_cheetah.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_elang.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_kanguru.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_katak.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_kelelawar.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_kelinci.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_kucing.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_landak.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_monyer.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_neruamg.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_panda.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_rusa.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_sapi.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_singa.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_siput.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_unta.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_hewan_zebra.xml" value="0.179" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_kapal.xml" value="0.187" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_motor.xml" value="0.187" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_polisi.xml" value="0.187" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_brokoli.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_bunga_kol.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_cabe.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_daun_bawang.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_jagung.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_jamur.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_kacang_panjang.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_kangkung.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_kedelai.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_kentang.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_kubis.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_labu.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_lobak.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_paprika.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_polong.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_selada.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_terong.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_timun.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_tomat.xml" value="0.179" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/layer_sayur_wortel.xml" value="0.179" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/logo_home.xml" value="0.1265" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/drawable/rounded_button.xml" value="0.124" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_bermain_musik.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_coba_landscape.xml" value="0.136" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_dasboard_belajar_angka.xml" value="0.115625" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/MassiveChallenge/app/src/main/res/layout/activity_dasboard_belajar_buah.xml" value="0.115625" />

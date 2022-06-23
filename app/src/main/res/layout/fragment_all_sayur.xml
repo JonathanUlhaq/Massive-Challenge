@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:id="@+id/frame_layout"
+    tools:context=".FragmentAllHewan">
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!--            Layer 1-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <!--                Gambar Mobil-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/mobil"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_brokoli"/>
+
+                </FrameLayout>
+
+
+                <!--                Gambar Truck-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/truck"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_bunga_kol"/>
+
+                </FrameLayout>
+
+                <!--                Gambar Ambulan-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/ambulan"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_cabe"/>
+
+                </FrameLayout>
+
+                <!--                Gambar perahu-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/perahu"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_daun_bawang"/>
+
+                </FrameLayout>
+
+                <!--                Gambar pemadam-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/pemadam"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_jagung"/>
+
+                </FrameLayout>
+
+
+
+
+
+            </LinearLayout>
+
+            <!--            End Layer 1-->
+
+
+            <!--            Layer 2-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <!--                Gambar kereta-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/kereta"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_jamur"/>
+
+                </FrameLayout>
+
+
+                <!--                Gambar polisi-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/polisi"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_kacang_panjang"/>
+
+                </FrameLayout>
+
+                <!--                Gambar pesawat-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/pesawat"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_kacang_polong"/>
+
+                </FrameLayout>
+
+                <!--                Gambar sepeda motor-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/sepeda_motor"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_kangkung"/>
+
+                </FrameLayout>
+
+                <!--                Gambar kapal-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/kapal"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_kedelai"/>
+
+                </FrameLayout>
+
+
+
+
+
+            </LinearLayout>
+
+            <!--            End Layer 2-->
+
+
+            <!--            Layer 3-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <!--                Gambar bajaj-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/bajaj"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_kentang"/>
+
+                </FrameLayout>
+
+
+                <!--                Gambar balon-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/balon"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_kubis"/>
+
+                </FrameLayout>
+
+                <!--                Gambar bus-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/bus"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_labu"/>
+
+                </FrameLayout>
+
+                <!--                Gambar kapal cepat-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/kapal_cepat"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_lobak"/>
+
+                </FrameLayout>
+
+                <!--                Gambar kontainer-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/kontainer"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_paprika"/>
+
+                </FrameLayout>
+
+
+
+
+
+            </LinearLayout>
+
+            <!--            End Layer 3-->
+
+
+            <!--            Layer 4-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <!--                Gambar mobil sport-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/mobil_sport"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_selada"/>
+
+                </FrameLayout>
+
+
+                <!--                Gambar sepeda-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/sepeda"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_terong"/>
+
+                </FrameLayout>
+
+                <!--                Gambar vespa-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/vespa"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_timun"/>
+
+                </FrameLayout>
+
+                <!--                Gambar bus sekolah-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/bus_sekolah"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_tomat"/>
+
+                </FrameLayout>
+
+                <!--                Gambar helikopter-->
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="17dp"
+                    android:id="@+id/helikopter"
+                    android:background="@drawable/bg_alat_all">
+
+                    <ImageView
+                        android:layout_width="83dp"
+                        android:layout_height="93dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/sayur_wortel"/>
+
+                </FrameLayout>
+
+
+
+
+
+            </LinearLayout>
+
+            <!--            End Layer 4-->
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

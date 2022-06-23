@@ -348,4 +348,93 @@
     <string name="Brown">Brown</string>
 
 
+    <!-- TODO: Asset Hewan Indonesia -->
+    <string name="Anjing">Anjing</string>
+    <string name="Ayam">Ayam</string>
+    <string name="Bebek">Bebek</string>
+    <string name="Beruang">Beruang</string>
+    <string name="Citah">Citah</string>
+    <string name="Elang">Elang</string>
+    <string name="Kangguru">Kangguru</string>
+    <string name="Katak">Katak</string>
+    <string name="Kelelawar">Kelelawar</string>
+    <string name="Kelinci">Kelinci</string>
+    <string name="Kucing">Kucing</string>
+    <string name="Landak">Landak</string>
+    <string name="Monyet">Monyet</string>
+    <string name="Panda">Panda</string>
+    <string name="Rusa">Rusa</string>
+    <string name="Sapi">Sapi</string>
+    <string name="Singa">Singa</string>
+    <string name="Siput">Siput</string>
+    <string name="Unta">Unta</string>
+    <string name="Zebra">Zebra</string>
+
+    <!-- TODO: Asset Hewan Inggris -->
+    <string name="Dog">Dog</string>
+    <string name="Chicken">Chicken</string>
+    <string name="Duck">Duck</string>
+    <string name="Bear">Bear</string>
+    <string name="Cheetah">Cheetah</string>
+    <string name="Eagle">Eagle</string>
+    <string name="Kangaroo">Kangaroo</string>
+    <string name="Frog">Frog</string>
+    <string name="Bat">Bat</string>
+    <string name="Rabbit">Rabbit</string>
+    <string name="Cat">Cat</string>
+    <string name="Hedgehog">Hedgehog</string>
+    <string name="Monkey">Monkey</string>
+    <string name="Deer">Deer</string>
+    <string name="Cow">Cow</string>
+    <string name="Lion">Lion</string>
+    <string name="Snail">Snail</string>
+    <string name="Camel">Camel</string>
+
+    <!-- TODO: Asset Sayur Indo -->
+    <string name="Sayur_1">Brokoli</string>
+    <string name="Sayur_2">Bunga Kol</string>
+    <string name="Sayur_3">Cabe</string>
+    <string name="Sayur_4">Daun Bawang</string>
+    <string name="Sayur_5">Jagung</string>
+    <string name="Sayur_6">Jamur</string>
+    <string name="Sayur_7">Kacang Panjang</string>
+    <string name="Sayur_8">Kacang Polong</string>
+    <string name="Sayur_9">Kangkung</string>
+    <string name="Sayur_10">Kedelai</string>
+    <string name="Sayur_11">Kentang</string>
+    <string name="Sayur_12">Kubis</string>
+    <string name="Sayur_13">Labu</string>
+    <string name="Sayur_14">Lobak</string>
+    <string name="Sayur_15">Paprika</string>
+    <string name="Sayur_16">Selada</string>
+    <string name="Sayur_17">Terong</string>
+    <string name="Sayur_18">Timun</string>
+    <string name="Sayur_19">Tomat</string>
+    <string name="Sayur_20">Wortel</string>
+
+
+    <!-- TODO: Asset Sayur Eng -->
+    <string name="Sayur_Eng1">Broccoli</string>
+    <string name="Sayur_Eng2">Couliflower</string>
+    <string name="Sayur_Eng3">Chili</string>
+    <string name="Sayur_Eng4">Leek</string>
+    <string name="Sayur_Eng5">Corn</string>
+    <string name="Sayur_Eng6">Mushroom</string>
+    <string name="Sayur_Eng7">Long Bean</string>
+    <string name="Sayur_Eng8">Pea</string>
+    <string name="Sayur_Eng9">Water Spinach</string>
+    <string name="Sayur_Eng10">Soybean</string>
+    <string name="Sayur_Eng11">Potato</string>
+    <string name="Sayur_Eng12">Cabbage</string>
+    <string name="Sayur_Eng13">Pumpkin</string>
+    <string name="Sayur_Eng14">Radis</string>
+    <string name="Sayur_Eng15">Peppers</string>
+    <string name="Sayur_Eng16">Lettuce</string>
+    <string name="Sayur_Eng17">Eggplant</string>
+    <string name="Sayur_Eng18">Cucumber</string>
+    <string name="Sayur_Eng19">Tomato</string>
+    <string name="Sayur_Eng20">Carrot</string>
+
+
+
 </resources>

@@ -58,7 +58,12 @@ public class IsiBelajarBentuk extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(IsiBelajarBentuk.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
-
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         bahasa_inggris.setImageResource(R.drawable.button_inggris_inactive);
                         bahasa_indonesia.setImageResource(R.drawable.button_indonesia_inactive);
                         button_all.setImageResource(R.drawable.button_all_pencet);
@@ -93,7 +98,12 @@ public class IsiBelajarBentuk extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(IsiBelajarBentuk.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
-
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(IsiBelajarBentuk.this,DashboardBelajarBentuk.class);
                         startActivity(intent);
                     }

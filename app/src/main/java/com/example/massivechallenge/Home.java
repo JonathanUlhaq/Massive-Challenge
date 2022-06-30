@@ -54,7 +54,12 @@ public class Home extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(Home.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
-
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                     }
 
                     @Override
@@ -84,6 +89,12 @@ public class Home extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(Home.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(Home.this,DashboardMewarnai.class);
                         startActivity(intent);
                     }
@@ -111,7 +122,12 @@ public class Home extends AppCompatActivity {
                 musik.startAnimation(animation);
                 MediaPlayer mediaPlayer = MediaPlayer.create(Home.this,R.raw.click_sound_effect);
                 mediaPlayer.start();
-
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        mediaPlayer.reset();
+                    }
+                });
                 Intent intent = new Intent(Home.this,BermainMusik.class);
                 startActivity(intent);
             }

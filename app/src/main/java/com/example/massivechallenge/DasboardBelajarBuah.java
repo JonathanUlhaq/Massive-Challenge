@@ -59,6 +59,12 @@ public class DasboardBelajarBuah extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(getApplicationContext(),IsiBelajarBuah.class);
                         startActivity(intent);
                     }
@@ -87,6 +93,12 @@ public class DasboardBelajarBuah extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DasboardBelajarBuah.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         showDialog();
                     }
 
@@ -115,6 +127,12 @@ public class DasboardBelajarBuah extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DasboardBelajarBuah.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(DasboardBelajarBuah.this,DashboardBelajar.class);
                         startActivity(intent);
                     }

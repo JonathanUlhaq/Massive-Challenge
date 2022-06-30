@@ -56,6 +56,12 @@ public class DasboardBelajarHuruf extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(getApplicationContext(),IsiBelajarHuruf.class);
                         startActivity(intent);
                     }
@@ -87,7 +93,12 @@ public class DasboardBelajarHuruf extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DasboardBelajarHuruf.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
-
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(DasboardBelajarHuruf.this,DashboardBelajar.class);
                         startActivity(intent);
                     }

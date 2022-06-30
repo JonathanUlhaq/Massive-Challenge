@@ -59,7 +59,12 @@ public class IsiBelajarProfesi extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(IsiBelajarProfesi.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
-
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         bahasa_inggris.setImageResource(R.drawable.button_inggris_inactive);
                         bahasa_indonesia.setImageResource(R.drawable.button_indonesia_inactive);
                         button_all.setImageResource(R.drawable.button_all_pencet);
@@ -94,7 +99,12 @@ public class IsiBelajarProfesi extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(IsiBelajarProfesi.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
-
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(IsiBelajarProfesi.this,DashboardBelajarProfesi.class);
                         startActivity(intent);
                     }

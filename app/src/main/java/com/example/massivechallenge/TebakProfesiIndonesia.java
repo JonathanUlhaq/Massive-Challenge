@@ -158,7 +158,12 @@ public class TebakProfesiIndonesia extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(TebakProfesiIndonesia.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
-
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(TebakProfesiIndonesia.this, DashboardBelajarProfesi.class);
                         startActivity(intent);
                     }
@@ -199,6 +204,13 @@ public class TebakProfesiIndonesia extends AppCompatActivity {
 
                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakProfesiIndonesia.this, R.raw.click_sound_effect);
                 mediaPlayer.start();
+
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        mediaPlayer.reset();
+                    }
+                });
             }
 
             @Override
@@ -242,7 +254,12 @@ public class TebakProfesiIndonesia extends AppCompatActivity {
                                             public void onAnimationStart(Animation animation) {
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakProfesiIndonesia.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
-
+                                                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                                    @Override
+                                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                                        mediaPlayer.reset();
+                                                    }
+                                                });
                                                 Intent intent = new Intent(TebakProfesiIndonesia.this, DasboardBelajarAngka.class);
                                                 startActivity(intent);
                                             }
@@ -273,7 +290,12 @@ public class TebakProfesiIndonesia extends AppCompatActivity {
                                             public void onAnimationStart(Animation animation) {
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakProfesiIndonesia.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
-
+                                                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                                    @Override
+                                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                                        mediaPlayer.reset();
+                                                    }
+                                                });
                                                 generateSoal();
                                                 scoreAll = 0;
                                                 nomorSoal = 0;
@@ -341,7 +363,12 @@ public class TebakProfesiIndonesia extends AppCompatActivity {
                                             public void onAnimationStart(Animation animation) {
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakProfesiIndonesia.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
-
+                                                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                                    @Override
+                                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                                        mediaPlayer.reset();
+                                                    }
+                                                });
                                                 Intent intent = new Intent(TebakProfesiIndonesia.this, DashboardBelajarProfesi.class);
                                                 startActivity(intent);
                                             }
@@ -372,7 +399,12 @@ public class TebakProfesiIndonesia extends AppCompatActivity {
                                             public void onAnimationStart(Animation animation) {
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakProfesiIndonesia.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
-
+                                                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                                    @Override
+                                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                                        mediaPlayer.reset();
+                                                    }
+                                                });
                                                 generateSoal();
                                                 scoreAll = 0;
                                                 nomorSoal = 0;

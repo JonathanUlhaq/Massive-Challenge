@@ -76,6 +76,12 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarWarna.class);
                         startActivity(intent);
                     }
@@ -109,6 +115,12 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarTataSurya.class);
                         startActivity(intent);
                     }
@@ -142,6 +154,12 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarProfesi.class);
                         startActivity(intent);
                     }
@@ -176,6 +194,12 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarTransportasi.class);
                         startActivity(intent);
                     }
@@ -209,6 +233,12 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarPerkakas.class);
                         startActivity(intent);
                     }
@@ -242,6 +272,12 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(DashboardBelajar.this,DashboardBelajarBentuk.class);
                         startActivity(intent);
                     }
@@ -275,6 +311,12 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(DashboardBelajar.this,Home.class);
                         startActivity(intent);
                     }
@@ -308,6 +350,12 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarAngka.class);
                         startActivity(intent);
                     }
@@ -338,6 +386,12 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarBuah.class);
                         startActivity(intent);
                     }
@@ -368,6 +422,12 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarHewan.class);
                         startActivity(intent);
                     }
@@ -398,7 +458,12 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
-
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarHuruf.class);
                         startActivity(intent);
                     }
@@ -429,7 +494,12 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
-
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(DashboardBelajar.this,DasboardBelajarMenulis.class);
                         startActivity(intent);
                     }
@@ -460,7 +530,12 @@ public class DashboardBelajar extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
-
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(DashboardBelajar.this, DasboardBelajarSayurs.class);
                         startActivity(intent);
                     }

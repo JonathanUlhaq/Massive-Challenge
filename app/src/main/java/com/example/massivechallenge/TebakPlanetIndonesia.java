@@ -137,7 +137,12 @@ public class TebakPlanetIndonesia extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(TebakPlanetIndonesia.this, R.raw.click_sound_effect);
                         mediaPlayer.start();
-
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(TebakPlanetIndonesia.this, DashboardBelajarTataSurya.class);
                         startActivity(intent);
                     }
@@ -179,6 +184,13 @@ public class TebakPlanetIndonesia extends AppCompatActivity {
 
                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakPlanetIndonesia.this, R.raw.click_sound_effect);
                 mediaPlayer.start();
+
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        mediaPlayer.reset();
+                    }
+                });
             }
 
             @Override
@@ -222,7 +234,12 @@ public class TebakPlanetIndonesia extends AppCompatActivity {
                                             public void onAnimationStart(Animation animation) {
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakPlanetIndonesia.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
-
+                                                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                                    @Override
+                                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                                        mediaPlayer.reset();
+                                                    }
+                                                });
                                                 Intent intent = new Intent(TebakPlanetIndonesia.this, DashboardBelajarTataSurya.class);
                                                 startActivity(intent);
                                             }
@@ -253,7 +270,12 @@ public class TebakPlanetIndonesia extends AppCompatActivity {
                                             public void onAnimationStart(Animation animation) {
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakPlanetIndonesia.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
-
+                                                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                                    @Override
+                                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                                        mediaPlayer.reset();
+                                                    }
+                                                });
                                                 generateSoal();
                                                 scoreAll = 0;
                                                 nomorSoal = 0;
@@ -321,7 +343,12 @@ public class TebakPlanetIndonesia extends AppCompatActivity {
                                             public void onAnimationStart(Animation animation) {
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakPlanetIndonesia.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
-
+                                                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                                    @Override
+                                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                                        mediaPlayer.reset();
+                                                    }
+                                                });
                                                 Intent intent = new Intent(TebakPlanetIndonesia.this, DashboardBelajarTataSurya.class);
                                                 startActivity(intent);
                                             }
@@ -352,7 +379,12 @@ public class TebakPlanetIndonesia extends AppCompatActivity {
                                             public void onAnimationStart(Animation animation) {
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakPlanetIndonesia.this, R.raw.click_sound_effect);
                                                 mediaPlayer.start();
-
+                                                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                                    @Override
+                                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                                        mediaPlayer.reset();
+                                                    }
+                                                });
                                                 generateSoal();
                                                 scoreAll = 0;
                                                 nomorSoal = 0;

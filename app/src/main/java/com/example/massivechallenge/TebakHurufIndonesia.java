@@ -132,6 +132,12 @@ public class TebakHurufIndonesia extends AppCompatActivity {
 
                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakHurufIndonesia.this,R.raw.click_sound_effect);
                 mediaPlayer.start();
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        mediaPlayer.reset();
+                    }
+                });
 
             }
 
@@ -180,7 +186,12 @@ public class TebakHurufIndonesia extends AppCompatActivity {
                                             public void onAnimationStart(Animation animation) {
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakHurufIndonesia.this,R.raw.click_sound_effect);
                                                 mediaPlayer.start();
-
+                                                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                                    @Override
+                                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                                        mediaPlayer.reset();
+                                                    }
+                                                });
                                                 Intent intent = new Intent(TebakHurufIndonesia.this,DasboardBelajarHuruf.class);
                                                 startActivity(intent);
                                             }
@@ -211,7 +222,12 @@ public class TebakHurufIndonesia extends AppCompatActivity {
                                             public void onAnimationStart(Animation animation) {
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakHurufIndonesia.this,R.raw.click_sound_effect);
                                                 mediaPlayer.start();
-
+                                                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                                    @Override
+                                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                                        mediaPlayer.reset();
+                                                    }
+                                                });
                                                 generateSoal();
                                                 scoreAll = 0;
                                                 nomorSoal = 0;
@@ -282,7 +298,12 @@ public class TebakHurufIndonesia extends AppCompatActivity {
                                             public void onAnimationStart(Animation animation) {
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakHurufIndonesia.this,R.raw.click_sound_effect);
                                                 mediaPlayer.start();
-
+                                                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                                    @Override
+                                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                                        mediaPlayer.reset();
+                                                    }
+                                                });
                                                 Intent intent = new Intent(TebakHurufIndonesia.this,DasboardBelajarHuruf.class);
                                                 startActivity(intent);
                                             }
@@ -313,7 +334,12 @@ public class TebakHurufIndonesia extends AppCompatActivity {
                                             public void onAnimationStart(Animation animation) {
                                                 MediaPlayer mediaPlayer = MediaPlayer.create(TebakHurufIndonesia.this,R.raw.click_sound_effect);
                                                 mediaPlayer.start();
-
+                                                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                                    @Override
+                                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                                        mediaPlayer.reset();
+                                                    }
+                                                });
                                                 generateSoal();
                                                 scoreAll = 0;
                                                 nomorSoal = 0;
@@ -408,7 +434,12 @@ public class TebakHurufIndonesia extends AppCompatActivity {
                     public void onAnimationStart(Animation animation) {
                         MediaPlayer mediaPlayer = MediaPlayer.create(TebakHurufIndonesia.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
-
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(TebakHurufIndonesia.this,DasboardBelajarHuruf.class);
                         startActivity(intent);
                     }

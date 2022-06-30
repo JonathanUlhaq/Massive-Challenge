@@ -22,7 +22,6 @@
             android:src="@drawable/ic_logo_homee"
             android:id="@+id/homes"/>
 
-
     </LinearLayout>
 
     <LinearLayout

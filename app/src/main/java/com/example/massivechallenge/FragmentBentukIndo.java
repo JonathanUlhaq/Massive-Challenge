@@ -73,6 +73,25 @@ public class FragmentBentukIndo extends Fragment {
     Timer timer;
     Handler handler;
 
+
+    int[] suara = {
+            R.raw.persegi,
+            R.raw.persegi_panjang,
+            R.raw.lingkaran,
+            R.raw.lonjong,
+            R.raw.segitiga,
+            R.raw.segi_lima,
+            R.raw.segi_enam,
+            R.raw.segi_delapan,
+            R.raw.jajar_genjang,
+            R.raw.trapesium,
+            R.raw.belah_ketupat,
+            R.raw.bintang,
+            R.raw.panah,
+            R.raw.bulan_bentuk,
+            R.raw.layang
+    };
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -102,13 +121,16 @@ public class FragmentBentukIndo extends Fragment {
         {
             int data = bundle.getInt("posisi2");
             viewPager.setCurrentItem(data);
+
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
+            mediaPlayers.start();
         }
 
-        //        if(bundle == null)
-//        {
-//            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
-//            mediaPlayers.start();
-//        }
+                if(bundle == null)
+        {
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
+            mediaPlayers.start();
+        }
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
 
@@ -141,9 +163,9 @@ public class FragmentBentukIndo extends Fragment {
 
                         auto.startAnimation(animation);
 
-                        //MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                        MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
                         Log.e("POSISIS",Integer.toString(position));
-                        // mediaPlayers.start();
+                         mediaPlayers.start();
 
                         animation.setAnimationListener(new Animation.AnimationListener() {
                             @Override
@@ -265,17 +287,17 @@ public class FragmentBentukIndo extends Fragment {
 
                 //                ON KETIKA ADA SUARA
 
-//                   if(getContext() != null)
-//               {
-//                   MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
-//                   Log.e("POSISIS",Integer.toString(position));
-//                   mediaPlayers.start();
-//               }
+                   if(getContext() != null)
+               {
+                   MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                   Log.e("POSISIS",Integer.toString(position));
+                   mediaPlayers.start();
+               }
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
 
 //                adapterAbjadIndonesia.instantiateItem(container,position);
-                if(position == 18)
+                if(position == 15)
                 {
                     next.startAnimation(dissapear);
                     dissapear.setAnimationListener(new Animation.AnimationListener() {

@@ -74,6 +74,19 @@ public class FragmentAngkaEng extends Fragment {
     Timer timer;
     Handler handler;
 
+    int[] suara = {
+            R.raw.one,
+            R.raw.two,
+            R.raw.theree,
+            R.raw.four,
+            R.raw.five,
+            R.raw.six,
+            R.raw.seven,
+            R.raw.eight,
+            R.raw.nine,
+            R.raw.ten
+    };
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -109,13 +122,15 @@ public class FragmentAngkaEng extends Fragment {
         {
             int data = bundle.getInt("posisi");
             viewPager.setCurrentItem(data);
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
+            mediaPlayers.start();
         }
 
-        //        if(bundle == null)
-//        {
-//            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
-//            mediaPlayers.start();
-//        }
+                if(bundle == null)
+        {
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
+            mediaPlayers.start();
+        }
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
 
@@ -147,9 +162,9 @@ public class FragmentAngkaEng extends Fragment {
 
                         auto.startAnimation(animation);
 
-                        //MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                        MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
                         Log.e("POSISIS",Integer.toString(position));
-                        // mediaPlayers.start();
+                         mediaPlayers.start();
 
                         animation.setAnimationListener(new Animation.AnimationListener() {
                             @Override
@@ -172,11 +187,11 @@ public class FragmentAngkaEng extends Fragment {
                                                     posiss++;
 
                                                 }
-//                                        if (viewPager.getCurrentItem() == suara.length -1)
-//                                        {
-//                                            int i = viewPager.getCurrentItem();
-//                                            viewPager.setCurrentItem(i);
-//                                        }
+                                        if (viewPager.getCurrentItem() == suara.length -1)
+                                        {
+                                            int i = viewPager.getCurrentItem();
+                                            viewPager.setCurrentItem(i);
+                                        }
                                                 else {
                                                     int i = viewPager.getCurrentItem();
                                                     i++;
@@ -275,18 +290,18 @@ public class FragmentAngkaEng extends Fragment {
 
 //                Jika ada suara
 
-//                if(getContext() != null)
-//                {
-//                    MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
-//                    Log.e("POSISIS",Integer.toString(position));
-//                    mediaPlayers.start();
-//                    mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-//                        @Override
-//                        public void onCompletion(MediaPlayer mediaPlayer) {
-//                            mediaPlayer.reset();
-//                        }
-//                    });
-//                }
+                if(getContext() != null)
+                {
+                    MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                    Log.e("POSISIS",Integer.toString(position));
+                    mediaPlayers.start();
+                    mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            mediaPlayer.reset();
+                        }
+                    });
+                }
 
 //                adapterAbjadInggris.instantiateItem(container,position);
 

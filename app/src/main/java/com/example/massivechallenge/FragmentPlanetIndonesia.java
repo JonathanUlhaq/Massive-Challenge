@@ -73,6 +73,19 @@ public class FragmentPlanetIndonesia extends Fragment {
     Timer timer;
     Handler handler;
 
+//    int[] suara = {
+//            R.raw.matahari,
+//            R.raw.bulan,
+//            R.raw.merkurius,
+//            R.raw.venus,
+//            R.raw.bumi,
+//            R.raw.mars,
+//            R.raw.jupiter,
+//            R.raw.saturnus,
+//            R.raw.uranus,
+//            R.raw.neptunus
+//    };
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

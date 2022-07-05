@@ -75,6 +75,8 @@ public class AdapterBuahIndo extends PagerAdapter {
 
     };
 
+
+
     public AdapterBuahIndo(Context context) {
         this.context = context;
     }

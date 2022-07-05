@@ -83,6 +83,30 @@ public class FragmentTransportasIndonesia extends Fragment {
     Timer timer;
     Handler handler;
 
+
+    int[] suara = {
+            R.raw.mobil,
+            R.raw.truk,
+            R.raw.ambulan,
+            R.raw.perahu,
+            R.raw.kereta_api,
+            R.raw.pemadam_kebakaran,
+            R.raw.mobil_polisi,
+            R.raw.pesawat,
+            R.raw.sepeda_motor,
+            R.raw.kapal,
+            R.raw.bajaj,
+            R.raw.balon_udara,
+            R.raw.bus,
+            R.raw.kapal_cepat,
+            R.raw.truk_kontainer,
+            R.raw.mobil_sport,
+            R.raw.sepeda,
+            R.raw.vespa,
+            R.raw.bus_sekolah,
+            R.raw.helikopter,
+    };
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -111,13 +135,16 @@ public class FragmentTransportasIndonesia extends Fragment {
         {
             int data = bundle.getInt("posisi2");
             viewPager.setCurrentItem(data);
+
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
+            mediaPlayers.start();
         }
 
-        //        if(bundle == null)
-//        {
-//            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
-//            mediaPlayers.start();
-//        }
+                if(bundle == null)
+        {
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
+            mediaPlayers.start();
+        }
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
 
@@ -148,9 +175,9 @@ public class FragmentTransportasIndonesia extends Fragment {
 
                         auto.startAnimation(animation);
 
-                        //MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                        MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
                         Log.e("POSISIS",Integer.toString(position));
-                        // mediaPlayers.start();
+                         mediaPlayers.start();
 
                         animation.setAnimationListener(new Animation.AnimationListener() {
                             @Override
@@ -271,12 +298,12 @@ public class FragmentTransportasIndonesia extends Fragment {
 
                 //                ON KETIKA ADA SUARA
 
-//                   if(getContext() != null)
-//               {
-//                   MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
-//                   Log.e("POSISIS",Integer.toString(position));
-//                   mediaPlayers.start();
-//               }
+                   if(getContext() != null)
+               {
+                   MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                   Log.e("POSISIS",Integer.toString(position));
+                   mediaPlayers.start();
+               }
 
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));

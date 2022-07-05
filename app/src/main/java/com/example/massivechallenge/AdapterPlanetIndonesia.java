@@ -44,6 +44,9 @@ public class AdapterPlanetIndonesia extends PagerAdapter {
             R.drawable.gambar_planet_10,
     };
 
+
+//
+
     public AdapterPlanetIndonesia(Context context) {
         this.context = context;
     }

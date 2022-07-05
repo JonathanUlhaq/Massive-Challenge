@@ -38,10 +38,9 @@ public class AdapterBentukIndo extends PagerAdapter {
             R.drawable.gambar_bentuk_panah,
             R.drawable.gambar_bentuk_bulan,
             R.drawable.gambar_bentuk_layang_layang,
-
-
-
     };
+
+
 
     int[] namas = {
             R.string.persegi,
@@ -62,6 +61,8 @@ public class AdapterBentukIndo extends PagerAdapter {
 
 
     };
+
+
 
     @Override
     public int getCount() {

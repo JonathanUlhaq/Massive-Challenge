@@ -34,6 +34,8 @@ public class TebakTransportasiIndonesia extends AppCompatActivity {
     ArrayList<Integer> jawaban = new ArrayList<Integer>();
 
 
+
+
     int[] namas = {
             R.string.mobil,
             R.string.truk,

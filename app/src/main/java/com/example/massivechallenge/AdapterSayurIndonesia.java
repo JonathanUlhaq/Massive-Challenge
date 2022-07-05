@@ -46,6 +46,8 @@ public class AdapterSayurIndonesia extends PagerAdapter {
 
 
 
+
+
     int[] namas = {
             R.string.Sayur_1,
             R.string.Sayur_2,

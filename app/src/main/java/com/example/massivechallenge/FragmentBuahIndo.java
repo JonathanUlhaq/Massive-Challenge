@@ -73,6 +73,30 @@ public class FragmentBuahIndo extends Fragment {
     Timer timer;
     Handler handler;
 
+    int[] suara = {
+            R.raw.alpukat,
+            R.raw.anggur,
+            R.raw.stroberi,
+            R.raw.belimbing,
+            R.raw.buah_naga,
+            R.raw.ceri,
+            R.raw.delima,
+            R.raw.durian,
+            R.raw.jambu,
+            R.raw.jeruk_nipis,
+            R.raw.jeruk,
+            R.raw.kelapa,
+            R.raw.kiwi,
+            R.raw.lemon,
+            R.raw.mangga,
+            R.raw.nanas,
+            R.raw.pepaya,
+            R.raw.pisang,
+            R.raw.rambutan,
+            R.raw.semangka
+
+    };
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -102,13 +126,16 @@ public class FragmentBuahIndo extends Fragment {
         {
             int data = bundle.getInt("posisi2");
             viewPager.setCurrentItem(data);
+
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
+            mediaPlayers.start();
         }
 
-        //        if(bundle == null)
-//        {
-//            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
-//            mediaPlayers.start();
-//        }
+                if(bundle == null)
+        {
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
+            mediaPlayers.start();
+        }
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
 
@@ -141,9 +168,9 @@ public class FragmentBuahIndo extends Fragment {
 
                         auto.startAnimation(animation);
 
-                        //MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                        MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
                         Log.e("POSISIS",Integer.toString(position));
-                        // mediaPlayers.start();
+                         mediaPlayers.start();
 
                         animation.setAnimationListener(new Animation.AnimationListener() {
                             @Override
@@ -265,12 +292,12 @@ public class FragmentBuahIndo extends Fragment {
 
                 //                ON KETIKA ADA SUARA
 
-//                   if(getContext() != null)
-//               {
-//                   MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
-//                   Log.e("POSISIS",Integer.toString(position));
-//                   mediaPlayers.start();
-//               }
+                 if(getContext() != null)
+                {
+                 MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                 Log.e("POSISIS",Integer.toString(position));
+                  mediaPlayers.start();
+                 }
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
 

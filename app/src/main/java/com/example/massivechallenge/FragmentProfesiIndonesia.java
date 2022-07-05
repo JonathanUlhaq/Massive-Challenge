@@ -73,6 +73,28 @@ public class FragmentProfesiIndonesia extends Fragment {
     Timer timer;
     Handler handler;
 
+    int[] suara = {
+            R.raw.koki,
+            R.raw.pengusaha,
+            R.raw.dokter,
+            R.raw.nelayan,
+            R.raw.guru,
+            R.raw.ilmuan,
+            R.raw.insinyu,
+            R.raw.montir,
+            R.raw.pelukis,
+            R.raw.pemadam_kebakaran,
+            R.raw.petani,
+            R.raw.photograper,
+            R.raw.pilot,
+            R.raw.polisi,
+            R.raw.pramugari,
+            R.raw.tentara,
+            R.raw.sekretaris,
+            R.raw.pelayan,
+            R.raw.atlet
+    };
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -102,13 +124,15 @@ public class FragmentProfesiIndonesia extends Fragment {
         {
             int data = bundle.getInt("posisi2");
             viewPager.setCurrentItem(data);
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
+            mediaPlayers.start();
         }
 
-        //        if(bundle == null)
-//        {
-//            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
-//            mediaPlayers.start();
-//        }
+                if(bundle == null)
+        {
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
+            mediaPlayers.start();
+        }
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
 
@@ -141,9 +165,10 @@ public class FragmentProfesiIndonesia extends Fragment {
 
                         auto.startAnimation(animation);
 
-                        //MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                        MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
                         Log.e("POSISIS",Integer.toString(position));
-                        // mediaPlayers.start();
+                         mediaPlayers.start();
+
 
                         animation.setAnimationListener(new Animation.AnimationListener() {
                             @Override
@@ -265,12 +290,12 @@ public class FragmentProfesiIndonesia extends Fragment {
 
                 //                ON KETIKA ADA SUARA
 
-//                   if(getContext() != null)
-//               {
-//                   MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
-//                   Log.e("POSISIS",Integer.toString(position));
-//                   mediaPlayers.start();
-//               }
+                   if(getContext() != null)
+               {
+                   MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                   Log.e("POSISIS",Integer.toString(position));
+                   mediaPlayers.start();
+               }
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
 

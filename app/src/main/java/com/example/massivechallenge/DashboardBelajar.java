@@ -89,7 +89,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-
+                    MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this,R.raw.pilih_belajar_tebak);
+                    mediaPlayer.start();
+                    mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            mediaPlayer.reset();
+                        }
+                    });
 
                     }
 
@@ -128,7 +135,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this,R.raw.pilih_belajar_tebak);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
 
                     }
 
@@ -167,7 +181,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this,R.raw.pilih_belajar_tebak);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
 
                     }
 
@@ -207,7 +228,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this,R.raw.pilih_belajar_tebak);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
 
                     }
 
@@ -246,7 +274,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this,R.raw.pilih_belajar_tebak);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
 
                     }
 
@@ -285,7 +320,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this,R.raw.pilih_belajar_tebak);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
 
                     }
 
@@ -363,7 +405,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this,R.raw.pilih_belajar_tebak);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
 
                     }
 
@@ -399,7 +448,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this,R.raw.pilih_belajar_tebak);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
 
                     }
 
@@ -435,7 +491,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this,R.raw.pilih_belajar_tebak);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
 
                     }
 
@@ -471,7 +534,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this,R.raw.pilih_belajar_tebak);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
 
                     }
 
@@ -507,7 +577,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this,R.raw.pilih_belajar_tebak);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
 
                     }
 
@@ -543,7 +620,14 @@ public class DashboardBelajar extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajar.this,R.raw.pilih_belajar_tebak);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
 
                     }
 

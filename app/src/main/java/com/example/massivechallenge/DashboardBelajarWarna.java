@@ -63,10 +63,20 @@ public class DashboardBelajarWarna extends AppCompatActivity {
                             @Override
                             public void onCompletion(MediaPlayer mediaPlayer) {
                                 mediaPlayer.reset();
+
+                                MediaPlayer mediaPlayers = MediaPlayer.create(DashboardBelajarWarna.this,R.raw.belajar_warna);
+                                mediaPlayers.start();
+                                mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                    @Override
+                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                        mediaPlayers.reset();
+                                        Intent intent = new Intent(getApplicationContext(),IsiBelajarWarna.class);
+                                        startActivity(intent);
+                                    }
+                                });
                             }
                         });
-                        Intent intent = new Intent(getApplicationContext(),IsiBelajarWarna.class);
-                        startActivity(intent);
+
                     }
 
                     @Override
@@ -226,7 +236,14 @@ public class DashboardBelajarWarna extends AppCompatActivity {
         });
 
         dialog.show();
-
+        MediaPlayer player = MediaPlayer.create(DashboardBelajarWarna.this,R.raw.pilih_bahasa);
+        player.start();
+        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                player.reset();
+            }
+        });
     }
 
 }

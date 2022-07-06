@@ -63,10 +63,20 @@ public class DashboardBelajarBentuk extends AppCompatActivity {
                             @Override
                             public void onCompletion(MediaPlayer mediaPlayer) {
                                 mediaPlayer.reset();
+
+                                MediaPlayer mediaPlayers = MediaPlayer.create(DashboardBelajarBentuk.this,R.raw.belajar_bentuk);
+                                mediaPlayers.start();
+                                mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                    @Override
+                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                        mediaPlayers.reset();
+                                        Intent intent = new Intent(getApplicationContext(),IsiBelajarBentuk.class);
+                                        startActivity(intent);
+                                    }
+                                });
                             }
                         });
-                        Intent intent = new Intent(getApplicationContext(),IsiBelajarBentuk.class);
-                        startActivity(intent);
+
                     }
 
                     @Override
@@ -225,6 +235,15 @@ public class DashboardBelajarBentuk extends AppCompatActivity {
         });
 
         dialog.show();
+
+        MediaPlayer player = MediaPlayer.create(DashboardBelajarBentuk.this,R.raw.pilih_bahasa);
+        player.start();
+        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                player.reset();
+            }
+        });
 
     }
 }

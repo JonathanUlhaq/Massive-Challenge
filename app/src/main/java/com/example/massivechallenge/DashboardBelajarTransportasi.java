@@ -96,10 +96,20 @@ public class DashboardBelajarTransportasi extends AppCompatActivity {
                             @Override
                             public void onCompletion(MediaPlayer mediaPlayer) {
                                 mediaPlayer.reset();
+
+                                MediaPlayer mediaPlayers = MediaPlayer.create(DashboardBelajarTransportasi.this,R.raw.belajar_transportasi);
+                                mediaPlayers.start();
+                                mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                    @Override
+                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                        mediaPlayers.reset();
+                                        Intent intent = new Intent(DashboardBelajarTransportasi.this, IsiBelajarTransportasi.class);
+                                        startActivity(intent);
+                                    }
+                                });
                             }
                         });
-                        Intent intent = new Intent(DashboardBelajarTransportasi.this, IsiBelajarTransportasi.class);
-                        startActivity(intent);
+
                     }
 
                     @Override
@@ -221,6 +231,15 @@ public class DashboardBelajarTransportasi extends AppCompatActivity {
         });
 
         dialog.show();
+
+        MediaPlayer player = MediaPlayer.create(DashboardBelajarTransportasi.this,R.raw.pilih_bahasa);
+        player.start();
+        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                player.reset();
+            }
+        });
 
     }
 

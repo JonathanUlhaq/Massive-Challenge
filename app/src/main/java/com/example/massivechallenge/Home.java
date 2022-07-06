@@ -60,13 +60,22 @@ public class Home extends AppCompatActivity {
                                 mediaPlayer.reset();
                             }
                         });
+
+                        Intent intent = new Intent(Home.this,DashboardBelajar.class);
+                        startActivity(intent);
                     }
 
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                        Intent intent = new Intent(Home.this,DashboardBelajar.class);
-                        startActivity(intent);
+                 MediaPlayer mediaPlayer = MediaPlayer.create(Home.this,R.raw.pilih_pelajaran);
+                 mediaPlayer.start();
+                 mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                     @Override
+                     public void onCompletion(MediaPlayer mediaPlayer) {
+                         mediaPlayer.reset();
+                     }
+                 });
 
                     }
 

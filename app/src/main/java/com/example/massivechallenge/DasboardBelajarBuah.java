@@ -63,10 +63,20 @@ public class DasboardBelajarBuah extends AppCompatActivity {
                             @Override
                             public void onCompletion(MediaPlayer mediaPlayer) {
                                 mediaPlayer.reset();
+
+                                MediaPlayer mediaPlayers = MediaPlayer.create(DasboardBelajarBuah.this,R.raw.belajar_buah);
+                                mediaPlayers.start();
+                                mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                    @Override
+                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                        mediaPlayers.reset();
+                                        Intent intent = new Intent(getApplicationContext(),IsiBelajarBuah.class);
+                                        startActivity(intent);
+                                    }
+                                });
                             }
                         });
-                        Intent intent = new Intent(getApplicationContext(),IsiBelajarBuah.class);
-                        startActivity(intent);
+
                     }
 
                     @Override
@@ -226,6 +236,15 @@ public class DasboardBelajarBuah extends AppCompatActivity {
         });
 
         dialog.show();
+
+        MediaPlayer player = MediaPlayer.create(DasboardBelajarBuah.this,R.raw.pilih_bahasa);
+        player.start();
+        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                player.reset();
+            }
+        });
 
     }
 }

@@ -63,10 +63,20 @@ public class DashboardBelajarProfesi extends AppCompatActivity {
                             @Override
                             public void onCompletion(MediaPlayer mediaPlayer) {
                                 mediaPlayer.reset();
+
+                                MediaPlayer mediaPlayers = MediaPlayer.create(DashboardBelajarProfesi.this,R.raw.belajar_profesi);
+                                mediaPlayers.start();
+                                mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                                    @Override
+                                    public void onCompletion(MediaPlayer mediaPlayer) {
+                                        mediaPlayers.reset();
+                                        Intent intent = new Intent(getApplicationContext(),IsiBelajarProfesi.class);
+                                        startActivity(intent);
+                                    }
+                                });
                             }
                         });
-                        Intent intent = new Intent(getApplicationContext(),IsiBelajarProfesi.class);
-                        startActivity(intent);
+
                     }
 
                     @Override
@@ -225,6 +235,15 @@ public class DashboardBelajarProfesi extends AppCompatActivity {
         });
 
         dialog.show();
+
+        MediaPlayer player = MediaPlayer.create(DashboardBelajarProfesi.this,R.raw.pilih_bahasa);
+        player.start();
+        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                player.reset();
+            }
+        });
 
     }
 }

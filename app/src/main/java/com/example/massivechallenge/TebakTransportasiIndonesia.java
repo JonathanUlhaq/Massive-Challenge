@@ -223,6 +223,15 @@ public class TebakTransportasiIndonesia extends AppCompatActivity {
                 nomorSoal++;
                 if (view.getTag().toString().equals(Integer.toString(lokasiJawaban))) {
 
+                    MediaPlayer mediaPlayer = MediaPlayer.create(TebakTransportasiIndonesia.this,R.raw.hebat);
+                    mediaPlayer.start();
+                    mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            mediaPlayer.reset();
+                        }
+                    });
+
                     new CountDownTimer(3000, 1000) {
                         @Override
                         public void onTick(long l) {
@@ -332,6 +341,15 @@ public class TebakTransportasiIndonesia extends AppCompatActivity {
                 } else {
                     ImageView hebat = dialog.findViewById(R.id.hebat);
                     hebat.setImageResource(R.drawable.gambar_oops);
+
+                    MediaPlayer mediaPlayer = MediaPlayer.create(TebakTransportasiIndonesia.this,R.raw.oops);
+                    mediaPlayer.start();
+                    mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            mediaPlayer.reset();
+                        }
+                    });
 
                     new CountDownTimer(3000, 1000) {
                         @Override

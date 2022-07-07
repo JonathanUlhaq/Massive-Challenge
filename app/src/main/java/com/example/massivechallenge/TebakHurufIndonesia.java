@@ -148,6 +148,14 @@ public class TebakHurufIndonesia extends AppCompatActivity {
                 if(view.getTag().toString().equals(Integer.toString(lokasiJawaban)))
                 {
 
+                    MediaPlayer mediaPlayer = MediaPlayer.create(TebakHurufIndonesia.this,R.raw.hebat);
+                    mediaPlayer.start();
+                    mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            mediaPlayer.reset();
+                        }
+                    });
 
                     new CountDownTimer(3000,1000)
                     {
@@ -262,6 +270,16 @@ public class TebakHurufIndonesia extends AppCompatActivity {
 
                     ImageView hebat = dialog.findViewById(R.id.hebat);
                     hebat.setImageResource(R.drawable.gambar_oops);
+
+                    MediaPlayer mediaPlayer = MediaPlayer.create(TebakHurufIndonesia.this,R.raw.oops);
+                    mediaPlayer.start();
+                    mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            mediaPlayer.reset();
+                        }
+                    });
+
                     new CountDownTimer(3000,1000)
                     {
                         @Override

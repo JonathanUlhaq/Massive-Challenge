@@ -127,6 +127,15 @@ public class TebakAngkaInggris extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
 
+                MediaPlayer mediaPlayer = MediaPlayer.create(TebakAngkaInggris.this,R.raw.hebat);
+                mediaPlayer.start();
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        mediaPlayer.reset();
+                    }
+                });
+
                 nomorSoal++;
                 if(view.getTag().toString().equals(Integer.toString(lokasiJawaban))) {
 
@@ -241,6 +250,15 @@ public class TebakAngkaInggris extends AppCompatActivity {
                 } else {
                     ImageView hebat = dialog.findViewById(R.id.hebat);
                     hebat.setImageResource(R.drawable.gambar_oops);
+
+                    MediaPlayer mediaPlayers = MediaPlayer.create(TebakAngkaInggris.this,R.raw.oops);
+                    mediaPlayers.start();
+                    mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            mediaPlayer.reset();
+                        }
+                    });
 
                     new CountDownTimer(3000,1000)
                     {

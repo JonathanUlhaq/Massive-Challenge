@@ -4,6 +4,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -131,12 +132,22 @@ public class TebakAngkaIndonesia extends AppCompatActivity {
                 nomorSoal++;
                 if(view.getTag().toString().equals(Integer.toString(lokasiJawaban))) {
 
+                    MediaPlayer mediaPlayer = MediaPlayer.create(TebakAngkaIndonesia.this,R.raw.hebat);
+                    mediaPlayer.start();
+                    mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            mediaPlayer.reset();
+                        }
+                    });
+
                     new CountDownTimer(3000,1000)
                     {
                         @Override
                         public void onTick(long l) {
 
                             dialog.show();
+
 
                         }
 
@@ -243,11 +254,18 @@ public class TebakAngkaIndonesia extends AppCompatActivity {
                     ImageView hebat = dialog.findViewById(R.id.hebat);
                     hebat.setImageResource(R.drawable.gambar_oops);
 
+                    MediaPlayer mediaPlayer = MediaPlayer.create(TebakAngkaIndonesia.this,R.raw.oops);
+                    mediaPlayer.start();
+                    mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            mediaPlayer.reset();
+                        }
+                    });
                     new CountDownTimer(3000,1000)
                     {
                         @Override
                         public void onTick(long l) {
-
                             dialog.show();
 
                         }

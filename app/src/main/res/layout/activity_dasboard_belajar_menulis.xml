@@ -29,6 +29,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:fontFamily="@font/rockoultraflf"
                 android:text="@string/menulis"
                 android:autoSizeTextType="uniform"
@@ -41,72 +42,40 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        >
-
-
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:background="@drawable/background_menu_belajar">
+            android:id="@+id/huruf_besar"
+            android:background="@drawable/bg_huruf_besar">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:layout_gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="173dp"
-                    android:layout_height="157dp"
-                    android:src="@drawable/menulis_a" />
-
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/belajar"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/jelle_roman"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/huruf_besar" />
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/bayangan_huruf_besar" />
+
+
 
             </LinearLayout>
 
         </FrameLayout>
-
-
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_marginLeft="25dp"
-            android:background="@drawable/background_menu_belajar">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="173dp"
-                    android:layout_height="157dp"
-                    android:src="@drawable/icon_game"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/tebak_menulis"
-                    android:textSize="14sp"
-                    android:fontFamily="@font/jelle_roman"/>
-
-            </LinearLayout>
-
-        </FrameLayout>
-
 
     </LinearLayout>
 

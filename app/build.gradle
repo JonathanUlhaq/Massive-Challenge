@@ -31,14 +31,20 @@ android {
 }
 
 dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     def fragment_version = "1.3.4"
     implementation "androidx.fragment:fragment:$fragment_version"
     implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation "com.android.support:support-annotations:28.0.0"
     implementation 'com.google.android.material:material:1.6.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     implementation 'androidx.navigation:navigation-runtime:2.4.2'
     testImplementation 'junit:junit:4.13.2'
+    implementation project(path: ':tracinglibrary')
+
+
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
 }

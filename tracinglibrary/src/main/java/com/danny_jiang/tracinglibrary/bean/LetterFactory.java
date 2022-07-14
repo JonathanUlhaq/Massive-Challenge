@@ -1,5 +1,8 @@
 package com.danny_jiang.tracinglibrary.bean;
 
+import android.content.Intent;
+import android.util.Log;
+
 import androidx.annotation.IntDef;
 
 import java.lang.annotation.Retention;
@@ -33,6 +36,41 @@ public class LetterFactory {
     public static final int X = W + 1;
     public static final int Y = X + 1;
     public static final int Z = Y + 1;
+
+    int[] alphabet = {
+            A,
+            B,
+            C,
+            D,
+            E,
+            F,
+            G,
+            H,
+            I,
+            J,
+            K,
+            L,
+            M,
+            N,
+            O,
+            P,
+            Q,
+            R,
+            S,
+            T,
+            U,
+            V,
+            W,
+            X,
+            Y,
+            Z
+    };
+
+    public int getAlphabet(int position)
+    {
+        Log.e("ERRR", Integer.toString(alphabet[position]));
+        return alphabet[position];
+    }
 
     public String getLetterAssets() {
         return "letter/" + letter + "_bg.png";

@@ -21,52 +21,54 @@ public class AdapterHewanIndonesia extends PagerAdapter {
 
 
     int[] gambar = {
+            R.drawable.hewan_kucing,
             R.drawable.hewan_anjing,
-            R.drawable.hewan_ayam,
-            R.drawable.hewan_bebek,
+            R.drawable.hewan_monyet,
             R.drawable.hewan_beruang,
             R.drawable.hewan_citah,
             R.drawable.hewan_elang,
             R.drawable.hewan_kangguru,
-            R.drawable.hewan_katak,
-            R.drawable.hewan_kelelawar,
             R.drawable.hewan_kelinci,
-            R.drawable.hewan_kucing,
-            R.drawable.hewan_landak,
-            R.drawable.hewan_monyet,
             R.drawable.hewan_panda,
-            R.drawable.hewan_rusa,
             R.drawable.hewan_sapi,
             R.drawable.hewan_singa,
-            R.drawable.hewan_siput,
             R.drawable.hewan_unta,
             R.drawable.hewan_zebra,
+            R.drawable.hewan_bebek,
+            R.drawable.hewan_katak,
+            R.drawable.hewan_kelelawar,
+            R.drawable.hewan_landak,
+            R.drawable.hewan_rusa,
+            R.drawable.hewan_siput,
+            R.drawable.hewan_ayam,
+
 
     };
 
 
 
     int[] namas = {
+            R.string.kucing,
             R.string.Anjing,
-            R.string.Ayam,
-            R.string.Bebek,
+            R.string.Monyet,
             R.string.Beruang,
             R.string.Citah,
             R.string.Elang,
             R.string.Kangguru,
-            R.string.Katak,
-            R.string.Kelelawar,
             R.string.Kelinci,
-            R.string.Kucing,
-            R.string.Landak,
-            R.string.Monyet,
             R.string.Panda,
-            R.string.Rusa,
             R.string.Sapi,
             R.string.Singa,
-            R.string.Siput,
             R.string.Unta,
             R.string.Zebra,
+            R.string.Bebek,
+            R.string.Katak,
+            R.string.Kelelawar,
+            R.string.Landak,
+            R.string.Rusa,
+            R.string.Siput,
+            R.string.Ayam,
+
     };
 
     public AdapterHewanIndonesia(Context context) {

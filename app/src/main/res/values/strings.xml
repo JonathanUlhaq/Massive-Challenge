@@ -434,6 +434,9 @@
     <string name="Sayur_Eng18">Cucumber</string>
     <string name="Sayur_Eng19">Tomato</string>
     <string name="Sayur_Eng20">Carrot</string>
+    <string name="broccoli">Broccoli</string>
+    <string name="kucing">Kucing</string>
+    <string name="cat">Cat</string>
 
 
 </resources>

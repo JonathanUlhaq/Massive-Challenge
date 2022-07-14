@@ -73,28 +73,29 @@ public class FragmentHewanIndonesia extends Fragment {
     Handler handler;
     boolean b = false,c = false;
 
-/*    int[] suara = {
-            R.raw.gembok,
-            R.raw.gergaji,
-            R.raw.gergaji_mesin,
-            R.raw.guntin,
-            R.raw.helm,
-            R.raw.jarum,
-            R.raw.kaca_pembesar,
-            R.raw.kapak,
-            R.raw.kunci_inggris,
-            R.raw.magnet,
-            R.raw.obeng,
-            R.raw.paku,
-            R.raw.palu,
-            R.raw.rantai,
-            R.raw.roda,
-            R.raw.sekop,
-            R.raw.baut,
-            R.raw.soket,
-            R.raw.tali,
-            R.raw.tangga,
-    };*/
+    int[] suara = {
+            R.raw.hewan_indo_kucing,
+            R.raw.hewan_indo_anjing,
+            R.raw.hewan_indo_monyet,
+            R.raw.hewan_indo_beruang,
+            R.raw.hewan_indo_citah,
+            R.raw.hewan_indo_elang,
+            R.raw.hewan_indo_kangguru,
+            R.raw.hewan_indo_kelinci,
+            R.raw.hewan_indo_panda,
+            R.raw.hewan_indo_sapi,
+            R.raw.hewan_indo_singa,
+            R.raw.hewan_indo_unta,
+            R.raw.hewan_indo_zebra,
+            R.raw.hewan_indo_bebek,
+            R.raw.hewan_indo_katak,
+            R.raw.hewan_indo_kelelawar,
+            R.raw.hewan_indo_landak,
+            R.raw.hewan_indo_rusa,
+            R.raw.hewan_indo_siput,
+            R.raw.hewan_indo_ayam
+
+    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -124,9 +125,9 @@ public class FragmentHewanIndonesia extends Fragment {
 
         if (bundle != null)
         {
-            int data = bundle.getInt("posisi2");
+            int data = bundle.getInt("posisi");
             viewPager.setCurrentItem(data);
-            /*MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
 
             mediaPlayers.start();
             mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -134,20 +135,21 @@ public class FragmentHewanIndonesia extends Fragment {
                 public void onCompletion(MediaPlayer mediaPlayer) {
                     mediaPlayer.reset();
                 }
-            });*/
+            });
         }
 
         if(bundle == null)
         {
-           /* MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
             mediaPlayers.start();
             mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mediaPlayer) {
                     mediaPlayer.reset();
                 }
-            });*/
+            });
         }
+
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
 
@@ -193,9 +195,9 @@ public class FragmentHewanIndonesia extends Fragment {
                                     }
                                 });
 
-                                /*MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);*/
+                                MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
                                 Log.e("POSISIS",Integer.toString(position));
-                                /*mediaPlayers.start();*/
+                                mediaPlayers.start();
                                 Log.e("BEOL2",Boolean.toString(b));
                                 timer.schedule(new TimerTask() {
                                     @Override
@@ -213,11 +215,13 @@ public class FragmentHewanIndonesia extends Fragment {
                                                     viewPager.setCurrentItem(posiss);
                                                     posiss++;
 
-                                                } /*if (viewPager.getCurrentItem() == suara.length -1)
+                                                }
+                                                if (viewPager.getCurrentItem() == suara.length -1)
                                                 {
                                                     int i = viewPager.getCurrentItem();
                                                     viewPager.setCurrentItem(i);
-                                                }*/ else {
+                                                }
+                                                else {
                                                     int i = viewPager.getCurrentItem();
                                                     i++;
                                                     viewPager.setCurrentItem(i);
@@ -310,18 +314,18 @@ public class FragmentHewanIndonesia extends Fragment {
             public void onPageSelected(int position) {
                 //  frameLayout.setBackgroundResource(background.get(position));
 
-              /* if(getContext() != null)
-               {
-                   MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
-                   Log.e("POSISIS",Integer.toString(position));
-                   mediaPlayers.start();
-                   mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                       @Override
-                       public void onCompletion(MediaPlayer mediaPlayer) {
-                           mediaPlayer.reset();
-                       }
-                   });
-               }*/
+                if(getContext() != null)
+                {
+                    MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                    Log.e("POSISIS",Integer.toString(position));
+                    mediaPlayers.start();
+                    mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            mediaPlayer.reset();
+                        }
+                    });
+                }
 
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));

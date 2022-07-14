@@ -73,6 +73,30 @@ public class FragmentProfesioInggris extends Fragment {
     Timer timer;
     Handler handler;
 
+    int[] suara = {
+            R.raw.profesi_inggris_chef,
+            R.raw.profesi_inggris_bussinessman,
+            R.raw.profesi_inggris_doctor,
+            R.raw.profesi_inggris_fisherman,
+            R.raw.profesi_inggris_teacher,
+            R.raw.profesi_inggris_scientist,
+            R.raw.profesi_inggris_engineer,
+            R.raw.profesi_inggris_mechanic,
+            R.raw.profesi_inggris_painter,
+            R.raw.profesi_inggris_firefighter,
+            R.raw.profesi_inggris_farmer,
+            R.raw.profesi_inggris_photographer,
+            R.raw.profesi_inggris_pilot,
+            R.raw.profesi_inggris_police,
+            R.raw.profesi_inggris_airhostess,
+            R.raw.profesi_inggris_army,
+            R.raw.profesi_inggris_secretary,
+            R.raw.profesi_inggris_waiter,
+            R.raw.profesi_inggris_athlete,
+
+    };
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -99,17 +123,34 @@ public class FragmentProfesioInggris extends Fragment {
         ImageView button_all;
         button_all = getActivity().findViewById(R.id.all);
         button_all.setImageResource(R.drawable.button_all);
+
+
         if (bundle != null)
         {
             int data = bundle.getInt("posisi");
             viewPager.setCurrentItem(data);
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
+
+            mediaPlayers.start();
+            mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    mediaPlayer.reset();
+                }
+            });
         }
 
-        //        if(bundle == null)
-//        {
-//            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
-//            mediaPlayers.start();
-//        }
+        if(bundle == null)
+        {
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
+            mediaPlayers.start();
+            mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    mediaPlayer.reset();
+                }
+            });
+        }
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
 
@@ -141,9 +182,9 @@ public class FragmentProfesioInggris extends Fragment {
 
                         auto.startAnimation(animation);
 
-                        //MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                        MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
                         Log.e("POSISIS",Integer.toString(position));
-                        // mediaPlayers.start();
+                        mediaPlayers.start();
 
                         animation.setAnimationListener(new Animation.AnimationListener() {
                             @Override
@@ -166,11 +207,11 @@ public class FragmentProfesioInggris extends Fragment {
                                                     posisiss++;
 
                                                 }
-//                                        if (viewPager.getCurrentItem() == suara.length -1)
-//                                        {
-//                                            int i = viewPager.getCurrentItem();
-//                                            viewPager.setCurrentItem(i);
-//                                        }
+                                        if (viewPager.getCurrentItem() == suara.length -1)
+                                        {
+                                            int i = viewPager.getCurrentItem();
+                                            viewPager.setCurrentItem(i);
+                                        }
                                                 else {
                                                     int i = viewPager.getCurrentItem();
                                                     i++;
@@ -262,6 +303,20 @@ public class FragmentProfesioInggris extends Fragment {
             @Override
             public void onPageSelected(int position) {
                 //  frameLayout.setBackgroundResource(background.get(position));
+
+                if(getContext() != null)
+                {
+                    MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                    Log.e("POSISIS",Integer.toString(position));
+                    mediaPlayers.start();
+                    mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                        @Override
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                            mediaPlayer.reset();
+                        }
+                    });
+                }
+
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
 

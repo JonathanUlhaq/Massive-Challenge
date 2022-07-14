@@ -74,6 +74,31 @@ public class FragmentTransportasiEng extends Fragment {
     Timer timer;
     Handler handler;
 
+    int[] suara = {
+            R.raw.trans_inggris_car,
+            R.raw.trans_inggris_truck2,
+            R.raw.trans_inggris_ambulance,
+            R.raw.trans_inggris_boat,
+            R.raw.trans_inggris_train,
+            R.raw.trans_inggris_fireengine,
+            R.raw.trans_inggris_policecar,
+            R.raw.trans_inggris_airplane,
+            R.raw.trans_inggris_motorcycle,
+            R.raw.trans_inggris_ship,
+            R.raw.trans_inggris_autorickshaw,
+            R.raw.trans_inggris_airballon,
+            R.raw.trans_inggris_bus,
+            R.raw.trans_inggris_speadboat,
+            R.raw.trans_inggris_containertruck2,
+            R.raw.trans_inggris_sportcar,
+            R.raw.trans_inggris_bicycle,
+            R.raw.trans_inggris_scooter,
+            R.raw.trans_inggris_schoolbus,
+            R.raw.trans_inggris_helicopter2,
+
+    };
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -99,17 +124,24 @@ public class FragmentTransportasiEng extends Fragment {
         ImageView button_all;
         button_all = getActivity().findViewById(R.id.all);
         button_all.setImageResource(R.drawable.button_all);
+
+
         if (bundle != null)
         {
             int data = bundle.getInt("posisi");
             viewPager.setCurrentItem(data);
+
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
+            mediaPlayers.start();
         }
 
-        //        if(bundle == null)
-//        {
-//            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
-//            mediaPlayers.start();
-//        }
+        if(bundle == null)
+        {
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
+            mediaPlayers.start();
+        }
+
+
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
 
@@ -140,9 +172,9 @@ public class FragmentTransportasiEng extends Fragment {
 
                         auto.startAnimation(animation);
 
-                        //MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                        MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
                         Log.e("POSISIS",Integer.toString(position));
-                        // mediaPlayers.start();
+                        mediaPlayers.start();
 
                         animation.setAnimationListener(new Animation.AnimationListener() {
                             @Override
@@ -264,12 +296,12 @@ public class FragmentTransportasiEng extends Fragment {
 
                 //                ON KETIKA ADA SUARA
 
-//                   if(getContext() != null)
-//               {
-//                   MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
-//                   Log.e("POSISIS",Integer.toString(position));
-//                   mediaPlayers.start();
-//               }
+                 if(getContext() != null)
+               {
+                   MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                   Log.e("POSISIS",Integer.toString(position));
+                   mediaPlayers.start();
+               }
 
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));

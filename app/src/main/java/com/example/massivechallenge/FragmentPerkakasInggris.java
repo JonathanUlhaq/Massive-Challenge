@@ -73,6 +73,30 @@ public class FragmentPerkakasInggris extends Fragment {
     Timer timer;
     Handler handler;
 
+    int[] suara = {
+            R.raw.padlock_alat_inggris,
+            R.raw.handsaw_alat_inggris,
+            R.raw.chainsaw_alat_inggris,
+            R.raw.scissor_alat_inggris,
+            R.raw.helmet_alat_inggris,
+            R.raw.needle_alat_inggris,
+            R.raw.magnifyingglass_alat_inggris,
+            R.raw.axe_alat_inggris,
+            R.raw.wrench_alat_inggris,
+            R.raw.magnet_alat_inggris,
+            R.raw.screwdriver_alat_inggris,
+            R.raw.nail_alat_inggris,
+            R.raw.hammer_alat_inggris,
+            R.raw.chain_alat_inggris,
+            R.raw.wheel_alat_inggris,
+            R.raw.shovel_alat_inggris,
+            R.raw.screw_alat_inggris,
+            R.raw.powersocker_alat_inggris,
+            R.raw.rope_alat_inggris,
+            R.raw.ladder_alat_inggris,
+
+    };
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -106,13 +130,28 @@ public class FragmentPerkakasInggris extends Fragment {
         {
             int data = bundle.getInt("posisi");
             viewPager.setCurrentItem(data);
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
+
+            mediaPlayers.start();
+            mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    mediaPlayer.reset();
+                }
+            });
         }
 
-//        if(bundle == null)
-//        {
-//            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
-//            mediaPlayers.start();
-//        }
+        if(bundle == null)
+        {
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
+            mediaPlayers.start();
+            mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    mediaPlayer.reset();
+                }
+            });
+        }
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
 
@@ -146,9 +185,9 @@ public class FragmentPerkakasInggris extends Fragment {
 
                         auto.startAnimation(animation);
 
-                        //MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                        MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
                         Log.e("POSISIS",Integer.toString(position));
-                        // mediaPlayers.start();
+                        mediaPlayers.start();
 
                         animation.setAnimationListener(new Animation.AnimationListener() {
                             @Override
@@ -171,11 +210,11 @@ public class FragmentPerkakasInggris extends Fragment {
                                                     posiss++;
 
                                                 }
-//                                        if (viewPager.getCurrentItem() == suara.length -1)
-//                                        {
-//                                            int i = viewPager.getCurrentItem();
-//                                            viewPager.setCurrentItem(i);
-//                                        }
+                                        if (viewPager.getCurrentItem() == suara.length -1)
+                                        {
+                                            int i = viewPager.getCurrentItem();
+                                            viewPager.setCurrentItem(i);
+                                        }
                                                 else {
                                                     int i = viewPager.getCurrentItem();
                                                     i++;
@@ -270,12 +309,18 @@ public class FragmentPerkakasInggris extends Fragment {
 
 //                ON KETIKA ADA SUARA
 
-//                   if(getContext() != null)
-//               {
-//                   MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
-//                   Log.e("POSISIS",Integer.toString(position));
-//                   mediaPlayers.start();
-//               }
+                if(getContext() != null)
+               {
+                   MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                   Log.e("POSISIS",Integer.toString(position));
+                   mediaPlayers.start();
+                   mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                       @Override
+                       public void onCompletion(MediaPlayer mediaPlayer) {
+                           mediaPlayer.reset();
+                       }
+                   });
+               }
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
 

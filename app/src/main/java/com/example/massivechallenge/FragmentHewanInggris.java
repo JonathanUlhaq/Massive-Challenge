@@ -72,6 +72,30 @@ public class FragmentHewanInggris extends Fragment {
     Timer timer;
     Handler handler;
 
+    int[] suara = {
+            R.raw.hewan_inggris_cat,
+            R.raw.hewan_inggris_dog,
+            R.raw.hewan_inggris_monkey,
+            R.raw.hewan_inggris_bear,
+            R.raw.hewan_inggris_cheetah,
+            R.raw.hewan_inggris_eagle,
+            R.raw.hewan_inggris_kangaroo,
+            R.raw.hewan_inggris_rabbit,
+            R.raw.hewan_inggris_panda,
+            R.raw.hewan_inggris_cow,
+            R.raw.hewan_inggris_lion,
+            R.raw.hewan_inggris_camel,
+            R.raw.hewan_indo_zebra,
+            R.raw.hewan_inggris_duck,
+            R.raw.hewan_inggris_frog,
+            R.raw.hewan_inggris_bat,
+            R.raw.hewan_inggris_hedgehog,
+            R.raw.hewan_inggris_deer,
+            R.raw.hewan_inggris_snail,
+            R.raw.hewan_inggris_chicken,
+
+    };
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -105,13 +129,28 @@ public class FragmentHewanInggris extends Fragment {
         {
             int data = bundle.getInt("posisi");
             viewPager.setCurrentItem(data);
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
+
+            mediaPlayers.start();
+            mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    mediaPlayer.reset();
+                }
+            });
         }
 
-//        if(bundle == null)
-//        {
-//            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
-//            mediaPlayers.start();
-//        }
+        if(bundle == null)
+        {
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
+            mediaPlayers.start();
+            mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    mediaPlayer.reset();
+                }
+            });
+        }
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
 
@@ -145,9 +184,9 @@ public class FragmentHewanInggris extends Fragment {
 
                         auto.startAnimation(animation);
 
-                        //MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                        MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
                         Log.e("POSISIS",Integer.toString(position));
-                        // mediaPlayers.start();
+                        mediaPlayers.start();
 
                         animation.setAnimationListener(new Animation.AnimationListener() {
                             @Override
@@ -170,11 +209,11 @@ public class FragmentHewanInggris extends Fragment {
                                                     posiss++;
 
                                                 }
-//                                        if (viewPager.getCurrentItem() == suara.length -1)
-//                                        {
-//                                            int i = viewPager.getCurrentItem();
-//                                            viewPager.setCurrentItem(i);
-//                                        }
+                                        if (viewPager.getCurrentItem() == suara.length -1)
+                                        {
+                                            int i = viewPager.getCurrentItem();
+                                            viewPager.setCurrentItem(i);
+                                        }
                                                 else {
                                                     int i = viewPager.getCurrentItem();
                                                     i++;
@@ -269,12 +308,18 @@ public class FragmentHewanInggris extends Fragment {
 
 //                ON KETIKA ADA SUARA
 
-//                   if(getContext() != null)
-//               {
-//                   MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
-//                   Log.e("POSISIS",Integer.toString(position));
-//                   mediaPlayers.start();
-//               }
+                 if(getContext() != null)
+               {
+                   MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                   Log.e("POSISIS",Integer.toString(position));
+                   mediaPlayers.start();
+                   mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                       @Override
+                       public void onCompletion(MediaPlayer mediaPlayer) {
+                           mediaPlayer.reset();
+                       }
+                   });
+               }
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
 

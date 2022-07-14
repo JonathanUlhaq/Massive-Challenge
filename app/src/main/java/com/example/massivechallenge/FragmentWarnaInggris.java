@@ -72,6 +72,22 @@ public class FragmentWarnaInggris extends Fragment {
     int posisiss;
     Timer timer;
     Handler handler;
+    boolean b = false,c = false;
+
+    int[] suara = {
+            R.raw.red_warna_inggris,
+            R.raw.orange_warna_inggris,
+            R.raw.yellow_warna_inggris,
+            R.raw.green_warna_inggris,
+            R.raw.blue_warna_inggris,
+            R.raw.black_warna_inggris,
+            R.raw.white_warna_inggris,
+            R.raw.grey_warna_inggris,
+            R.raw.pink_warna_inggris,
+            R.raw.purple_warna_inggris,
+            R.raw.brown_warna_inggris,
+
+    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -98,17 +114,34 @@ public class FragmentWarnaInggris extends Fragment {
         ImageView button_all;
         button_all = getActivity().findViewById(R.id.all);
         button_all.setImageResource(R.drawable.button_all);
+
+
         if (bundle != null)
         {
             int data = bundle.getInt("posisi");
             viewPager.setCurrentItem(data);
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
+
+            mediaPlayers.start();
+            mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    mediaPlayer.reset();
+                }
+            });
         }
 
-        //        if(bundle == null)
-//        {
-//            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
-//            mediaPlayers.start();
-//        }
+        if(bundle == null)
+        {
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
+            mediaPlayers.start();
+            mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    mediaPlayer.reset();
+                }
+            });
+        }
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
 
@@ -139,9 +172,9 @@ public class FragmentWarnaInggris extends Fragment {
 
                         auto.startAnimation(animation);
 
-                        //MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                        MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
                         Log.e("POSISIS",Integer.toString(position));
-                        // mediaPlayers.start();
+                        mediaPlayers.start();
 
                         animation.setAnimationListener(new Animation.AnimationListener() {
                             @Override
@@ -164,11 +197,11 @@ public class FragmentWarnaInggris extends Fragment {
                                                     posisiss++;
 
                                                 }
-//                                        if (viewPager.getCurrentItem() == suara.length -1)
-//                                        {
-//                                            int i = viewPager.getCurrentItem();
-//                                            viewPager.setCurrentItem(i);
-//                                        }
+                                        if (viewPager.getCurrentItem() == suara.length -1)
+                                        {
+                                            int i = viewPager.getCurrentItem();
+                                            viewPager.setCurrentItem(i);
+                                        }
                                                 else {
                                                     int i = viewPager.getCurrentItem();
                                                     i++;
@@ -263,12 +296,18 @@ public class FragmentWarnaInggris extends Fragment {
 
                 //                ON KETIKA ADA SUARA
 
-//                   if(getContext() != null)
-//               {
-//                   MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
-//                   Log.e("POSISIS",Integer.toString(position));
-//                   mediaPlayers.start();
-//               }
+                   if(getContext() != null)
+               {
+                   MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                   Log.e("POSISIS",Integer.toString(position));
+                   mediaPlayers.start();
+                   mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                       @Override
+                       public void onCompletion(MediaPlayer mediaPlayer) {
+                           mediaPlayer.reset();
+                       }
+                   });
+               }
 
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));

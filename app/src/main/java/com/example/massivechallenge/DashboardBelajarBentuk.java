@@ -3,6 +3,7 @@ package com.example.massivechallenge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -20,6 +21,7 @@ import android.widget.ImageView;
 public class DashboardBelajarBentuk extends AppCompatActivity {
 
     ImageView back;
+    MediaPlayer player;
     FrameLayout bentuk,tebak_bentuk;
 
     @Override
@@ -45,6 +47,15 @@ public class DashboardBelajarBentuk extends AppCompatActivity {
 
         Animation animation = AnimationUtils.loadAnimation(DashboardBelajarBentuk.this,R.anim.splash);
 
+        MediaPlayer introPlayer = MediaPlayer.create(DashboardBelajarBentuk.this,R.raw.pilih_belajar_tebak);
+        introPlayer.start();
+        introPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.reset();
+            }
+        });
+
         back = findViewById(R.id.back);
         bentuk = findViewById(R.id.bentuk);
         tebak_bentuk = findViewById(R.id.tebak_bentuk);
@@ -57,6 +68,7 @@ public class DashboardBelajarBentuk extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        introPlayer.stop();
                         MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.click_sound_effect);
                         mediaPlayer.start();
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -101,6 +113,7 @@ public class DashboardBelajarBentuk extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        introPlayer.stop();
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarBentuk.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -135,6 +148,7 @@ public class DashboardBelajarBentuk extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        introPlayer.stop();
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarBentuk.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -173,6 +187,13 @@ public class DashboardBelajarBentuk extends AppCompatActivity {
 
         dialog.setCancelable(true);
 
+        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialogInterface) {
+                player.stop();
+            }
+        });
+
         dialog.setContentView(R.layout.dialog_bahasa);
         Animation animation = AnimationUtils.loadAnimation(DashboardBelajarBentuk.this,R.anim.splash);
 
@@ -188,6 +209,15 @@ public class DashboardBelajarBentuk extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        player.stop();
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarBentuk.this,R.raw.click_sound_effect);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(getApplicationContext(),TebakBentukIndo.class);
                         startActivity(intent);
                     }
@@ -216,6 +246,15 @@ public class DashboardBelajarBentuk extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        player.stop();
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarBentuk.this,R.raw.click_sound_effect);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(getApplicationContext(),TebakBentukEng.class);
                         startActivity(intent);
                     }
@@ -236,7 +275,7 @@ public class DashboardBelajarBentuk extends AppCompatActivity {
 
         dialog.show();
 
-        MediaPlayer player = MediaPlayer.create(DashboardBelajarBentuk.this,R.raw.pilih_bahasa);
+        player = MediaPlayer.create(DashboardBelajarBentuk.this,R.raw.pilih_bahasa);
         player.start();
         player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override

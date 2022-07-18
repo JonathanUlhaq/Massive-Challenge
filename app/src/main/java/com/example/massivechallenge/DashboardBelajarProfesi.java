@@ -3,6 +3,7 @@ package com.example.massivechallenge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -21,6 +22,7 @@ public class DashboardBelajarProfesi extends AppCompatActivity {
 
     ImageView back;
     FrameLayout profesi,tebak_profesi;
+    MediaPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,15 @@ public class DashboardBelajarProfesi extends AppCompatActivity {
         profesi = findViewById(R.id.belajar_es);
         tebak_profesi = findViewById(R.id.tebak_profesi);
 
+        MediaPlayer introPlayer = MediaPlayer.create(DashboardBelajarProfesi.this,R.raw.pilih_belajar_tebak);
+        introPlayer.start();
+        introPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                introPlayer.reset();
+            }
+        });
+
         profesi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,6 +68,7 @@ public class DashboardBelajarProfesi extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        introPlayer.stop();
                         MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.click_sound_effect);
                         mediaPlayer.start();
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -101,6 +113,7 @@ public class DashboardBelajarProfesi extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        introPlayer.stop();
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarProfesi.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -136,6 +149,7 @@ public class DashboardBelajarProfesi extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        introPlayer.stop();
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarProfesi.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -179,6 +193,13 @@ public class DashboardBelajarProfesi extends AppCompatActivity {
         final ImageView bahasa_indonesia = dialog.findViewById(R.id.bahasa_indonesia);
         final ImageView bahasa_inggris = dialog.findViewById(R.id.bahasa_inggris);
 
+        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialogInterface) {
+                player.stop();
+            }
+        });
+
         bahasa_indonesia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -188,6 +209,15 @@ public class DashboardBelajarProfesi extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        player.stop();
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarProfesi.this,R.raw.click_sound_effect);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(getApplicationContext(),TebakProfesiIndonesia.class);
                         startActivity(intent);
                     }
@@ -216,6 +246,15 @@ public class DashboardBelajarProfesi extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        player.stop();
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarProfesi.this,R.raw.click_sound_effect);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(getApplicationContext(),TebakProfesiInggris.class);
                         startActivity(intent);
                     }
@@ -236,7 +275,7 @@ public class DashboardBelajarProfesi extends AppCompatActivity {
 
         dialog.show();
 
-        MediaPlayer player = MediaPlayer.create(DashboardBelajarProfesi.this,R.raw.pilih_bahasa);
+        player = MediaPlayer.create(DashboardBelajarProfesi.this,R.raw.pilih_bahasa);
         player.start();
         player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override

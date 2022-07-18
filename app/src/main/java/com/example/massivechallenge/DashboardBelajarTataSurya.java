@@ -3,6 +3,7 @@ package com.example.massivechallenge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -20,6 +21,7 @@ import android.widget.ImageView;
 public class DashboardBelajarTataSurya extends AppCompatActivity {
     ImageView back;
     FrameLayout belajar,tebak_planet;
+    MediaPlayer player;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +48,15 @@ public class DashboardBelajarTataSurya extends AppCompatActivity {
         belajar = findViewById(R.id.belajar);
         tebak_planet = findViewById(R.id.tebak_planet);
 
+        MediaPlayer introPlayer = MediaPlayer.create(DashboardBelajarTataSurya.this,R.raw.pilih_belajar_tebak);
+        introPlayer.start();
+        introPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                introPlayer.reset();
+            }
+        });
+
         belajar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,6 +65,7 @@ public class DashboardBelajarTataSurya extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        introPlayer.stop();
                         MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.click_sound_effect);
                         mediaPlayer.start();
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -98,6 +110,7 @@ public class DashboardBelajarTataSurya extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        introPlayer.stop();
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarTataSurya.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -133,6 +146,7 @@ public class DashboardBelajarTataSurya extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        introPlayer.stop();
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarTataSurya.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -173,6 +187,13 @@ public class DashboardBelajarTataSurya extends AppCompatActivity {
         dialog.setContentView(R.layout.dialog_bahasa);
         Animation animation = AnimationUtils.loadAnimation(DashboardBelajarTataSurya.this,R.anim.splash);
 
+        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialogInterface) {
+                player.stop();
+            }
+        });
+
         final ImageView bahasa_indonesia = dialog.findViewById(R.id.bahasa_indonesia);
         final ImageView bahasa_inggris = dialog.findViewById(R.id.bahasa_inggris);
 
@@ -185,6 +206,15 @@ public class DashboardBelajarTataSurya extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        player.stop();
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarTataSurya.this,R.raw.click_sound_effect);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(getApplicationContext(),TebakPlanetIndonesia.class);
                         startActivity(intent);
                     }
@@ -213,6 +243,15 @@ public class DashboardBelajarTataSurya extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        player.stop();
+                        MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarTataSurya.this,R.raw.click_sound_effect);
+                        mediaPlayer.start();
+                        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                            @Override
+                            public void onCompletion(MediaPlayer mediaPlayer) {
+                                mediaPlayer.reset();
+                            }
+                        });
                         Intent intent = new Intent(getApplicationContext(),TebakPlanetInggris.class);
                         startActivity(intent);
                     }
@@ -233,7 +272,7 @@ public class DashboardBelajarTataSurya extends AppCompatActivity {
 
         dialog.show();
 
-        MediaPlayer player = MediaPlayer.create(DashboardBelajarTataSurya.this,R.raw.pilih_bahasa);
+         player = MediaPlayer.create(DashboardBelajarTataSurya.this,R.raw.pilih_bahasa);
         player.start();
         player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override

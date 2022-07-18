@@ -45,6 +45,14 @@ public class DasboardBelajarHewan extends AppCompatActivity {
 
 
         Animation animation = AnimationUtils.loadAnimation(DasboardBelajarHewan.this,R.anim.splash);
+        MediaPlayer introPlayer = MediaPlayer.create(DasboardBelajarHewan.this,R.raw.pilih_belajar_tebak);
+        introPlayer.start();
+        introPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                mediaPlayer.reset();
+            }
+        });
 
         back = findViewById(R.id.back);
         belajar_hewan = findViewById(R.id.belajar_hewan);
@@ -58,6 +66,7 @@ public class DasboardBelajarHewan extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        introPlayer.stop();
                         MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.click_sound_effect);
                         mediaPlayer.start();
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -102,6 +111,7 @@ public class DasboardBelajarHewan extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        introPlayer.stop();
                         MediaPlayer mediaPlayer = MediaPlayer.create(DasboardBelajarHewan.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -135,6 +145,7 @@ public class DasboardBelajarHewan extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        introPlayer.stop();
                         MediaPlayer mediaPlayer = MediaPlayer.create(DasboardBelajarHewan.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {

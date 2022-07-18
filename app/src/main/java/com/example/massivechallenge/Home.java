@@ -68,14 +68,7 @@ public class Home extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
 
-                 MediaPlayer mediaPlayer = MediaPlayer.create(Home.this,R.raw.pilih_pelajaran);
-                 mediaPlayer.start();
-                 mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                     @Override
-                     public void onCompletion(MediaPlayer mediaPlayer) {
-                         mediaPlayer.reset();
-                     }
-                 });
+
 
                     }
 

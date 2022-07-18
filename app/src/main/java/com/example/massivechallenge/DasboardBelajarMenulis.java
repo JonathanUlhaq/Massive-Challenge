@@ -50,6 +50,15 @@ public class DasboardBelajarMenulis extends AppCompatActivity {
 
         Animation animation = AnimationUtils.loadAnimation(DasboardBelajarMenulis.this,R.anim.splash);
 
+        MediaPlayer introPlayer = MediaPlayer.create(DasboardBelajarMenulis.this,R.raw.pilih_belajar_tebak);
+        introPlayer.start();
+        introPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                introPlayer.reset();
+            }
+        });
+
 
         huruf_besar = findViewById(R.id.huruf_besar);
         huruf_besar.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +69,7 @@ public class DasboardBelajarMenulis extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
-
+                        introPlayer.stop();
                         MediaPlayer mediaPlayer = MediaPlayer.create(DasboardBelajarMenulis.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -98,6 +107,7 @@ public class DasboardBelajarMenulis extends AppCompatActivity {
                 animation.setAnimationListener(new Animation.AnimationListener() {
                     @Override
                     public void onAnimationStart(Animation animation) {
+                        introPlayer.stop();
                         MediaPlayer mediaPlayer = MediaPlayer.create(DasboardBelajarMenulis.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {

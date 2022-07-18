@@ -127,36 +127,30 @@ public class BelajarMenulisBesar extends AppCompatActivity {
     Intent intent;
     public void Abjad(View view)
     {
-        i++;
-        letterView = findViewById(R.id.letter);
-        LetterFactory letterFactory = new LetterFactory();
-
-
-        String value = view.getTag().toString();
-
-        switch (value){
-            case "0":
-                Intent intent = getIntent();
-                finish();
-                startActivity(intent);
-                letterView.setLetterChar(letterFactory.B);
-                letterView.setPointColor(Color.BLUE);
-                letterView.setInstructMode(true);
-                break;
-            case "1":
-                intent = getIntent();
-                finish();
-                startActivity(intent);
-                letterView.setLetterChar(letterFactory.C);
-                letterView.setPointColor(Color.BLUE);
-                letterView.setInstructMode(true);
-                break;
-        }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        i = 0;
+//        i++;
+//        letterView = findViewById(R.id.letter);
+//        LetterFactory letterFactory = new LetterFactory();
+//
+//
+//        String value = view.getTag().toString();
+//
+//        switch (value){
+//            case "0":
+//                Intent intent = getIntent();
+//                finish();
+//                startActivity(intent);
+//                letterView.setLetterChar(letterFactory.B);
+//                letterView.setPointColor(Color.BLUE);
+//                letterView.setInstructMode(true);
+//                break;
+//            case "1":
+//                intent = getIntent();
+//                finish();
+//                startActivity(intent);
+//                letterView.setLetterChar(letterFactory.C);
+//                letterView.setPointColor(Color.BLUE);
+//                letterView.setInstructMode(true);
+//                break;
+//        }
     }
 }

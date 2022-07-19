@@ -36,6 +36,15 @@ public class Home extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
+        MediaPlayer introPlayers = MediaPlayer.create(Home.this,R.raw.selamat_datang);
+        introPlayers.start();
+        introPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                introPlayers.reset();
+            }
+        });
+
         musik = findViewById(R.id.musik);
         mewarnai = findViewById(R.id.mewarnai);
         belajar = findViewById(R.id.belajar);

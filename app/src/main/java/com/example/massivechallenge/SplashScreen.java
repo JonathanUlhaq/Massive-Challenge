@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -16,7 +17,8 @@ import android.widget.TextView;
 
 public class SplashScreen extends AppCompatActivity {
 
-    private static final int SPLASH_TIME = 4*1000;
+    private static final int SPLASH_TIME = 6*1000;
+
     ImageView icon_loading;
     TextView judul,deskripsi;
     LinearLayout tulisan;
@@ -43,10 +45,23 @@ public class SplashScreen extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
+        MediaPlayer introPlayers = MediaPlayer.create(SplashScreen.this,R.raw.halo_aku_temanmu);
+        introPlayers.start();
+        introPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                introPlayers.reset();
+            }
+        });
+
+
         Animation animation = AnimationUtils.loadAnimation(SplashScreen.this,R.anim.pop_out);
         Animation animation2 = AnimationUtils.loadAnimation(SplashScreen.this,R.anim.pop_out);
         Animation animation3 = AnimationUtils.loadAnimation(SplashScreen.this,R.anim.pop_out);
         Animation bounce = AnimationUtils.loadAnimation(SplashScreen.this,R.anim.unlimited_bouncing_splashscreen);
+
+
+
 
         icon_loading = findViewById(R.id.icon_loading);
         judul = findViewById(R.id.judul);
@@ -87,6 +102,7 @@ public class SplashScreen extends AppCompatActivity {
                 finish();
             }
         }, SPLASH_TIME);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

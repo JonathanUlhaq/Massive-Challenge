@@ -78,6 +78,7 @@ public class DashboardBelajarBentuk extends AppCompatActivity {
 
                                 MediaPlayer mediaPlayers = MediaPlayer.create(DashboardBelajarBentuk.this,R.raw.belajar_bentuk);
                                 mediaPlayers.start();
+                                back.setEnabled(false);
                                 mediaPlayers.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                                     @Override
                                     public void onCompletion(MediaPlayer mediaPlayer) {

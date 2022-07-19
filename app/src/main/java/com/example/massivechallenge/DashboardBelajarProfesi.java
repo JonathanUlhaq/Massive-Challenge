@@ -71,6 +71,7 @@ public class DashboardBelajarProfesi extends AppCompatActivity {
                         introPlayer.stop();
                         MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        back.setEnabled(false);
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                             @Override
                             public void onCompletion(MediaPlayer mediaPlayer) {
@@ -212,6 +213,8 @@ public class DashboardBelajarProfesi extends AppCompatActivity {
                         player.stop();
                         MediaPlayer mediaPlayer = MediaPlayer.create(DashboardBelajarProfesi.this,R.raw.click_sound_effect);
                         mediaPlayer.start();
+
+
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                             @Override
                             public void onCompletion(MediaPlayer mediaPlayer) {

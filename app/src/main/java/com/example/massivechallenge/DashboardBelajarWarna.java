@@ -72,6 +72,7 @@ public class DashboardBelajarWarna extends AppCompatActivity {
                         MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.click_sound_effect);
                         introPlayer.stop();
                         mediaPlayer.start();
+                        back.setEnabled(false);
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                             @Override
                             public void onCompletion(MediaPlayer mediaPlayer) {

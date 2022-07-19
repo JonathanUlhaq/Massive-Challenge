@@ -69,6 +69,7 @@ public class DasboardBelajarHewan extends AppCompatActivity {
                         introPlayer.stop();
                         MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(),R.raw.click_sound_effect);
                         mediaPlayer.start();
+                        back.setEnabled(false);
                         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                             @Override
                             public void onCompletion(MediaPlayer mediaPlayer) {

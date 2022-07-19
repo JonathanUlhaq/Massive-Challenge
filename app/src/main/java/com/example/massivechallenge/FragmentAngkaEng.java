@@ -67,7 +67,7 @@ public class FragmentAngkaEng extends Fragment {
         }
     }
 
-    ImageView next,previous;
+    ImageView next,previous,back,button_all,bahasa_inggris,bahasa_indonesia;
     AdapterAngkaInggris adapterAngkaInggris;
     ViewPager viewPager;
     int posiss;
@@ -93,6 +93,10 @@ public class FragmentAngkaEng extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_angka_eng, container, false);
 
+        back = getActivity().findViewById(R.id.back);
+        button_all = getActivity().findViewById(R.id.all);
+        bahasa_inggris = getActivity().findViewById(R.id.bahasa_inggris);
+        bahasa_indonesia = getActivity().findViewById(R.id.bahasa_indonesia);
 
         Animation animation = AnimationUtils.loadAnimation(getContext(),R.anim.splash);
         Animation shadowAnimation = AnimationUtils.loadAnimation(getContext(),R.anim.unlimited_bouncing_shadow);
@@ -159,12 +163,20 @@ public class FragmentAngkaEng extends Fragment {
                             }
                         });
 
-
+// setting enable button
                         auto.startAnimation(animation);
+                        back.setEnabled(false);
+                        bahasa_inggris.setEnabled(false);
+                        bahasa_indonesia.setEnabled(false);
+                        next.setEnabled(false);
+                        previous.setEnabled(false);
 
                         MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
                         Log.e("POSISIS",Integer.toString(position));
                          mediaPlayers.start();
+
+
+
 
                         animation.setAnimationListener(new Animation.AnimationListener() {
                             @Override
@@ -250,6 +262,17 @@ public class FragmentAngkaEng extends Fragment {
 
                                     }
                                 });
+
+
+                               // setting enable button
+                                auto.startAnimation(animation);
+                                back.setEnabled(true);
+                                bahasa_inggris.setEnabled(true);
+                                bahasa_indonesia.setEnabled(true);
+                                next.setEnabled(true);
+                                previous.setEnabled(true);
+                                viewPager.setEnabled(true);
+
 
                                 FragmentAngkaEng inggris = new FragmentAngkaEng();
                                 Bundle bundle = new Bundle();

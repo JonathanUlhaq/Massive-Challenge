@@ -41,10 +41,12 @@ public class IsiBelajarAlatPerkakas extends AppCompatActivity {
         Animation backAnimation = AnimationUtils.loadAnimation(this,R.anim.splash);
         Animation shadowAnimation = AnimationUtils.loadAnimation(this,R.anim.unlimited_bouncing_shadow);
 
-
+        back = findViewById(R.id.back);
         button_all = findViewById(R.id.all);
         bahasa_inggris = findViewById(R.id.bahasa_inggris);
         bahasa_indonesia = findViewById(R.id.bahasa_indonesia);
+
+
 
         getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.splash,R.anim.splash_out).replace(R.id.frame,new FragmentPerkakasIndonesia()).commit();
 
@@ -87,7 +89,6 @@ public class IsiBelajarAlatPerkakas extends AppCompatActivity {
             }
         });
 
-        back = findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

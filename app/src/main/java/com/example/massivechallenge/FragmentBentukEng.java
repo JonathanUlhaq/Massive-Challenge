@@ -66,7 +66,7 @@ public class FragmentBentukEng extends Fragment {
         }
     }
 
-    ImageView next,previous;
+    ImageView next,previous,back,button_all,bahasa_inggris,bahasa_indonesia;
     AdapterBentukEng adapterBentukEng ;
     ViewPager viewPager;
     int posisiss;
@@ -93,6 +93,11 @@ public class FragmentBentukEng extends Fragment {
         adapterBentukEng = new AdapterBentukEng (getContext());
         viewPager = view.findViewById(R.id.view_puager);
         viewPager.setAdapter(adapterBentukEng );
+
+        back = getActivity().findViewById(R.id.back);
+        button_all = getActivity().findViewById(R.id.all);
+        bahasa_inggris = getActivity().findViewById(R.id.bahasa_inggris);
+        bahasa_indonesia = getActivity().findViewById(R.id.bahasa_indonesia);
 
         // MENDAPATKAN POSISI DARI VIEWPAGER
         Bundle bundle = getArguments();
@@ -139,7 +144,14 @@ public class FragmentBentukEng extends Fragment {
                         });
 
 
+                        // setting enable button
                         auto.startAnimation(animation);
+                        back.setEnabled(false);
+                        bahasa_inggris.setEnabled(false);
+                        bahasa_indonesia.setEnabled(false);
+                        next.setEnabled(false);
+                        button_all.setEnabled(false);
+                        previous.setEnabled(false);
 
                         //MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
                         Log.e("POSISIS",Integer.toString(position));
@@ -229,6 +241,13 @@ public class FragmentBentukEng extends Fragment {
 
                                     }
                                 });
+
+                                back.setEnabled(true);
+                                bahasa_inggris.setEnabled(true);
+                                bahasa_indonesia.setEnabled(true);
+                                next.setEnabled(true);
+                                button_all.setEnabled(false);
+                                previous.setEnabled(true);
 
                                 FragmentBentukEng  inggris = new FragmentBentukEng ();
                                 Bundle bundle = new Bundle();

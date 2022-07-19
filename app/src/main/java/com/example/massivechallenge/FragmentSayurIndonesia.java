@@ -65,7 +65,7 @@ public class FragmentSayurIndonesia extends Fragment {
         }
     }
 
-    ImageView next,previous;
+    ImageView next,previous,back,button_all,bahasa_inggris,bahasa_indonesia;
     AdapterSayurIndonesia adapterSayurIndonesia;
     ViewPager viewPager;
     int posiss;
@@ -119,7 +119,10 @@ public class FragmentSayurIndonesia extends Fragment {
         // MENDAPATKAN POSISI DARI VIEWPAGER
         Bundle bundle = getArguments();
 
-
+        back = getActivity().findViewById(R.id.back);
+        button_all = getActivity().findViewById(R.id.all);
+        bahasa_inggris = getActivity().findViewById(R.id.bahasa_inggris);
+        bahasa_indonesia = getActivity().findViewById(R.id.bahasa_indonesia);
 
 
         if (bundle != null)
@@ -178,6 +181,13 @@ public class FragmentSayurIndonesia extends Fragment {
                         });
 
                         auto.startAnimation(animation);
+
+                        back.setEnabled(false);
+                        bahasa_inggris.setEnabled(false);
+                        bahasa_indonesia.setEnabled(false);
+                        next.setEnabled(false);
+                        button_all.setEnabled(false);
+                        previous.setEnabled(false);
 
                         animation.setAnimationListener(new Animation.AnimationListener() {
                             @Override
@@ -269,6 +279,14 @@ public class FragmentSayurIndonesia extends Fragment {
 
                                 MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
                                 mediaPlayer.start();
+
+                                back.setEnabled(true);
+                                bahasa_inggris.setEnabled(true);
+                                bahasa_indonesia.setEnabled(true);
+                                next.setEnabled(true);
+                                button_all.setEnabled(true);
+                                previous.setEnabled(true);
+
                                 mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                                     @Override
                                     public void onCompletion(MediaPlayer mediaPlayer) {

@@ -66,7 +66,7 @@ public class FragmentBentukIndo extends Fragment {
         }
     }
 
-    ImageView next,previous;
+    ImageView next,previous,back,button_all,bahasa_inggris,bahasa_indonesia;
     AdapterBentukIndo adapterBentukIndo;
     ViewPager viewPager;
     int posiss;
@@ -134,6 +134,10 @@ public class FragmentBentukIndo extends Fragment {
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
 
+        back = getActivity().findViewById(R.id.back);
+        button_all = getActivity().findViewById(R.id.all);
+        bahasa_inggris = getActivity().findViewById(R.id.bahasa_inggris);
+        bahasa_indonesia = getActivity().findViewById(R.id.bahasa_indonesia);
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -162,6 +166,13 @@ public class FragmentBentukIndo extends Fragment {
 
 
                         auto.startAnimation(animation);
+
+                        back.setEnabled(false);
+                        bahasa_inggris.setEnabled(false);
+                        bahasa_indonesia.setEnabled(false);
+                        next.setEnabled(false);
+                        button_all.setEnabled(false);
+                        previous.setEnabled(false);
 
                         MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
                         Log.e("POSISIS",Integer.toString(position));
@@ -251,6 +262,13 @@ public class FragmentBentukIndo extends Fragment {
 
                                     }
                                 });
+
+                                back.setEnabled(true);
+                                bahasa_inggris.setEnabled(true);
+                                bahasa_indonesia.setEnabled(true);
+                                next.setEnabled(true);
+                                button_all.setEnabled(true);
+                                previous.setEnabled(true);
 
                                 FragmentBentukIndo indonesia = new FragmentBentukIndo();
                                 Bundle bundle = new Bundle();

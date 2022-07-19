@@ -75,7 +75,6 @@ public class DashboardBelajar extends AppCompatActivity {
         menulis = findViewById(R.id.menulis);
         sayur = findViewById(R.id.sayur);
 
-
 //        Warna
 
         warna.setOnClickListener(new View.OnClickListener() {

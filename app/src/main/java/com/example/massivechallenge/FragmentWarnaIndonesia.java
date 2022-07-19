@@ -66,7 +66,7 @@ public class FragmentWarnaIndonesia extends Fragment {
         }
     }
 
-    ImageView next,previous;
+    ImageView next,previous,back,button_all,bahasa_inggris,bahasa_indonesia;
     AdapterWarnaIndonesia adapterWarnaIndonesia;
     ViewPager viewPager;
     int positioss;
@@ -109,6 +109,11 @@ public class FragmentWarnaIndonesia extends Fragment {
         adapterWarnaIndonesia = new AdapterWarnaIndonesia(getContext());
         viewPager = view.findViewById(R.id.view_puager);
         viewPager.setAdapter(adapterWarnaIndonesia);
+
+        back = getActivity().findViewById(R.id.back);
+        button_all = getActivity().findViewById(R.id.all);
+        bahasa_inggris = getActivity().findViewById(R.id.bahasa_inggris);
+        bahasa_indonesia = getActivity().findViewById(R.id.bahasa_indonesia);
 
         // MENDAPATKAN POSISI DARI VIEWPAGER
         Bundle bundle = getArguments();
@@ -172,6 +177,13 @@ public class FragmentWarnaIndonesia extends Fragment {
                         //MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
                         Log.e("POSISIS",Integer.toString(position));
                         // mediaPlayers.start();
+
+                        back.setEnabled(false);
+                        bahasa_inggris.setEnabled(false);
+                        bahasa_indonesia.setEnabled(false);
+                        next.setEnabled(false);
+                        button_all.setEnabled(false);
+                        previous.setEnabled(false);
 
                         animation.setAnimationListener(new Animation.AnimationListener() {
                             @Override
@@ -257,6 +269,13 @@ public class FragmentWarnaIndonesia extends Fragment {
 
                                     }
                                 });
+
+                                back.setEnabled(true);
+                                bahasa_inggris.setEnabled(true);
+                                bahasa_indonesia.setEnabled(true);
+                                next.setEnabled(true);
+                                button_all.setEnabled(true);
+                                previous.setEnabled(true);
 
                                 FragmentWarnaIndonesia indonesia = new FragmentWarnaIndonesia();
                                 Bundle bundle = new Bundle();

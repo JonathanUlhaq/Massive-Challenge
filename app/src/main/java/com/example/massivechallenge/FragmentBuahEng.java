@@ -73,6 +73,31 @@ public class FragmentBuahEng extends Fragment {
     Timer timer;
     Handler handler;
 
+    int[] suara = {
+            R.raw.buah_inggris_avocado,
+            R.raw.buah_inggris_grape,
+            R.raw.buah_inggris_strawberry,
+            R.raw.buah_inggris_star_fruit,
+            R.raw.buah_inggris_dragon_fruit,
+            R.raw.buah_inggris_cherry,
+            R.raw.buah_inggris_pomagrenate,
+            R.raw.buah_inggris_durian,
+            R.raw.buah_inggris_guava,
+            R.raw.buah_inggris_lime,
+            R.raw.buah_inggris_orange,
+            R.raw.buah_inggris_coconut,
+            R.raw.buah_inggris_kiwi,
+            R.raw.buah_inggris_lemon,
+            R.raw.buah_inggris_manggo,
+            R.raw.buah_inggris_pineapple,
+            R.raw.buah_inggris_papaya,
+            R.raw.buah_inggris_banana,
+            R.raw.buah_inggris_rambutan,
+            R.raw.buah_inggris_watermelon,
+
+
+    };
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -104,17 +129,21 @@ public class FragmentBuahEng extends Fragment {
         ImageView button_all;
         button_all = getActivity().findViewById(R.id.all);
         button_all.setImageResource(R.drawable.button_all);
+
         if (bundle != null)
         {
             int data = bundle.getInt("posisi");
             viewPager.setCurrentItem(data);
+
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
+            mediaPlayers.start();
         }
 
-        //        if(bundle == null)
-//        {
-//            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
-//            mediaPlayers.start();
-//        }
+        if(bundle == null)
+        {
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
+            mediaPlayers.start();
+        }
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
 
@@ -281,6 +310,16 @@ public class FragmentBuahEng extends Fragment {
             @Override
             public void onPageSelected(int position) {
                 //  frameLayout.setBackgroundResource(background.get(position));
+
+                //                ON KETIKA ADA SUARA
+
+                if(getContext() != null)
+                {
+                    MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                    Log.e("POSISIS",Integer.toString(position));
+                    mediaPlayers.start();
+                }
+
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
 

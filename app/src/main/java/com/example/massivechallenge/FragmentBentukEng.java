@@ -73,6 +73,25 @@ public class FragmentBentukEng extends Fragment {
     Timer timer;
     Handler handler;
 
+    int[] suara = {
+            R.raw.bentuk_inggris_square,
+            R.raw.bentuk_inggris_rectangle,
+            R.raw.bentuk_inggris_circle,
+            R.raw.bentuk_inggris_oval,
+            R.raw.bentuk_inggris_triangle,
+            R.raw.bentuk_inggris_pentagon,
+            R.raw.bentuk_inggris_hexagon,
+            R.raw.bentuk_inggris_octagonal,
+            R.raw.bentuk_inggris_parrallelogram,
+            R.raw.bentuk_inggris_trapezoidal,
+            R.raw.bentuk_inggris_rhombus,
+            R.raw.bentuk_inggris_star,
+            R.raw.bentuk_inggris_arrow,
+            R.raw.bentuk_inggris_moon,
+            R.raw.bentuk_inggris_kite,
+
+    };
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -104,17 +123,21 @@ public class FragmentBentukEng extends Fragment {
         ImageView button_all;
         button_all = getActivity().findViewById(R.id.all);
         button_all.setImageResource(R.drawable.button_all);
+
         if (bundle != null)
         {
             int data = bundle.getInt("posisi");
             viewPager.setCurrentItem(data);
+
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[data]);
+            mediaPlayers.start();
         }
 
-        //        if(bundle == null)
-//        {
-//            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
-//            mediaPlayers.start();
-//        }
+        if(bundle == null)
+        {
+            MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[viewPager.getCurrentItem()]);
+            mediaPlayers.start();
+        }
 
         MediaPlayer mediaPlayer = MediaPlayer.create(getContext(),R.raw.click_sound_effect);
 
@@ -153,9 +176,9 @@ public class FragmentBentukEng extends Fragment {
                         button_all.setEnabled(false);
                         previous.setEnabled(false);
 
-                        //MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                        MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
                         Log.e("POSISIS",Integer.toString(position));
-                        // mediaPlayers.start();
+                        mediaPlayers.start();
 
                         animation.setAnimationListener(new Animation.AnimationListener() {
                             @Override
@@ -281,6 +304,15 @@ public class FragmentBentukEng extends Fragment {
             @Override
             public void onPageSelected(int position) {
                 //  frameLayout.setBackgroundResource(background.get(position));
+
+                //                ON KETIKA ADA SUARA
+
+                if(getContext() != null)
+                {
+                    MediaPlayer mediaPlayers = MediaPlayer.create(getContext(),suara[position]);
+                    Log.e("POSISIS",Integer.toString(position));
+                    mediaPlayers.start();
+                }
 
                 Log.e("POSISI",Integer.toString(viewPager.getCurrentItem()));
 

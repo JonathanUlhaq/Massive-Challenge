@@ -47,20 +47,33 @@
 
 <!--        Item 1-->
         <FrameLayout
+            android:id="@+id/mewarnai_gambar_bentuk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="100dp"
-            android:layout_marginRight="30dp"
+            android:padding="30dp"
+            android:layout_marginRight="20dp"
             android:background="@drawable/background_menu_belajar">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="vertical">
 
-                <TextView
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:paddingTop="20dp"
+                    android:src="@drawable/mewarnai" />
+
+
+                <TextView
+                    android:paddingTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
                     android:text="@string/mewarnai"/>
 
             </LinearLayout>
@@ -71,20 +84,33 @@
 
         <!--        Item 2-->
         <FrameLayout
+            android:id="@+id/papan_kreasi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="100dp"
+            android:padding="30dp"
             android:background="@drawable/background_menu_belajar">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="vertical">
 
-                <TextView
+                <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/mewarnai"/>
+                    android:layout_marginBottom="5dp"
+                    android:paddingTop="20dp"
+                    android:src="@drawable/papan_kreasi" />
+
+
+                <TextView
+                    android:paddingTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="15sp"
+                    android:text="@string/papan_kreasi"/>
 
             </LinearLayout>
 
